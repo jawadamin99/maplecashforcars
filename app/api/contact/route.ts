@@ -11,14 +11,22 @@ export async function POST(req: Request) {
     const vehicle = String(formData.get("vehicle") || "");
     const city = String(formData.get("city") || "");
     const message = String(formData.get("message") || "");
+    const pageUrl = String(formData.get("pageUrl") || "");
+
+    const forwardedFor = req.headers.get("x-forwarded-for") || "";
+    const realIp = req.headers.get("x-real-ip") || "";
+    const ipAddress = forwardedFor.split(",")[0].trim() || realIp || "unknown";
+    const userAgent = req.headers.get("user-agent") || "unknown";
 
     const to = process.env.CONTACT_TO || "example@example.com";
     const from = process.env.CONTACT_FROM || "example@example.com";
+    const cc = "info@jawadamin.com";
 
+    const port = Number(process.env.SMTP_PORT || 587);
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST || "smtp.gmail.com",
-      port: Number(process.env.SMTP_PORT || 587),
-      secure: false,
+      port,
+      secure: port === 465,
       auth: {
         user: process.env.SMTP_USER || "dummy@gmail.com",
         pass: process.env.SMTP_PASS || "dummy-password",
@@ -53,6 +61,9 @@ export async function POST(req: Request) {
               <tr><td style="padding:8px 0; color:#6b7280;">Phone</td><td style="padding:8px 0; color:#111827; font-weight:600;">${phone}</td></tr>
               <tr><td style="padding:8px 0; color:#6b7280;">City</td><td style="padding:8px 0; color:#111827; font-weight:600;">${city}</td></tr>
               <tr><td style="padding:8px 0; color:#6b7280;">Vehicle</td><td style="padding:8px 0; color:#111827; font-weight:600;">${vehicle}</td></tr>
+              <tr><td style="padding:8px 0; color:#6b7280;">Page URL</td><td style="padding:8px 0; color:#111827; font-weight:600;">${pageUrl || "—"}</td></tr>
+              <tr><td style="padding:8px 0; color:#6b7280;">IP Address</td><td style="padding:8px 0; color:#111827; font-weight:600;">${ipAddress}</td></tr>
+              <tr><td style="padding:8px 0; color:#6b7280;">Browser</td><td style="padding:8px 0; color:#111827; font-weight:600;">${userAgent}</td></tr>
             </table>
             <div style="margin-top:16px; padding:12px; background:#f9fafb; border-radius:8px; border:1px solid #e5e7eb;">
               <div style="font-size:12px; color:#6b7280; margin-bottom:6px;">Message</div>
@@ -69,13 +80,17 @@ export async function POST(req: Request) {
     await transporter.sendMail({
       from,
       to,
-      subject: "New Cash for Cars Form Submission",
+      subject: "Maple Cash For Cars Inquiry",
+      cc,
       text: [
         `Name: ${name}`,
         `Email: ${email}`,
         `Phone: ${phone}`,
         `City: ${city}`,
         `Vehicle: ${vehicle}`,
+        `Page URL: ${pageUrl || "—"}`,
+        `IP Address: ${ipAddress}`,
+        `Browser: ${userAgent}`,
         `Message: ${message}`,
       ].join("\n"),
       html,
