@@ -90,22 +90,31 @@ const areas = [
 ];
 
 export default function Home() {
-  const [files, setFiles] = useState([]);
-  const [fileError, setFileError] = useState("");
-  const testimonialRef = useRef(null);
+  const [files, setFiles] = useState<File[]>([]);
+  const [fileError, setFileError] = useState<string>("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+  const testimonialRef = useRef<HTMLDivElement | null>(null);
   const [visibleCount, setVisibleCount] = useState(3);
   const [carouselIndex, setCarouselIndex] = useState(0);
-  const [translateX, setTranslateX] = useState(0);
-  const dragState = useRef({
+  const [translateX, setTranslateX] = useState<number>(0);
+  const dragState = useRef<{
+    isDragging: boolean;
+    startX: number;
+    startTranslate: number;
+  }>({
     isDragging: false,
     startX: 0,
     startTranslate: 0,
   });
 
-  const validateFiles = (fileList, existing = []) => {
+  const validateFiles = (
+    fileList: FileList | null,
+    existing: File[] = []
+  ): { ok: boolean; files: File[]; warning?: string; error?: string } => {
     const maxFiles = 3;
     const maxSize = 5 * 1024 * 1024;
-    const incoming = Array.from(fileList || []);
+    const incoming = Array.from(fileList || []) as File[];
 
     if (incoming.length === 0) {
       return { ok: true, files: [] };
@@ -116,10 +125,10 @@ export default function Home() {
 
     for (const f of clipped) {
       if (!f.type.startsWith("image/")) {
-        return { ok: false, error: "Only image files are allowed." };
+        return { ok: false, error: "Only image files are allowed.", files: [] };
       }
       if (f.size > maxSize) {
-        return { ok: false, error: "Each image must be 5MB or less." };
+        return { ok: false, error: "Each image must be 5MB or less.", files: [] };
       }
     }
 
@@ -131,29 +140,55 @@ export default function Home() {
     };
   };
 
-  const handleFiles = (fileList) => {
+  const handleFiles = (fileList: FileList | null) => {
     const result = validateFiles(fileList, files);
     if (!result.ok) {
-      setFileError(result.error);
+      setFileError(result.error ?? "");
       return;
     }
     setFileError(result.warning || "");
     setFiles((prev) => [...prev, ...result.files]);
   };
 
-  const onDrop = (e) => {
+  const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     e.stopPropagation();
     handleFiles(e.dataTransfer.files);
   };
 
-  const onDragOver = (e) => {
+  const onDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
   };
 
-  const removeFile = (index) => {
+  const removeFile = (index: number) => {
     const next = files.filter((_, i) => i !== index);
     setFiles(next);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+    setSubmitMessage("");
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    files.forEach((file) => data.append("images", file));
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: data,
+      });
+      if (!res.ok) throw new Error("Failed");
+      setSubmitMessage("Thanks! Your request has been sent.");
+      form.reset();
+      setFiles([]);
+    } catch (err) {
+      setSubmitMessage("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   useEffect(() => {
@@ -223,7 +258,7 @@ export default function Home() {
     setTranslateX(-carouselIndex * step);
   }, [carouselIndex, visibleCount]);
 
-  const onPointerDown = (e) => {
+  const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     const node = testimonialRef.current;
     if (!node) return;
     dragState.current.isDragging = true;
@@ -232,13 +267,13 @@ export default function Home() {
     node.setPointerCapture(e.pointerId);
   };
 
-  const onPointerMove = (e) => {
+  const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     if (!dragState.current.isDragging) return;
     const delta = e.clientX - dragState.current.startX;
     setTranslateX(dragState.current.startTranslate + delta);
   };
 
-  const onPointerUp = (e) => {
+  const onPointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
     const node = testimonialRef.current;
     if (!node) return;
     dragState.current.isDragging = false;
@@ -320,8 +355,7 @@ export default function Home() {
               id="lead-form"
               className="rounded-2xl border-2 border-[var(--brand-green)] bg-white p-6 shadow-[0_18px_50px_rgba(0,0,0,0.35)] md:p-8 reveal"
               data-animate="animate__fadeInUp animate__delay-2s"
-              action="#"
-              method="post"
+              onSubmit={handleSubmit}
             >
               <h2 className="mb-1 text-3xl font-black text-[var(--brand-red)] reveal" data-animate="animate__fadeInUp animate__delay-3s">Get a Free Cash Offer</h2>
               <p className="mb-5 text-sm text-slate-600 reveal" data-animate="animate__fadeInUp animate__delay-3s">Fill in your details and we will contact you shortly.</p>
@@ -399,8 +433,11 @@ export default function Home() {
               </div>
 
               <button type="submit" className="btn btn-red mt-5 w-full reveal" data-animate="animate__fadeInUp animate__delay-3s">
-                Submit
+                {isSubmitting ? "Sending..." : "Submit"}
               </button>
+              {submitMessage ? (
+                <p className="mt-3 text-sm text-slate-600">{submitMessage}</p>
+              ) : null}
             </form>
           </div>
         </div>
@@ -427,13 +464,12 @@ export default function Home() {
             </p>
           </div>
           <div className="relative">
-            <div className="funky-corner" aria-hidden="true" />
             <Image
-              src="/images/car-about.webp"
+              src="/images/sell-my-car.png"
               alt="Vehicle pickup in Calgary"
               width={900}
               height={700}
-              className="h-[430px] w-full rounded-2xl object-cover shadow-2xl"
+              className="h-[430px] w-full rounded-2xl object-cover"
             />
           </div>
         </div>
