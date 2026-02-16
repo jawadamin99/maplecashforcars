@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="700" viewBox="0 0 800 700">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0f14"/>
+      <stop offset="100%" stop-color="#0e151b"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="700" fill="url(#bg)"/>
+
+  <!-- grid -->
+  <g stroke="rgba(80,255,255,0.18)" stroke-width="1">
+    <path d="M80 40 V660 M160 40 V660 M240 40 V660 M320 40 V660 M400 40 V660 M480 40 V660 M560 40 V660 M640 40 V660 M720 40 V660"/>
+    <path d="M40 80 H760 M40 160 H760 M40 240 H760 M40 320 H760 M40 400 H760 M40 480 H760 M40 560 H760 M40 640 H760"/>
+  </g>
+
+  <!-- stylized Alberta outline -->
+  <path
+    d="M290 110 L520 110 L520 590 L470 590 L470 560 L360 560 L360 530 L330 530 L330 480 L300 480 L300 420 L320 420 L320 320 L300 320 L300 260 L320 260 L320 200 L300 200 L300 150 Z"
+    fill="none"
+    stroke="#57f0ff"
+    stroke-width="4"
+    filter="url(#glow)"
+  />
+
+  <!-- inner route lines -->
+  <g stroke="#57f0ff" stroke-width="2" opacity="0.8" filter="url(#glow)">
+    <path d="M340 160 L470 160"/>
+    <path d="M340 220 L470 220"/>
+    <path d="M340 280 L470 280"/>
+    <path d="M340 340 L470 340"/>
+    <path d="M340 400 L470 400"/>
+    <path d="M340 460 L470 460"/>
+    <path d="M360 160 L360 520"/>
+    <path d="M400 160 L400 520"/>
+    <path d="M440 160 L440 520"/>
+  </g>
+
+  <!-- label -->
+  <text x="400" y="350" text-anchor="middle" fill="#e8fbff" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="34">ALBERTA</text>
+</svg>

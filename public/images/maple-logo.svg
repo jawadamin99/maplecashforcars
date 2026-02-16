@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="140" viewBox="0 0 520 140">
+  <defs>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2b6cb0"/>
+      <stop offset="100%" stop-color="#1f9d55"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="520" height="140" rx="16" fill="#ffffff"/>
+  <rect x="0" y="0" width="520" height="140" rx="16" fill="none" stroke="#1b1b1b" stroke-width="3"/>
+  <g transform="translate(22 20)">
+    <rect x="0" y="0" width="96" height="96" rx="12" fill="#0f172a"/>
+    <path d="M48 10 L58 28 L80 24 L70 42 L88 54 L64 60 L70 82 L50 72 L32 92 L30 70 L10 78 L20 58 L4 50 L24 42 L16 24 L38 28 Z" fill="url(#leaf)"/>
+    <rect x="45" y="74" width="6" height="16" fill="#ffffff"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#1b1b1b">
+    <text x="140" y="62" font-size="34" font-weight="800">Maple Cash</text>
+    <text x="140" y="96" font-size="20" font-weight="700" letter-spacing="0.12em">FOR CARS</text>
+  </g>
+</svg>
