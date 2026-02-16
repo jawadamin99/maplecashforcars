@@ -790,6 +790,30 @@ h1, h2, h3, h4, h5, h6 {
   height: 26px;
 }
 
+.topbar-call {
+  width: 42px;
+  height: 42px;
+  border-radius: 9999px;
+  background: var(--brand-green);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.3);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.topbar-call:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 22px rgba(15, 23, 42, 0.35);
+}
+
+.topbar-call svg {
+  width: 20px;
+  height: 20px;
+}
+
 .dropzone {
   position: relative;
   border-radius: 1rem;

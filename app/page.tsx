@@ -312,21 +312,23 @@ export default function Home() {
             <a href="/" className="flex items-center gap-3">
               <Image src="/images/maple-cash-for-cars.png" alt="Maple Cash for Cars" width={220} height={66} />
             </a>
-            <a href="tel:+10000000000" className="btn btn-green reveal" data-animate="animate__fadeInDown animate__delay-1s">
-              Call Now
+            <a href="tel:+10000000000" className="topbar-call reveal" data-animate="animate__fadeInDown" aria-label="Call now">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 5.5c0-.8.7-1.5 1.5-1.5h2.2c.7 0 1.2.4 1.4 1l.8 2.6c.2.6 0 1.3-.5 1.7l-1.2 1c1.1 2.2 2.9 4 5.1 5.1l1-1.2c.4-.5 1.1-.7 1.7-.5l2.6.8c.6.2 1 .7 1 1.4v2.2c0 .8-.7 1.5-1.5 1.5H18C10.8 20 4 13.2 4 5.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </a>
           </div>
 
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
             <div className="space-y-6 text-white">
-              <h1 className="max-w-xl text-4xl font-extrabold leading-tight md:text-5xl lg:text-6xl reveal" data-animate="animate__fadeInUp animate__delay-1s">
+              <h1 className="max-w-xl text-4xl font-extrabold leading-tight md:text-5xl lg:text-6xl reveal" data-animate="animate__fadeInUp">
                 Turn Your Unwanted Car into <span className="text-[var(--brand-green)]">Cash</span>
               </h1>
-              <p className="max-w-xl text-lg text-slate-100 reveal" data-animate="animate__fadeInUp animate__delay-2s">
+              <p className="max-w-xl text-lg text-slate-100 reveal" data-animate="animate__fadeInUp">
                 We buy used, old, damaged, and junk vehicles. Quick pickup,
                 same-day offers, and a clear process from quote to payment.
               </p>
-              <div className="flex flex-wrap gap-4 reveal" data-animate="animate__fadeInUp animate__delay-2s">
+              <div className="flex flex-wrap gap-4 reveal" data-animate="animate__fadeInUp">
                 <a href="#lead-form" className="btn btn-red">
                   Get Cash Offer
                 </a>
@@ -335,7 +337,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="graphic-strip reveal" data-animate="animate__fadeInUp animate__delay-3s">
+              <div className="graphic-strip reveal" data-animate="animate__fadeInUp">
                 <div className="graphic-chip">
                   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h18M12 3v18" stroke="currentColor" strokeWidth="2"/></svg>
                   <span>Same Day Pickup</span>
@@ -354,11 +356,11 @@ export default function Home() {
             <form
               id="lead-form"
               className="rounded-2xl border-2 border-[var(--brand-green)] bg-white p-6 shadow-[0_18px_50px_rgba(0,0,0,0.35)] md:p-8 reveal"
-              data-animate="animate__fadeInUp animate__delay-2s"
+              data-animate="animate__fadeInUp"
               onSubmit={handleSubmit}
             >
-              <h2 className="mb-1 text-3xl font-black text-[var(--brand-red)] reveal" data-animate="animate__fadeInUp animate__delay-3s">Get a Free Cash Offer</h2>
-              <p className="mb-5 text-sm text-slate-600 reveal" data-animate="animate__fadeInUp animate__delay-3s">Fill in your details and we will contact you shortly.</p>
+              <h2 className="mb-1 text-3xl font-black text-[var(--brand-red)] reveal" data-animate="animate__fadeInUp">Get a Free Cash Offer</h2>
+              <p className="mb-5 text-sm text-slate-600 reveal" data-animate="animate__fadeInUp">Fill in your details and we will contact you shortly.</p>
 
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
@@ -432,7 +434,7 @@ export default function Home() {
                 ) : null}
               </div>
 
-              <button type="submit" className="btn btn-red mt-5 w-full reveal" data-animate="animate__fadeInUp animate__delay-3s">
+              <button type="submit" className="btn btn-red mt-5 w-full reveal" data-animate="animate__fadeInUp">
                 {isSubmitting ? "Sending..." : "Submit"}
               </button>
               {submitMessage ? (
@@ -526,7 +528,7 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <div className="process-cta reveal" data-animate="animate__fadeInUp animate__delay-2s">
+          <div className="process-cta reveal" data-animate="animate__fadeInUp animate__delay-1s">
             <a className="btn btn-outline-dark" href="tel:+10000000000">Call Us Now</a>
           </div>
         </div>
