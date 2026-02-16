@@ -61,6 +61,9 @@ export async function POST(req: Request) {
               <tr><td style="padding:8px 0; color:#6b7280;">Phone</td><td style="padding:8px 0; color:#111827; font-weight:600;">${phone}</td></tr>
               <tr><td style="padding:8px 0; color:#6b7280;">City</td><td style="padding:8px 0; color:#111827; font-weight:600;">${city}</td></tr>
               <tr><td style="padding:8px 0; color:#6b7280;">Vehicle</td><td style="padding:8px 0; color:#111827; font-weight:600;">${vehicle}</td></tr>
+              <tr><td style="padding:8px 0; color:#6b7280;">Page URL</td><td style="padding:8px 0; color:#111827; font-weight:600;">${pageUrl || "—"}</td></tr>
+              <tr><td style="padding:8px 0; color:#6b7280;">IP Address</td><td style="padding:8px 0; color:#111827; font-weight:600;">${ipAddress}</td></tr>
+              <tr><td style="padding:8px 0; color:#6b7280;">Browser</td><td style="padding:8px 0; color:#111827; font-weight:600;">${userAgent}</td></tr>
             </table>
             <div style="margin-top:16px; padding:12px; background:#f9fafb; border-radius:8px; border:1px solid #e5e7eb;">
               <div style="font-size:12px; color:#6b7280; margin-bottom:6px;">Message</div>
@@ -93,6 +96,9 @@ export async function POST(req: Request) {
         `Phone: ${phone}`,
         `City: ${city}`,
         `Vehicle: ${vehicle}`,
+        `Page URL: ${pageUrl || "—"}`,
+        `IP Address: ${ipAddress}`,
+        `Browser: ${userAgent}`,
         `Message: ${message}`,
         "",
         "Submission Metadata:",
