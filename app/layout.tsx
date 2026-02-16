@@ -24,6 +24,23 @@ export const metadata: Metadata = {
   title: "Maple Cash for Cars Calgary",
   description:
     "Sell your vehicle fast in Calgary. Get top cash offers with easy pickup and junk car removal.",
+  openGraph: {
+    title: "Maple Cash for Cars Calgary",
+    description:
+      "Sell your vehicle fast in Calgary. Get top cash offers with easy pickup and junk car removal.",
+    images: ["/images/maple-cash-for-cars.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Maple Cash for Cars Calgary",
+    description:
+      "Sell your vehicle fast in Calgary. Get top cash offers with easy pickup and junk car removal.",
+    images: ["/images/maple-cash-for-cars.png"],
+  },
+  icons: {
+    icon: "/images/maple-cash-for-cars.png",
+    apple: "/images/maple-cash-for-cars.png",
+  },
 };
 
 export default function RootLayout({
