@@ -38,8 +38,8 @@ export const metadata: Metadata = {
     images: ["/images/maple-cash-for-cars.png"],
   },
   icons: {
-    icon: "/images/maple-cash-for-cars.png",
-    apple: "/images/maple-cash-for-cars.png",
+    icon: "/icon.png",
+    apple: "/icon.png",
   },
 };
 
