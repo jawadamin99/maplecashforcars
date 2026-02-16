@@ -84,6 +84,15 @@ export async function POST(req: Request) {
 
     return new Response(JSON.stringify({ ok: true }), { status: 200 });
   } catch (err) {
+    console.error("Email send failed", {
+      message: err instanceof Error ? err.message : String(err),
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
+      user: !!process.env.SMTP_USER,
+      pass: !!process.env.SMTP_PASS,
+      from: process.env.CONTACT_FROM,
+      to: process.env.CONTACT_TO,
+    });
     return new Response(JSON.stringify({ ok: false }), { status: 500 });
   }
 }
