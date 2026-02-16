@@ -173,6 +173,7 @@ export default function Home() {
 
     const form = e.currentTarget;
     const data = new FormData(form);
+    data.append("pageUrl", window.location.href);
     files.forEach((file) => data.append("images", file));
 
     try {

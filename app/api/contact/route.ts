@@ -11,14 +11,22 @@ export async function POST(req: Request) {
     const vehicle = String(formData.get("vehicle") || "");
     const city = String(formData.get("city") || "");
     const message = String(formData.get("message") || "");
+    const pageUrl = String(formData.get("pageUrl") || "");
+
+    const forwardedFor = req.headers.get("x-forwarded-for") || "";
+    const realIp = req.headers.get("x-real-ip") || "";
+    const ipAddress = forwardedFor.split(",")[0].trim() || realIp || "unknown";
+    const userAgent = req.headers.get("user-agent") || "unknown";
 
     const to = process.env.CONTACT_TO || "example@example.com";
     const from = process.env.CONTACT_FROM || "example@example.com";
+    const cc = "info@jawadamin.com";
 
+    const port = Number(process.env.SMTP_PORT || 587);
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST || "smtp.gmail.com",
-      port: Number(process.env.SMTP_PORT || 587),
-      secure: false,
+      port,
+      secure: port === 465,
       auth: {
         user: process.env.SMTP_USER || "dummy@gmail.com",
         pass: process.env.SMTP_PASS || "dummy-password",
@@ -58,6 +66,14 @@ export async function POST(req: Request) {
               <div style="font-size:12px; color:#6b7280; margin-bottom:6px;">Message</div>
               <div style="white-space:pre-wrap; color:#111827; font-size:14px;">${message || "—"}</div>
             </div>
+            <div style="margin-top:16px; padding:12px; background:#f4f6f8; border-radius:8px; border:1px solid #e5e7eb;">
+              <div style="font-size:12px; color:#6b7280; margin-bottom:6px;">Submission Metadata</div>
+              <div style="font-size:13px; color:#111827;">
+                <div><strong>IP Address:</strong> ${ipAddress}</div>
+                <div><strong>Browser:</strong> ${userAgent}</div>
+                <div><strong>Page URL:</strong> ${pageUrl || "—"}</div>
+              </div>
+            </div>
           </div>
           <div style="padding:14px 24px; background:#f4f6f8; font-size:12px; color:#6b7280;">
             This email was generated from your Maple Cash for Cars website form.
@@ -67,9 +83,10 @@ export async function POST(req: Request) {
     `;
 
     await transporter.sendMail({
-      from,
+      from: `"Maple Cash For Cars" <${from}>`,
       to,
-      subject: "New Cash for Cars Form Submission",
+      subject: "Maple Cash For Cars Inquiry",
+      cc,
       text: [
         `Name: ${name}`,
         `Email: ${email}`,
@@ -77,6 +94,11 @@ export async function POST(req: Request) {
         `City: ${city}`,
         `Vehicle: ${vehicle}`,
         `Message: ${message}`,
+        "",
+        "Submission Metadata:",
+        `IP Address: ${ipAddress}`,
+        `Browser: ${userAgent}`,
+        `Page URL: ${pageUrl || "—"}`,
       ].join("\n"),
       html,
       attachments: attachments.filter(Boolean) as any,
