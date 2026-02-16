@@ -1,7 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const steps = [
   {
@@ -94,19 +98,6 @@ export default function Home() {
   const [fileError, setFileError] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
-  const testimonialRef = useRef<HTMLDivElement | null>(null);
-  const [visibleCount, setVisibleCount] = useState(3);
-  const [carouselIndex, setCarouselIndex] = useState(0);
-  const [translateX, setTranslateX] = useState<number>(0);
-  const dragState = useRef<{
-    isDragging: boolean;
-    startX: number;
-    startTranslate: number;
-  }>({
-    isDragging: false,
-    startX: 0,
-    startTranslate: 0,
-  });
 
   const validateFiles = (
     fileList: FileList | null,
@@ -216,82 +207,6 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const node = testimonialRef.current;
-    if (!node) return;
-
-    const interval = setInterval(() => {
-      setCarouselIndex((prev) => {
-        const maxIndex = Math.max(0, testimonials.length - visibleCount);
-        return prev >= maxIndex ? 0 : prev + 1;
-      });
-    }, 10000);
-
-    return () => clearInterval(interval);
-  }, [visibleCount]);
-
-  useEffect(() => {
-    const updateVisible = () => {
-      if (window.innerWidth < 640) {
-        setVisibleCount(1);
-      } else if (window.innerWidth < 1024) {
-        setVisibleCount(2);
-      } else {
-        setVisibleCount(3);
-      }
-    };
-
-    updateVisible();
-    window.addEventListener("resize", updateVisible);
-    return () => window.removeEventListener("resize", updateVisible);
-  }, []);
-
-  useEffect(() => {
-    const maxIndex = Math.max(0, testimonials.length - visibleCount);
-    if (carouselIndex > maxIndex) setCarouselIndex(0);
-  }, [carouselIndex, visibleCount]);
-
-  useEffect(() => {
-    const node = testimonialRef.current;
-    if (!node) return;
-    if (dragState.current.isDragging) return;
-    const step = node.clientWidth / visibleCount;
-    setTranslateX(-carouselIndex * step);
-  }, [carouselIndex, visibleCount]);
-
-  const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
-    const node = testimonialRef.current;
-    if (!node) return;
-    dragState.current.isDragging = true;
-    dragState.current.startX = e.clientX;
-    dragState.current.startTranslate = translateX;
-    node.setPointerCapture(e.pointerId);
-  };
-
-  const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (!dragState.current.isDragging) return;
-    const delta = e.clientX - dragState.current.startX;
-    setTranslateX(dragState.current.startTranslate + delta);
-  };
-
-  const onPointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
-    const node = testimonialRef.current;
-    if (!node) return;
-    dragState.current.isDragging = false;
-    node.releasePointerCapture(e.pointerId);
-
-    const step = node.clientWidth / visibleCount;
-    const maxIndex = Math.max(0, testimonials.length - visibleCount);
-    const delta = translateX - dragState.current.startTranslate;
-    const threshold = step * 0.25;
-    if (delta <= -threshold && carouselIndex < maxIndex) {
-      setCarouselIndex(carouselIndex + 1);
-    } else if (delta >= threshold && carouselIndex > 0) {
-      setCarouselIndex(carouselIndex - 1);
-    } else {
-      setCarouselIndex(carouselIndex);
-    }
-  };
 
   return (
     <div className="bg-white text-slate-900">
@@ -535,53 +450,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-red-tint px-4 py-16 md:px-8 lg:px-12 reveal" data-animate="animate__fadeInUp animate__slow">
+            <section className="section-red-tint px-4 py-16 md:px-8 lg:px-12 reveal" data-animate="animate__fadeInUp animate__slow">
         <div className="mx-auto max-w-7xl">
           <h2 className="text-center text-4xl font-black text-slate-900">Testimonials</h2>
-          <p className="mt-2 text-center section-sub text-slate-700">Real feedback from Calgary vehicle owners.</p>
-          <div
-            className="testimonial-carousel"
-            ref={testimonialRef}
-            onPointerDown={onPointerDown}
-            onPointerMove={onPointerMove}
-            onPointerUp={onPointerUp}
-            onPointerLeave={onPointerUp}
+          <p className="my-2 text-center section-sub text-slate-700">What the customers say about us.</p>
+          <Swiper
+            className="testimonials-swiper"
+            modules={[Autoplay, Pagination]}
+            slidesPerView={3}
+            spaceBetween={24}
+            loop
+            autoplay={{ delay: 10000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            breakpoints={{
+              0: { slidesPerView: 1, spaceBetween: 16 },
+              640: { slidesPerView: 2, spaceBetween: 20 },
+              1024: { slidesPerView: 3, spaceBetween: 24 },
+            }}
           >
-            <button
-              className="carousel-btn prev"
-              type="button"
-              aria-label="Previous testimonials"
-              onClick={() =>
-                setCarouselIndex((prev) =>
-                  prev === 0 ? Math.max(0, testimonials.length - visibleCount) : prev - 1
-                )
-              }
-            >
-              ‹
-            </button>
-            <button
-              className="carousel-btn next"
-              type="button"
-              aria-label="Next testimonials"
-              onClick={() =>
-                setCarouselIndex((prev) => {
-                  const maxIndex = Math.max(0, testimonials.length - visibleCount);
-                  return prev >= maxIndex ? 0 : prev + 1;
-                })
-              }
-            >
-              ›
-            </button>
-            <div
-              className="testimonial-track"
-              style={{ transform: `translateX(${translateX}px)` }}
-            >
-              {testimonials.map((item, i) => (
-                <article
-                  key={`${item.name}-${i}`}
-                  className={`testimonial-card ${i % 2 === 0 ? "testimonial-green" : "testimonial-red"}`}
-                  style={{ flex: `0 0 ${100 / visibleCount}%` }}
-                >
+            {testimonials.map((item, i) => (
+              <SwiperSlide key={`${item.name}-${i}`}>
+                <article className={`testimonial-card ${i % 2 === 0 ? "testimonial-green" : "testimonial-red"}`}>
                   <p className="text-slate-700">&ldquo;{item.quote}&rdquo;</p>
                   <div className="testimonial-bottom">
                     <div className="testimonial-avatar" aria-hidden="true">
@@ -594,22 +483,9 @@ export default function Home() {
                   </div>
                   <div className="testimonial-stars" aria-hidden="true">★★★★★</div>
                 </article>
-              ))}
-            </div>
-            <div className="carousel-dots">
-              {Array.from({
-                length: Math.max(1, testimonials.length - visibleCount + 1),
-              }).map((_, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  aria-label={`Go to testimonials ${idx + 1}`}
-                  className={idx === carouselIndex ? "active" : ""}
-                  onClick={() => setCarouselIndex(idx)}
-                />
-              ))}
-            </div>
-          </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
 
@@ -716,3 +592,5 @@ export default function Home() {
     </div>
   );
 }
+
+

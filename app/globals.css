@@ -550,51 +550,23 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.08em;
 }
 
-.testimonial-carousel {
-  position: relative;
+.testimonials-swiper {
   margin-top: 2.5rem;
-  overflow: hidden;
-  padding: 0 2.6rem 2.4rem;
-  cursor: grab;
-  touch-action: pan-y;
-  user-select: none;
+  padding-bottom: 2.2rem;
 }
 
-.testimonial-track {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 1.6rem;
-  transition: transform 0.4s ease;
+.testimonials-swiper .swiper-slide {
+  height: auto;
 }
 
-.testimonial-track .testimonial-card {
-  flex: 0 0 calc(var(--card-basis) - 1.1rem);
-}
-
-@media (max-width: 640px) {
-  .testimonial-carousel {
-    padding: 0 0 2rem;
-  }
-}
-
-
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1.2rem;
-}
-
-.carousel-dots button {
+.testimonials-swiper .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  border-radius: 9999px;
-  border: 0;
   background: #cbd5e1;
-  cursor: pointer;
+  opacity: 1;
 }
 
-.carousel-dots button.active {
+.testimonials-swiper .swiper-pagination-bullet-active {
   background: color-mix(in srgb, var(--brand-green) 60%, var(--brand-red));
 }
 
