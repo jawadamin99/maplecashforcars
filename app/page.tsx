@@ -212,7 +212,7 @@ export default function Home() {
     <div className="bg-white text-slate-900">
       <section className="hero-redgreen relative overflow-hidden reveal" data-animate="animate__fadeIn">
         <Image
-          src="/images/hero-bg.jpg"
+          src="/images/hero-bg.webp"
           alt="Maple Cash for Cars Calgary"
           fill
           priority
@@ -226,9 +226,9 @@ export default function Home() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-16 pt-8 md:px-8 lg:px-12 lg:pb-24 lg:pt-12">
           <div className="mb-10 flex items-center justify-between rounded-xl border border-white/20 bg-black/25 px-4 py-3 backdrop-blur-sm reveal" data-animate="animate__fadeInDown">
             <a href="/" className="flex items-center gap-3">
-              <Image src="/images/maple-cash-for-cars.png" alt="Maple Cash for Cars" width={220} height={66} />
+              <Image src="/images/maple-cash-for-cars.webp" alt="Maple Cash for Cars" width={220} height={66} />
             </a>
-            <a href="tel:+10000000000" className="topbar-call reveal" data-animate="animate__fadeInDown" aria-label="Call now">
+            <a href="tel:+15877009806" className="topbar-call reveal" data-animate="animate__fadeInDown" aria-label="Call now">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M4 5.5c0-.8.7-1.5 1.5-1.5h2.2c.7 0 1.2.4 1.4 1l.8 2.6c.2.6 0 1.3-.5 1.7l-1.2 1c1.1 2.2 2.9 4 5.1 5.1l1-1.2c.4-.5 1.1-.7 1.7-.5l2.6.8c.6.2 1 .7 1 1.4v2.2c0 .8-.7 1.5-1.5 1.5H18C10.8 20 4 13.2 4 5.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -238,7 +238,7 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
             <div className="space-y-6 text-white">
               <h1 className="max-w-xl text-4xl font-extrabold leading-tight md:text-5xl lg:text-6xl reveal" data-animate="animate__fadeInUp">
-                Turn Your Unwanted Car into <span className="text-[var(--brand-green)]">Cash</span>
+                Turn Your Scrap Car into <span className="text-[var(--brand-green)]">Cash</span>
               </h1>
               <p className="max-w-xl text-lg text-slate-100 reveal" data-animate="animate__fadeInUp">
                 We buy used, old, damaged, and junk vehicles. Quick pickup,
@@ -289,7 +289,7 @@ export default function Home() {
                 </div>
                 <div>
                   <label className="mb-1 block text-sm font-semibold text-slate-700" htmlFor="phone">Phone</label>
-                  <input id="phone" name="phone" required className="field" type="tel" placeholder="(000) 000-0000" />
+                  <input id="phone" name="phone" required className="field" type="tel" placeholder="(587) 700-9806" />
                 </div>
                 <div>
                   <label className="mb-1 block text-sm font-semibold text-slate-700" htmlFor="vehicle">Vehicle Make Model</label>
@@ -383,7 +383,7 @@ export default function Home() {
           </div>
           <div className="relative">
             <Image
-              src="/images/sell-my-car.png"
+              src="/images/cash-for-cars-calgary.webp"
               alt="Vehicle pickup in Calgary"
               width={900}
               height={700}
@@ -400,7 +400,7 @@ export default function Home() {
 
           <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2">
             <article className="service-card service-card-red">
-              <Image src="/images/cash-for-cars.png" alt="Cash for cars" width={900} height={700} className="h-72 w-full object-cover" />
+              <Image src="/images/cash-for-cars.webp" alt="Cash for cars" width={900} height={700} className="h-72 w-full object-cover" />
               <div className="p-7">
                 <h3 className="text-2xl font-black text-[var(--brand-red)]">Cash for Cars</h3>
                 <p className="mt-3 text-slate-700">
@@ -411,7 +411,7 @@ export default function Home() {
             </article>
 
             <article className="service-card service-card-green">
-              <Image src="/images/junk-car-removal.jpeg" alt="Junk car removal" width={900} height={700} className="h-72 w-full object-cover" />
+              <Image src="/images/junk-car-removal.webp" alt="Junk car removal" width={900} height={700} className="h-72 w-full object-cover" />
               <div className="p-7">
                 <h3 className="text-2xl font-black text-[var(--brand-green)]">Junk Car Removal</h3>
                 <p className="mt-3 text-slate-700">
@@ -445,7 +445,7 @@ export default function Home() {
             ))}
           </div>
           <div className="process-cta reveal" data-animate="animate__fadeInUp animate__delay-1s">
-            <a className="btn btn-outline-dark" href="tel:+10000000000">Call Us Now</a>
+            <a className="btn btn-outline-dark" href="tel:+15877009806">Call Us Now</a>
           </div>
         </div>
       </section>
@@ -497,7 +497,7 @@ export default function Home() {
             Calgary and surrounding areas.
           </h2>
           <div className="cta-actions">
-            <a className="btn btn-red" href="tel:+10000000000">Call Us Now</a>
+            <a className="btn btn-red" href="tel:+15877009806">Call Us Now</a>
             <a className="btn btn-outline-white" href="#lead-form">Get a Quote</a>
           </div>
         </div>
@@ -551,7 +551,7 @@ export default function Home() {
             </ul>
             <div className="">
               <Image
-                src="/images/alberta-map.jpg"
+                src="/images/alberta-map.webp"
                 alt="Alberta service map"
                 width={520}
                 height={520}
@@ -564,12 +564,12 @@ export default function Home() {
       <footer className="site-footer">
         <div className="footer-inner">
           <div className="footer-brand">
-            <Image src="/images/maple-cash-for-cars.png" alt="Maple Cash for Cars" width={200} height={60} />
+            <Image src="/images/maple-cash-for-cars.webp" alt="Maple Cash for Cars" width={200} height={60} />
             <p>Fast, straightforward cash offers for vehicles across Calgary and surrounding areas.</p>
           </div>
           <div className="footer-links">
             <h4>Contact</h4>
-            <a href="tel:+10000000000">(000) 000-0000</a>
+            <a href="tel:+15877009806">(587) 700-9806</a>
             <span>Calgary, AB</span>
           </div>
           <div className="footer-links">
@@ -584,7 +584,7 @@ export default function Home() {
         </div>
       </footer>
 
-      <a className="floating-call" href="tel:+10000000000" aria-label="Call now">
+      <a className="floating-call" href="tel:+15877009806" aria-label="Call now">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M4 5.5c0-.8.7-1.5 1.5-1.5h2.2c.7 0 1.2.4 1.4 1l.8 2.6c.2.6 0 1.3-.5 1.7l-1.2 1c1.1 2.2 2.9 4 5.1 5.1l1-1.2c.4-.5 1.1-.7 1.7-.5l2.6.8c.6.2 1 .7 1 1.4v2.2c0 .8-.7 1.5-1.5 1.5H18C10.8 20 4 13.2 4 5.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
@@ -592,5 +592,7 @@ export default function Home() {
     </div>
   );
 }
+
+
 
 
