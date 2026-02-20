@@ -289,7 +289,7 @@ export default function Home() {
                 </div>
                 <div>
                   <label className="mb-1 block text-sm font-semibold text-slate-700" htmlFor="phone">Phone</label>
-                  <input id="phone" name="phone" required className="field" type="tel" placeholder="(587) 700-9806" />
+                  <input id="phone" name="phone" required className="field" type="tel" placeholder="Your Phone" />
                 </div>
                 <div>
                   <label className="mb-1 block text-sm font-semibold text-slate-700" htmlFor="vehicle">Vehicle Make Model</label>
