@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Lato, Maven_Pro } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import "animate.css";
 
@@ -50,6 +51,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17815203674"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-17815203674');`}
+        </Script>
+      </head>
       <body
         className={`${mavenPro.variable} ${lato.variable} ${geistMono.variable} antialiased`}
       >
