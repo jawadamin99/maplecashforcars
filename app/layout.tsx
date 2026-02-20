@@ -60,7 +60,19 @@ export default function RootLayout({
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'AW-17815203674');`}
+gtag('config', 'AW-17815203674');
+function gtagSendEvent(url) {
+  var callback = function () {
+    if (typeof url === 'string') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'phone_click', {
+    'event_callback': callback,
+    'event_timeout': 2000,
+  });
+  return false;
+}`}
         </Script>
       </head>
       <body
