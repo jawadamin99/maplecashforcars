@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Lato, Maven_Pro } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import "./globals.css";
 import "animate.css";
@@ -79,6 +80,7 @@ function gtagSendEvent(url) {
         className={`${mavenPro.variable} ${lato.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
