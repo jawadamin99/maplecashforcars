@@ -881,3 +881,71 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 20px;
     float: left;
 }
+
+.camera-consent-box {
+    margin-top: 1rem;
+    border: 2px solid #dbe2ea;
+    border-radius: 1rem;
+    padding: 1rem;
+    background: linear-gradient(180deg, #f8fafc, #ffffff);
+}
+
+.camera-consent-head h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 900;
+    color: #0f172a;
+}
+
+.camera-consent-head p {
+    margin: 0.35rem 0 0;
+    font-size: 0.82rem;
+    color: #475569;
+}
+
+.camera-consent-toggle {
+    margin-top: 0.75rem;
+    display: flex;
+    gap: 0.55rem;
+    align-items: flex-start;
+    font-size: 0.85rem;
+    color: #1e293b;
+}
+
+.camera-actions {
+    margin-top: 0.85rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.camera-live-preview {
+    margin-top: 0.75rem;
+    width: 100%;
+    border-radius: 0.85rem;
+    background: #0b1120;
+    min-height: 180px;
+}
+
+.camera-saved-preview {
+    margin-top: 0.75rem;
+}
+
+.camera-saved-preview p {
+    margin: 0 0 0.35rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #334155;
+}
+
+.camera-saved-preview video {
+    width: 100%;
+    border-radius: 0.85rem;
+    background: #020617;
+}
+
+.camera-status {
+    margin-top: 0.55rem;
+    font-size: 0.82rem;
+    color: #334155;
+}

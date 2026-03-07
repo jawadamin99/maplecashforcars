@@ -34,8 +34,9 @@ export async function POST(req: Request) {
     });
 
     const images = formData.getAll("images");
+    const cameraVideo = formData.get("cameraVideo");
     const attachments = await Promise.all(
-      images.map(async (file) => {
+      [...images, cameraVideo].map(async (file) => {
         if (!(file instanceof File)) return null;
         const arrayBuffer = await file.arrayBuffer();
         return {
@@ -44,6 +45,9 @@ export async function POST(req: Request) {
           contentType: file.type,
         };
       })
+    );
+    const imageAttachments = attachments.filter(
+      (item): item is NonNullable<(typeof attachments)[number]> => item !== null
     );
 
     const html = `
@@ -64,14 +68,15 @@ export async function POST(req: Request) {
             </table>
             <div style="margin-top:16px; padding:12px; background:#f9fafb; border-radius:8px; border:1px solid #e5e7eb;">
               <div style="font-size:12px; color:#6b7280; margin-bottom:6px;">Message</div>
-              <div style="white-space:pre-wrap; color:#111827; font-size:14px;">${message || "—"}</div>
+              <div style="white-space:pre-wrap; color:#111827; font-size:14px;">${message || "-"}</div>
             </div>
             <div style="margin-top:16px; padding:12px; background:#f4f6f8; border-radius:8px; border:1px solid #e5e7eb;">
               <div style="font-size:12px; color:#6b7280; margin-bottom:6px;">Submission Metadata</div>
               <div style="font-size:13px; color:#111827;">
                 <div><strong>IP Address:</strong> ${ipAddress}</div>
                 <div><strong>Browser:</strong> ${userAgent}</div>
-                <div><strong>Page URL:</strong> ${pageUrl || "—"}</div>
+                <div><strong>Page URL:</strong> ${pageUrl || "-"}</div>
+                <div><strong>Camera Video Attached:</strong> ${cameraVideo instanceof File ? "Yes" : "No"}</div>
               </div>
             </div>
           </div>
@@ -98,10 +103,11 @@ export async function POST(req: Request) {
         "Submission Metadata:",
         `IP Address: ${ipAddress}`,
         `Browser: ${userAgent}`,
-        `Page URL: ${pageUrl || "—"}`,
+        `Page URL: ${pageUrl || "-"}`,
+        `Camera Video Attached: ${cameraVideo instanceof File ? "Yes" : "No"}`,
       ].join("\n"),
       html,
-      attachments: attachments.filter(Boolean) as any,
+      attachments: imageAttachments,
     });
 
     return new Response(JSON.stringify({ ok: true }), { status: 200 });
