@@ -4,14 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab2a8dd3-3d6e-4c29-ad58-5acc4a200d9d" name="Changes" comment="" />
+    <list default="true" id="ab2a8dd3-3d6e-4c29-ad58-5acc4a200d9d" name="Changes" comment="consent removed.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/contact/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/contact/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="47" />
+    <option name="cachedIndexableFilesCount" value="48" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -102,10 +107,15 @@
       <updated>1772838964060</updated>
       <workItem from="1772838967383" duration="325000" />
       <workItem from="1772841784262" duration="308000" />
+      <workItem from="1772931609334" duration="756000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="consent removed." />
+    <option name="LAST_COMMIT_MESSAGE" value="consent removed." />
   </component>
 </project>

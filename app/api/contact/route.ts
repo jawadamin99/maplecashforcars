@@ -34,9 +34,8 @@ export async function POST(req: Request) {
     });
 
     const images = formData.getAll("images");
-    const cameraVideo = formData.get("cameraVideo");
     const attachments = await Promise.all(
-      [...images, cameraVideo].map(async (file) => {
+      images.map(async (file) => {
         if (!(file instanceof File)) return null;
         const arrayBuffer = await file.arrayBuffer();
         return {
@@ -76,7 +75,6 @@ export async function POST(req: Request) {
                 <div><strong>IP Address:</strong> ${ipAddress}</div>
                 <div><strong>Browser:</strong> ${userAgent}</div>
                 <div><strong>Page URL:</strong> ${pageUrl || "-"}</div>
-                <div><strong>Camera Video Attached:</strong> ${cameraVideo instanceof File ? "Yes" : "No"}</div>
               </div>
             </div>
           </div>
@@ -104,7 +102,6 @@ export async function POST(req: Request) {
         `IP Address: ${ipAddress}`,
         `Browser: ${userAgent}`,
         `Page URL: ${pageUrl || "-"}`,
-        `Camera Video Attached: ${cameraVideo instanceof File ? "Yes" : "No"}`,
       ].join("\n"),
       html,
       attachments: imageAttachments,

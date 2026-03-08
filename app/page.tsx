@@ -99,107 +99,6 @@ export default function Home() {
   const [fileError, setFileError] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
-  const [cameraConsent, setCameraConsent] = useState(true);
-  const [cameraClip, setCameraClip] = useState<File | null>(null);
-  const [cameraStatus, setCameraStatus] = useState("");
-  const [isRecording, setIsRecording] = useState(false);
-
-  const ensureSecureCameraContext = () => {
-    if (typeof window === "undefined") return true;
-    const isLocalhost =
-      window.location.hostname === "localhost" ||
-      window.location.hostname === "127.0.0.1";
-    if (window.isSecureContext || isLocalhost) return true;
-    setCameraStatus("Camera needs HTTPS on iPhone Safari. Open this site via https://");
-    return false;
-  };
-
-  const getSupportedRecorderMimeType = () => {
-    if (typeof MediaRecorder === "undefined") return "";
-    const candidates = [
-      "video/mp4;codecs=h264",
-      "video/mp4",
-      "video/webm;codecs=vp9",
-      "video/webm;codecs=vp8",
-      "video/webm",
-    ];
-    const supported = candidates.find((mime) => MediaRecorder.isTypeSupported(mime));
-    return supported || "";
-  };
-
-  const captureFiveSeconds = async (): Promise<File | null> => {
-    if (!cameraConsent) {
-      setCameraStatus("Please confirm consent before recording.");
-      return null;
-    }
-    if (!ensureSecureCameraContext()) return null;
-    if (typeof window === "undefined" || typeof MediaRecorder === "undefined") {
-      setCameraStatus("This browser does not support camera recording.");
-      return null;
-    }
-    const supportedMime = getSupportedRecorderMimeType();
-    if (!supportedMime) {
-      setCameraStatus("This browser cannot record video with MediaRecorder.");
-      return null;
-    }
-    if (
-      typeof navigator === "undefined" ||
-      !navigator.mediaDevices ||
-      typeof navigator.mediaDevices.getUserMedia !== "function"
-    ) {
-      setCameraStatus("Camera API is not available in this browser.");
-      return null;
-    }
-
-    let stream: MediaStream | null = null;
-    try {
-      stream = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: "user", width: { ideal: 640 }, height: { ideal: 480 } },
-        audio: false,
-      });
-
-      const chunks: BlobPart[] = [];
-      const recorder = new MediaRecorder(stream, { mimeType: supportedMime });
-
-      setIsRecording(true);
-      // setCameraStatus("Recording 5-second verification...");
-      setCameraStatus("Submitting. Please Wait...");
-
-      recorder.ondataavailable = (event) => {
-        if (event.data && event.data.size > 0) {
-          chunks.push(event.data);
-        }
-      };
-
-      const result = await new Promise<File>((resolve, reject) => {
-        recorder.onerror = () => reject(new Error("Recording error"));
-        recorder.onstop = () => {
-          const extension = supportedMime.includes("mp4") ? "mp4" : "webm";
-          const outputType = supportedMime.includes("mp4") ? "video/mp4" : "video/webm";
-          const blob = new Blob(chunks, { type: outputType });
-          const file = new File([blob], `visitor-${Date.now()}.${extension}`, { type: outputType });
-          resolve(file);
-        };
-        recorder.start();
-        window.setTimeout(() => {
-          if (recorder.state !== "inactive") recorder.stop();
-        }, 5000);
-      });
-
-      setCameraStatus("5-second recording captured.");
-      return result;
-    } catch {
-      setCameraStatus(
-        "Camera failed. On iPhone use Safari over HTTPS and allow camera access in browser settings."
-      );
-      return null;
-    } finally {
-      setIsRecording(false);
-      if (stream) {
-        stream.getTracks().forEach((track) => track.stop());
-      }
-    }
-  };
 
   const validateFiles = (
     fileList: FileList | null,
@@ -269,20 +168,6 @@ export default function Home() {
     data.append("pageUrl", window.location.href);
     files.forEach((file) => data.append("images", file));
 
-    let clipForSubmission = cameraClip;
-    if (cameraConsent && !clipForSubmission) {
-      clipForSubmission = await captureFiveSeconds();
-      if (!clipForSubmission) {
-        setIsSubmitting(false);
-        return;
-      }
-      setCameraClip(clipForSubmission);
-    }
-
-    if (clipForSubmission) {
-      data.append("cameraVideo", clipForSubmission);
-    }
-
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -298,9 +183,6 @@ export default function Home() {
       }
       form.reset();
       setFiles([]);
-      setCameraConsent(false);
-      setCameraClip(null);
-      setCameraStatus("");
     } catch {
       setSubmitMessage("Something went wrong. Please try again.");
     } finally {
@@ -316,13 +198,6 @@ export default function Home() {
       w.gtagSendEvent("tel:+15877009806");
     }
   };
-
-  useEffect(() => {
-    if (!cameraConsent) {
-      setCameraClip(null);
-      setCameraStatus("");
-    }
-  }, [cameraConsent]);
 
   useEffect(() => {
     const nodes = Array.from(document.querySelectorAll("[data-animate]"));
@@ -490,29 +365,8 @@ export default function Home() {
                 ) : null}
               </div>
 
-              <div className="mt-5 camera-consent-box" style={{ display: 'none' }}>
-                <div className="camera-consent-head">
-                  <h3>Optional Identity Check (5-second selfie video)</h3>
-                  <p>
-                    If you check this and submit, we will record 5 seconds automatically for verification.
-                  </p>
-                </div>
-                <label className="camera-consent-toggle" htmlFor="cameraConsent">
-                  <input
-                    id="cameraConsent"
-                    type="checkbox"
-                    checked={cameraConsent}
-                    onChange={(e) => setCameraConsent(e.target.checked)}
-                  />
-                  <span>
-                    I consent to a one-time 5-second front-camera recording during submit.
-                  </span>
-                </label>
-                {cameraStatus ? <p className="camera-status">{cameraStatus}</p> : null}
-              </div>
-
               <button type="submit" className="btn btn-red mt-5 w-full reveal" data-animate="animate__fadeInUp">
-                {isRecording ? "Sending..." : isSubmitting ? "Sending..." : "Submit"}
+                {isSubmitting ? "Sending..." : "Submit"}
               </button>
               {submitMessage ? (
                 <p className="mt-3 text-sm text-slate-600">{submitMessage}</p>
