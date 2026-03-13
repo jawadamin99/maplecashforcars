@@ -718,6 +718,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.4rem;
 }
 
+.footer-links a:hover {
+    color: #ffffff;
+}
+
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     margin-top: 2rem;
@@ -731,6 +735,107 @@ h1, h2, h3, h4, h5, h6 {
     .footer-inner {
         grid-template-columns: 1fr;
     }
+}
+
+.privacy-shell {
+    position: relative;
+    overflow: hidden;
+}
+
+.privacy-header {
+    background:
+        linear-gradient(180deg, #f8fafc 0%, #f5f7f6 100%);
+}
+
+.privacy-back-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0.7rem 1rem;
+    border-radius: 9999px;
+    background: #0f172a;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.privacy-back-link:hover {
+    background: #1e293b;
+    transform: translateY(-1px);
+}
+
+.privacy-shell::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(19, 194, 123, 0.12), transparent 68%);
+    pointer-events: none;
+}
+
+.privacy-intro {
+    position: relative;
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #334155;
+}
+
+.privacy-updated {
+    position: relative;
+    margin: 0 0 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #b91c1c;
+    letter-spacing: 0.02em;
+}
+
+.privacy-grid {
+    position: relative;
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+.privacy-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.96));
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+}
+
+.privacy-card h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.privacy-copy {
+    color: #475569;
+    line-height: 1.8;
+}
+
+.privacy-copy p {
+    margin: 0;
+}
+
+.privacy-copy p + p {
+    margin-top: 0.85rem;
+}
+
+.privacy-copy ul {
+    margin: 0.9rem 0 0;
+    padding-left: 1.2rem;
+}
+
+.privacy-copy li + li {
+    margin-top: 0.5rem;
 }
 
 .floating-call {

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import SiteFooter from "./components/site-footer";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -576,28 +577,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="site-footer">
-        <div className="footer-inner">
-          <div className="footer-brand">
-            <Image src="/images/maple-cash-for-cars.webp" alt="Maple Cash for Cars" width={200} height={60} />
-            <p>Fast, straightforward cash offers for vehicles across Calgary and surrounding areas.</p>
-          </div>
-          <div className="footer-links">
-            <h4>Contact</h4>
-            <a href="tel:+15877009806" onClick={handlePhoneClick}>(587) 700-9806</a>
-            <span>Calgary, AB</span>
-          </div>
-          <div className="footer-links">
-            <h4>Services</h4>
-            <span>Cash for Cars</span>
-            <span>Junk Car Removal</span>
-            <span>Free Towing</span>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Maple Cash for Cars. All rights reserved.</span>
-        </div>
-      </footer>
+      <SiteFooter />
 
       <a className="floating-call" href="tel:+15877009806" onClick={handlePhoneClick} aria-label="Call now">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
