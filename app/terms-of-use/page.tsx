@@ -135,7 +135,7 @@ const sections = [
               <strong>Website:</strong> maplecashforcars.ca
           </li>
           <li>
-              <strong>Email:</strong> maplecashforcars@gmail.comadd
+              <strong>Email:</strong> maplecashforcars@gmail.com
           </li>
           <li>
               <strong>Phone:</strong> (587) 700-9806
