@@ -389,7 +389,7 @@ export default function Home() {
               Simple Process. <span className="text-[var(--brand-red)]">Fair Price.</span> Zero Headache.
             </h2>
             <p className="mt-5 text-lg text-slate-700">
-              We make selling your vehicle easy in Calgary. No classifieds, no
+              We make <Link href={"https://citywidecashforcars.ca/"} className={"text-blue-500 font-bold"}>selling your vehicle easy in Calgary</Link>. No classifieds, no
               no-shows, and no waiting weeks for payment.
             </p>
             <p className="mt-3 text-lg text-slate-700">
