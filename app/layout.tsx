@@ -23,25 +23,50 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://maplecashforcars.ca"),
   title: "Maple Cash for Cars Calgary",
   description:
     "Sell your vehicle fast in Calgary. Get top cash offers with easy pickup and junk car removal.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Maple Cash for Cars Calgary",
     description:
       "Sell your vehicle fast in Calgary. Get top cash offers with easy pickup and junk car removal.",
-    images: ["/images/maple-new-golden-logo.png"],
+    url: "/",
+    siteName: "Maple Cash for Cars",
+    type: "website",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Maple Cash for Cars Calgary",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Maple Cash for Cars Calgary",
     description:
       "Sell your vehicle fast in Calgary. Get top cash offers with easy pickup and junk car removal.",
-    images: ["/images/maple-new-golden-logo.png"],
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Maple Cash for Cars Calgary",
+      },
+    ],
   },
   icons: {
-    icon: "/icon.png",
-    apple: "/icon.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
 };
 
