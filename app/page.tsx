@@ -196,7 +196,7 @@ export default function Home() {
     const w = window as typeof window & { gtagSendEvent?: (url: string) => void };
     if (typeof w.gtagSendEvent === "function") {
       e.preventDefault();
-      w.gtagSendEvent("tel:+15877009806");
+      w.gtagSendEvent("tel:+14034771383");
     }
   };
 
@@ -242,9 +242,9 @@ export default function Home() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-16 pt-8 md:px-8 lg:px-12 lg:pb-24 lg:pt-12">
           <div className="mb-10 flex items-center justify-between rounded-xl border border-white/20 bg-black/25 px-4 py-3 backdrop-blur-sm reveal" data-animate="animate__fadeInDown">
             <Link href="/" className="flex items-center gap-3">
-              <Image src="/images/maple-cash-for-cars.webp" alt="Maple Cash for Cars" width={220} height={66} />
+              <Image src="/images/maple-new-golden-logo.png" alt="Maple Cash for Cars" width={220} height={88} />
             </Link>
-            <a href="tel:+15877009806" onClick={handlePhoneClick} className="topbar-call reveal" data-animate="animate__fadeInDown" aria-label="Call now">
+            <a href="tel:+14034771383" onClick={handlePhoneClick} className="topbar-call reveal" data-animate="animate__fadeInDown" aria-label="Call now">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M4 5.5c0-.8.7-1.5 1.5-1.5h2.2c.7 0 1.2.4 1.4 1l.8 2.6c.2.6 0 1.3-.5 1.7l-1.2 1c1.1 2.2 2.9 4 5.1 5.1l1-1.2c.4-.5 1.1-.7 1.7-.5l2.6.8c.6.2 1 .7 1 1.4v2.2c0 .8-.7 1.5-1.5 1.5H18C10.8 20 4 13.2 4 5.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -452,7 +452,7 @@ export default function Home() {
           <div className="process-grid reveal" data-animate="animate__fadeInUp animate__delay-1s">
             {steps.map((step, index) => (
               <article key={step.title} className="process-card">
-                <div className={`process-number ${index % 2 === 0 ? "process-green" : "process-blue"}`}>
+                <div className={`process-number ${index % 2 === 0 ? "process-green" : "process-gold"}`}>
                   {String(index + 1)}
                 </div>
                 <h3>{step.title}</h3>
@@ -461,7 +461,7 @@ export default function Home() {
             ))}
           </div>
           <div className="process-cta reveal" data-animate="animate__fadeInUp animate__delay-1s">
-            <a className="btn btn-outline-dark" href="tel:+15877009806" onClick={handlePhoneClick}>Call Us Now</a>
+            <a className="btn btn-outline-dark" href="tel:+14034771383" onClick={handlePhoneClick}>Call Us Now</a>
           </div>
         </div>
       </section>
@@ -513,7 +513,7 @@ export default function Home() {
             Calgary and surrounding areas.
           </h2>
           <div className="cta-actions">
-            <a className="btn btn-red" href="tel:+15877009806" onClick={handlePhoneClick}>Call Us Now</a>
+            <a className="btn btn-red" href="tel:+14034771383" onClick={handlePhoneClick}>Call Us Now</a>
             <a className="btn btn-outline-white" href="#lead-form">Get a Quote</a>
           </div>
         </div>
@@ -579,7 +579,7 @@ export default function Home() {
 
       <SiteFooter />
 
-      <a className="floating-call" href="tel:+15877009806" onClick={handlePhoneClick} aria-label="Call now">
+      <a className="floating-call" href="tel:+14034771383" onClick={handlePhoneClick} aria-label="Call now">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M4 5.5c0-.8.7-1.5 1.5-1.5h2.2c.7 0 1.2.4 1.4 1l.8 2.6c.2.6 0 1.3-.5 1.7l-1.2 1c1.1 2.2 2.9 4 5.1 5.1l1-1.2c.4-.5 1.1-.7 1.7-.5l2.6.8c.6.2 1 .7 1 1.4v2.2c0 .8-.7 1.5-1.5 1.5H18C10.8 20 4 13.2 4 5.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>

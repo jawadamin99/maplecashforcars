@@ -52,7 +52,7 @@ export async function POST(req: Request) {
     const html = `
       <div style="font-family: Arial, Helvetica, sans-serif; background:#f4f6f8; padding:24px;">
         <div style="max-width:640px; margin:0 auto; background:#ffffff; border-radius:12px; overflow:hidden; border:1px solid #e5e7eb;">
-          <div style="background:#2b6cb0; color:#ffffff; padding:18px 24px;">
+          <div style="background:#c78d1b; color:#ffffff; padding:18px 24px;">
             <div style="font-size:18px; font-weight:700; letter-spacing:0.02em;">Maple Cash for Cars</div>
             <div style="font-size:12px; opacity:0.85;">New form submission</div>
           </div>

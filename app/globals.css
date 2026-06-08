@@ -3,7 +3,7 @@
 :root {
     --background: #ffffff;
     --foreground: #0f172a;
-    --brand-red: #2b6cb0;
+    --brand-red: #c78d1b;
     --brand-green: #1f9d55;
 }
 
@@ -76,7 +76,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-red {
-    background: linear-gradient(120deg, var(--brand-red), #3b82f6);
+    background: linear-gradient(120deg, var(--brand-red), #e0a52d);
     color: #fff;
 }
 
@@ -300,7 +300,7 @@ h1, h2, h3, h4, h5, h6 {
     color: color-mix(in srgb, var(--brand-green) 65%, #1b1b1b);
 }
 
-.process-blue {
+.process-gold {
     color: color-mix(in srgb, var(--brand-red) 65%, #1b1b1b);
 }
 

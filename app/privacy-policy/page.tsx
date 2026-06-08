@@ -141,7 +141,7 @@ const sections = [
           <strong>Email:</strong> maplecashforcars@gmail.comadd
         </li>
         <li>
-          <strong>Phone:</strong> (587) 700-9806
+          <strong>Phone:</strong> (403) 477-1383
         </li>
       </ul>
     ),
@@ -155,10 +155,10 @@ export default function PrivacyPolicyPage() {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-[1.5rem] border border-slate-200 bg-white px-4 py-4 shadow-[0_12px_30px_rgba(15,23,42,0.06)]">
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/images/maple-cash-for-cars.webp"
-              alt="Maple Cash for Cars"
-              width={180}
-              height={54}
+                src="/images/maple-new-golden-logo.png"
+                alt="Maple Cash for Cars"
+                width={180}
+                height={72}
             />
           </Link>
           <Link href="/" className="privacy-back-link">
