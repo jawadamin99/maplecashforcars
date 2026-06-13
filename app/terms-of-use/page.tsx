@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import SiteFooter from "../components/site-footer";
+import SiteHeader from "../components/site-header";
 
 export const metadata: Metadata = {
   title: "Terms of Use | Maple Cash For Cars",
@@ -149,18 +148,8 @@ export default function TermsOfUsePage() {
   return (
     <div className="min-h-screen bg-stone-50 text-slate-900">
       <section className="privacy-header px-4 py-6 md:px-8 lg:px-12">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-[1.5rem] border border-slate-200 bg-white px-4 py-4 shadow-[0_12px_30px_rgba(15,23,42,0.06)]">
-          <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/images/maple-new-golden-logo.png"
-              alt="Maple Cash for Cars"
-              width={180}
-              height={72}
-            />
-          </Link>
-          <Link href="/" className="privacy-back-link">
-            Back Home
-          </Link>
+        <div className="mx-auto max-w-7xl">
+          <SiteHeader />
         </div>
         <div className="mx-auto max-w-4xl pt-8">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--brand-green)]">

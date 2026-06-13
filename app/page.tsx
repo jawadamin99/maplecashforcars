@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import SiteFooter from "./components/site-footer";
+import SiteHeader from "./components/site-header";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -85,14 +86,17 @@ const faqs = [
 ];
 
 const areas = [
-  "Calgary",
-  "Airdrie",
-  "Cochrane",
-  "Chestermere",
-  "Okotoks",
-  "High River",
-  "Strathmore",
-  "Canmore",
+  { name: "Calgary" },
+  { name: "Red Deer", href: "/cash-for-cars-red-deer" },
+  { name: "Lethbridge", href: "/cash-for-cars-lethbridge" },
+  { name: "Airdrie", href: "/cash-for-cars-airdrie" },
+  { name: "Cochrane", href: "/cash-for-cars-cochrane" },
+  { name: "Canmore", href: "/cash-for-cars-canmore" },
+  { name: "Banff", href: "/cash-for-cars-banff" },
+  { name: "Chestermere", href: "/cash-for-cars-chestermere" },
+  { name: "Okotoks", href: "/cash-for-cars-okotoks" },
+  { name: "High River" },
+  { name: "Strathmore", href: "/cash-for-cars-strathmore" },
 ];
 
 export default function Home() {
@@ -240,18 +244,11 @@ export default function Home() {
         <div className="funky-blob funky-blob-green" aria-hidden="true" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 pb-16 pt-8 md:px-8 lg:px-12 lg:pb-24 lg:pt-12">
-          <div className="mb-10 flex items-center justify-between rounded-xl border border-white/20 bg-black/25 px-4 py-3 backdrop-blur-sm reveal" data-animate="animate__fadeInDown">
-            <Link href="/" className="flex items-center gap-3">
-              <Image src="/images/maple-new-golden-logo.png" alt="Maple Cash for Cars" width={220} height={88} />
-            </Link>
-            <a href="tel:+14034771383" onClick={handlePhoneClick} className="topbar-call reveal" data-animate="animate__fadeInDown" aria-label="Call now">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 5.5c0-.8.7-1.5 1.5-1.5h2.2c.7 0 1.2.4 1.4 1l.8 2.6c.2.6 0 1.3-.5 1.7l-1.2 1c1.1 2.2 2.9 4 5.1 5.1l1-1.2c.4-.5 1.1-.7 1.7-.5l2.6.8c.6.2 1 .7 1 1.4v2.2c0 .8-.7 1.5-1.5 1.5H18C10.8 20 4 13.2 4 5.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </a>
+          <div className="relative z-50">
+            <SiteHeader variant="hero" />
           </div>
 
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
+          <div className="relative z-10 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
             <div className="space-y-6 text-white">
               <h1 className="max-w-xl text-4xl font-extrabold leading-tight md:text-5xl lg:text-6xl reveal" data-animate="animate__fadeInUp">
                 Turn Your Scrap Car into <span className="text-[var(--brand-green)]">Cash</span>
@@ -287,7 +284,7 @@ export default function Home() {
 
             <form
               id="lead-form"
-              className="rounded-2xl border-2 border-[var(--brand-green)] bg-white p-6 shadow-[0_18px_50px_rgba(0,0,0,0.35)] md:p-8 reveal"
+              className="relative z-0 rounded-2xl border-2 border-[var(--brand-green)] bg-white p-6 shadow-[0_18px_50px_rgba(0,0,0,0.35)] md:p-8 reveal"
               data-animate="animate__fadeInUp"
               onSubmit={handleSubmit}
             >
@@ -562,7 +559,13 @@ export default function Home() {
           <div className="areas-grid">
             <ul className="areas-list">
               {areas.map((area) => (
-                <li key={area}>{area}</li>
+                <li key={area.name}>
+                  {area.href ? (
+                    <Link href={area.href}>{area.name}</Link>
+                  ) : (
+                    area.name
+                  )}
+                </li>
               ))}
             </ul>
             <div className="">
