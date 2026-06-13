@@ -17,7 +17,6 @@ const sections = [
         digital properties managed by the parent company,{" "}
         <strong>Citywide Cash for Cars LTD</strong>, including{" "}
         <strong>citywidecashforcars.ca</strong>,{" "}
-        <strong>wildrosecashforcars.ca</strong>, and <strong>yyccash.com</strong>.
         By using this website, you consent to the data practices described in
         this statement.
       </p>
