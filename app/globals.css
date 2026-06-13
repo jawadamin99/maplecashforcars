@@ -187,14 +187,29 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-nav a,
 .site-nav button {
+    align-items: center;
     border: 0;
     border-radius: 9999px;
     background: transparent;
     color: #0f172a;
     cursor: pointer;
+    display: inline-flex;
+    gap: 0.35rem;
     font: inherit;
     padding: 0.65rem 0.85rem;
     text-decoration: none;
+}
+
+.site-nav-chevron {
+    height: 0.9rem;
+    width: 0.9rem;
+    transition: transform 0.18s ease;
+}
+
+.site-nav-dropdown:hover .site-nav-chevron,
+.site-nav-dropdown:focus-within .site-nav-chevron,
+.site-locations-open .site-nav-chevron {
+    transform: rotate(180deg);
 }
 
 .site-header-hero .site-nav a,

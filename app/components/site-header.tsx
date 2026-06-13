@@ -84,7 +84,10 @@ export default function SiteHeader({ variant = "default" }: SiteHeaderProps) {
             aria-expanded={isLocationsOpen}
             onClick={handleLocationsClick}
           >
-            Locations
+            <span>Locations</span>
+            <svg className="site-nav-chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </button>
           <div className="site-nav-menu">
             {locationLinks.map((location) => (
