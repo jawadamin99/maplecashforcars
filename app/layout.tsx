@@ -24,14 +24,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://maplecashforcars.ca"),
-  title: "Maple Cash for Cars Calgary",
+  title: "Maple Cash for Cars",
   description:
     "Sell your vehicle fast in Calgary. Get top cash offers with easy pickup and junk car removal.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Maple Cash for Cars Calgary",
+    title: "Maple Cash for Cars",
     description:
       "Sell your vehicle fast in Calgary. Get top cash offers with easy pickup and junk car removal.",
     url: "/",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Maple Cash for Cars Calgary",
+    title: "Maple Cash for Cars",
     description:
       "Sell your vehicle fast in Calgary. Get top cash offers with easy pickup and junk car removal.",
     images: [
@@ -62,7 +62,6 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico" },
       { url: "/icon.png", type: "image/png", sizes: "512x512" },
       { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
     ],

@@ -48,9 +48,13 @@ export default function SiteFooter() {
           <h4>Locations</h4>
           <Link href="/cash-for-cars-airdrie">Cash for Cars Airdrie</Link>
           <Link href="/cash-for-cars-banff">Cash for Cars Banff</Link>
+          <Link href="/cash-for-cars-black-diamond">Cash for Cars Black Diamond</Link>
+          <Link href="/cash-for-cars-bragg-creek">Cash for Cars Bragg Creek</Link>
+          <Link href="/cash-for-cars-brooks">Cash for Cars Brooks</Link>
           <Link href="/cash-for-cars-canmore">Cash for Cars Canmore</Link>
           <Link href="/cash-for-cars-chestermere">Cash for Cars Chestermere</Link>
           <Link href="/cash-for-cars-cochrane">Cash for Cars Cochrane</Link>
+          <Link href="/cash-for-cars-diamond-valley">Cash for Cars Diamond Valley</Link>
           <Link href="/cash-for-cars-red-deer">Cash for Cars Red Deer</Link>
           <Link href="/cash-for-cars-lethbridge">Cash for Cars Lethbridge</Link>
           <Link href="/cash-for-cars-okotoks">Cash for Cars Okotoks</Link>

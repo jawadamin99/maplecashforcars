@@ -7,9 +7,13 @@ import Link from "next/link";
 export const locationLinks = [
   { name: "Airdrie", href: "/cash-for-cars-airdrie" },
   { name: "Banff", href: "/cash-for-cars-banff" },
+  { name: "Black Diamond", href: "/cash-for-cars-black-diamond" },
+  { name: "Bragg Creek", href: "/cash-for-cars-bragg-creek" },
+  { name: "Brooks", href: "/cash-for-cars-brooks" },
   { name: "Canmore", href: "/cash-for-cars-canmore" },
   { name: "Chestermere", href: "/cash-for-cars-chestermere" },
   { name: "Cochrane", href: "/cash-for-cars-cochrane" },
+  { name: "Diamond Valley", href: "/cash-for-cars-diamond-valley" },
   { name: "Lethbridge", href: "/cash-for-cars-lethbridge" },
   { name: "Okotoks", href: "/cash-for-cars-okotoks" },
   { name: "Red Deer", href: "/cash-for-cars-red-deer" },
