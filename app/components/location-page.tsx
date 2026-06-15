@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import CityLeadForm from "./city-lead-form";
+import CityPageJsonLd from "./city-page-json-ld";
 import SiteFooter from "./site-footer";
 import SiteHeader from "./site-header";
 
@@ -80,6 +81,12 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
 
   return (
     <div className="bg-white text-slate-900">
+      <CityPageJsonLd
+        city={data.city}
+        title={data.title}
+        description={data.intro[0]}
+        faqs={data.faqs}
+      />
       <div className="border-b border-slate-200 bg-white px-4 py-4 md:px-8 lg:px-12">
         <div className="mx-auto max-w-7xl">
           <SiteHeader />

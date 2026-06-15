@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono, Lato, Maven_Pro } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
+import JsonLd from "./components/json-ld";
 import "./globals.css";
 import "animate.css";
 
@@ -22,8 +23,66 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://maplecashforcars.ca";
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "AutomotiveBusiness"],
+      "@id": `${siteUrl}/#business`,
+      name: "Maple Cash for Cars",
+      legalName: "Citywide Cash for Cars LTD",
+      url: siteUrl,
+      logo: `${siteUrl}/images/maple-new-golden-logo.png`,
+      image: `${siteUrl}/images/og-image.png`,
+      telephone: "+14034771383",
+      email: "maplecashforcars@gmail.com",
+      priceRange: "$200-$20000",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Calgary",
+        addressRegion: "AB",
+        addressCountry: "CA",
+      },
+      areaServed: [
+        "Calgary",
+        "Airdrie",
+        "Banff",
+        "Black Diamond",
+        "Bragg Creek",
+        "Brooks",
+        "Canmore",
+        "Chestermere",
+        "Cochrane",
+        "Diamond Valley",
+        "High River",
+        "Lethbridge",
+        "Okotoks",
+        "Red Deer",
+        "Strathmore",
+      ],
+      parentOrganization: {
+        "@type": "Organization",
+        name: "Citywide Cash for Cars LTD",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "Maple Cash for Cars",
+      alternateName: "Maple Cash For Cars",
+      publisher: {
+        "@id": `${siteUrl}/#business`,
+      },
+      inLanguage: "en-CA",
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://maplecashforcars.ca"),
+  applicationName: "Maple Cash for Cars",
   title: "Maple Cash for Cars",
   description:
     "Sell your vehicle fast in Calgary. Get top cash offers with easy pickup and junk car removal.",
@@ -77,6 +136,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <JsonLd data={businessSchema} />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-17815203674"
           strategy="afterInteractive"

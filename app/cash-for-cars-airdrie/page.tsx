@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CityLeadForm from "../components/city-lead-form";
 import CityDetailSections, { type CityDetailSection } from "../components/city-detail-sections";
+import CityPageJsonLd from "../components/city-page-json-ld";
 import SiteFooter from "../components/site-footer";
 import SiteHeader from "../components/site-header";
 
@@ -188,6 +189,12 @@ export const metadata: Metadata = {
 export default function CashForCarsAirdriePage() {
   return (
     <div className="bg-white text-slate-900">
+      <CityPageJsonLd
+        city="Airdrie"
+        title="Cash for Cars Airdrie - Get Top Dollar for Your Vehicle Today"
+        description="We offer fast, straightforward cash for cars in Airdrie, with free towing, zero hidden fees, and same-day pickup available across the city."
+        faqs={faqs}
+      />
       <div className="border-b border-slate-200 bg-white px-4 py-4 md:px-8 lg:px-12">
         <div className="mx-auto max-w-7xl">
           <SiteHeader />

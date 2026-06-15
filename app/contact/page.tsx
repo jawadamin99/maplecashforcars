@@ -1,6 +1,7 @@
 import type {Metadata} from "next";
 import Link from "next/link";
 import CityLeadForm from "../components/city-lead-form";
+import JsonLd from "../components/json-ld";
 import SiteFooter from "../components/site-footer";
 import SiteHeader from "../components/site-header";
 
@@ -67,6 +68,26 @@ export const metadata: Metadata = {
 export default function ContactPage() {
     return (
         <div className="min-h-screen bg-stone-50 text-slate-900">
+            <JsonLd
+                data={{
+                    "@context": "https://schema.org",
+                    "@type": "ContactPage",
+                    "@id": "https://maplecashforcars.ca/contact#webpage",
+                    url: "https://maplecashforcars.ca/contact",
+                    name: "Contact Maple Cash for Cars",
+                    description: "Contact Maple Cash for Cars for a free vehicle cash offer, fast pickup, and free towing.",
+                    isPartOf: {
+                        "@id": "https://maplecashforcars.ca/#website",
+                    },
+                    about: {
+                        "@id": "https://maplecashforcars.ca/#business",
+                    },
+                    mainEntity: {
+                        "@id": "https://maplecashforcars.ca/#business",
+                    },
+                    inLanguage: "en-CA",
+                }}
+            />
             <section className="privacy-header px-4 py-6 md:px-8 lg:px-12">
                 <div className="mx-auto max-w-7xl">
                     <SiteHeader/>
