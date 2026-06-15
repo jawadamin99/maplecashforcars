@@ -86,7 +86,7 @@ const faqs = [
 ];
 
 const areas = [
-  { name: "Calgary" },
+  { name: "Calgary", href: "/"},
   { name: "Red Deer", href: "/cash-for-cars-red-deer" },
   { name: "Lethbridge", href: "/cash-for-cars-lethbridge" },
   { name: "Airdrie", href: "/cash-for-cars-airdrie" },
@@ -99,7 +99,7 @@ const areas = [
   { name: "Banff", href: "/cash-for-cars-banff" },
   { name: "Chestermere", href: "/cash-for-cars-chestermere" },
   { name: "Okotoks", href: "/cash-for-cars-okotoks" },
-  { name: "High River" },
+  { name: "High River", href: "/cash-for-cars-high-river" },
   { name: "Strathmore", href: "/cash-for-cars-strathmore" },
 ];
 

@@ -44,21 +44,24 @@ export default function SiteFooter() {
           <span>Junk Car Removal</span>
           <span>Free Towing</span>
         </div>
-        <div className="footer-links">
+        <div className="footer-links footer-location-links">
           <h4>Locations</h4>
-          <Link href="/cash-for-cars-airdrie">Cash for Cars Airdrie</Link>
-          <Link href="/cash-for-cars-banff">Cash for Cars Banff</Link>
-          <Link href="/cash-for-cars-black-diamond">Cash for Cars Black Diamond</Link>
-          <Link href="/cash-for-cars-bragg-creek">Cash for Cars Bragg Creek</Link>
-          <Link href="/cash-for-cars-brooks">Cash for Cars Brooks</Link>
-          <Link href="/cash-for-cars-canmore">Cash for Cars Canmore</Link>
-          <Link href="/cash-for-cars-chestermere">Cash for Cars Chestermere</Link>
-          <Link href="/cash-for-cars-cochrane">Cash for Cars Cochrane</Link>
-          <Link href="/cash-for-cars-diamond-valley">Cash for Cars Diamond Valley</Link>
-          <Link href="/cash-for-cars-red-deer">Cash for Cars Red Deer</Link>
-          <Link href="/cash-for-cars-lethbridge">Cash for Cars Lethbridge</Link>
-          <Link href="/cash-for-cars-okotoks">Cash for Cars Okotoks</Link>
-          <Link href="/cash-for-cars-strathmore">Cash for Cars Strathmore</Link>
+          <div className="footer-location-grid">
+            <Link href="/cash-for-cars-airdrie">Airdrie</Link>
+            <Link href="/cash-for-cars-banff">Banff</Link>
+            <Link href="/cash-for-cars-black-diamond">Black Diamond</Link>
+            <Link href="/cash-for-cars-bragg-creek">Bragg Creek</Link>
+            <Link href="/cash-for-cars-brooks">Brooks</Link>
+            <Link href="/cash-for-cars-canmore">Canmore</Link>
+            <Link href="/cash-for-cars-chestermere">Chestermere</Link>
+            <Link href="/cash-for-cars-cochrane">Cochrane</Link>
+            <Link href="/cash-for-cars-diamond-valley">Diamond Valley</Link>
+            <Link href="/cash-for-cars-high-river">High River</Link>
+            <Link href="/cash-for-cars-red-deer">Red Deer</Link>
+            <Link href="/cash-for-cars-lethbridge">Lethbridge</Link>
+            <Link href="/cash-for-cars-okotoks">Okotoks</Link>
+            <Link href="/cash-for-cars-strathmore">Strathmore</Link>
+          </div>
         </div>
       </div>
       <div className="footer-bottom">

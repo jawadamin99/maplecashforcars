@@ -14,6 +14,7 @@ export const locationLinks = [
   { name: "Chestermere", href: "/cash-for-cars-chestermere" },
   { name: "Cochrane", href: "/cash-for-cars-cochrane" },
   { name: "Diamond Valley", href: "/cash-for-cars-diamond-valley" },
+  { name: "High River", href: "/cash-for-cars-high-river" },
   { name: "Lethbridge", href: "/cash-for-cars-lethbridge" },
   { name: "Okotoks", href: "/cash-for-cars-okotoks" },
   { name: "Red Deer", href: "/cash-for-cars-red-deer" },

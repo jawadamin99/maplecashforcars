@@ -242,7 +242,8 @@ h1, h2, h3, h4, h5, h6 {
     left: 50%;
     z-index: 140;
     display: grid;
-    min-width: 220px;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    min-width: 360px;
     transform: translateX(-50%);
     border: 1px solid #e2e8f0;
     border-radius: 0.8rem;
@@ -343,6 +344,7 @@ h1, h2, h3, h4, h5, h6 {
     .site-nav-menu {
         position: static;
         display: none;
+        grid-template-columns: 1fr;
         min-width: 0;
         transform: none;
         box-shadow: none;
@@ -885,6 +887,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
     list-style: none;
     display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.6rem;
     font-weight: 700;
     color: #1b1b1b;
@@ -919,6 +922,10 @@ h1, h2, h3, h4, h5, h6 {
     .areas-grid {
         grid-template-columns: 1fr;
     }
+
+    .areas-list {
+        grid-template-columns: 1fr;
+    }
 }
 
 .site-footer {
@@ -931,7 +938,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.5fr 0.8fr 0.8fr 1.2fr;
+    grid-template-columns: 1.35fr 0.85fr 0.75fr 1.6fr;
     gap: 2rem;
     align-items: start;
 }
@@ -960,6 +967,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-links a:hover {
     color: #ffffff;
+}
+
+.footer-location-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.1rem;
 }
 
 .footer-bottom {
@@ -996,6 +1009,10 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 900px) {
     .footer-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-location-grid {
         grid-template-columns: 1fr;
     }
 

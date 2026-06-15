@@ -14,6 +14,7 @@ const routes = [
   "/cash-for-cars-chestermere",
   "/cash-for-cars-cochrane",
   "/cash-for-cars-diamond-valley",
+  "/cash-for-cars-high-river",
   "/cash-for-cars-lethbridge",
   "/cash-for-cars-okotoks",
   "/cash-for-cars-red-deer",
