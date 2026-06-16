@@ -56,10 +56,12 @@ export default function SiteFooter() {
             <Link href="/cash-for-cars-chestermere">Chestermere</Link>
             <Link href="/cash-for-cars-cochrane">Cochrane</Link>
             <Link href="/cash-for-cars-diamond-valley">Diamond Valley</Link>
+            <Link href="/cash-for-cars-didsbury">Didsbury</Link>
             <Link href="/cash-for-cars-high-river">High River</Link>
             <Link href="/cash-for-cars-irricana">Irricana</Link>
             <Link href="/cash-for-cars-red-deer">Red Deer</Link>
             <Link href="/cash-for-cars-lethbridge">Lethbridge</Link>
+            <Link href="/cash-for-cars-medicine-hat">Medicine Hat</Link>
             <Link href="/cash-for-cars-nanton">Nanton</Link>
             <Link href="/cash-for-cars-olds">Olds</Link>
             <Link href="/cash-for-cars-okotoks">Okotoks</Link>
