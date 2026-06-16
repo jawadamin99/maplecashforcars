@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab2a8dd3-3d6e-4c29-ad58-5acc4a200d9d" name="Changes" comment="Added location pages">
-      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-airdrie/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-airdrie/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-cochrane/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-cochrane/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-lethbridge/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-lethbridge/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-red-deer/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-red-deer/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/location-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/location-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/contact/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/contact/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="ab2a8dd3-3d6e-4c29-ad58-5acc4a200d9d" name="Changes" comment="Added location pages" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,7 +110,7 @@
       <workItem from="1780954979893" duration="18729000" />
       <workItem from="1781383824875" duration="65000" />
       <workItem from="1781384166450" duration="172000" />
-      <workItem from="1781519419270" duration="2150000" />
+      <workItem from="1781519419270" duration="2338000" />
     </task>
     <task id="LOCAL-00001" summary="consent removed.">
       <option name="closed" value="true" />
@@ -168,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781558127291</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added location pages">
+      <option name="closed" value="true" />
+      <created>1781558706747</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1781558706747</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

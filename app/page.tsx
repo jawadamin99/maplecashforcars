@@ -98,8 +98,12 @@ const areas = [
   { name: "Canmore", href: "/cash-for-cars-canmore" },
   { name: "Banff", href: "/cash-for-cars-banff" },
   { name: "Chestermere", href: "/cash-for-cars-chestermere" },
+  { name: "Irricana", href: "/cash-for-cars-irricana" },
+  { name: "Nanton", href: "/cash-for-cars-nanton" },
+  { name: "Olds", href: "/cash-for-cars-olds" },
   { name: "Okotoks", href: "/cash-for-cars-okotoks" },
   { name: "High River", href: "/cash-for-cars-high-river" },
+  { name: "Ponoka", href: "/cash-for-cars-ponoka" },
   { name: "Strathmore", href: "/cash-for-cars-strathmore" },
 ];
 
