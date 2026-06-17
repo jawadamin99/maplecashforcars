@@ -27,6 +27,12 @@ export const locationLinks = [
   { name: "Strathmore", href: "/cash-for-cars-strathmore" },
 ];
 
+export const serviceLinks = [
+  { name: "Scrap Car Removal", href: "/scrap-car-removal" },
+  { name: "Junk Car Removal", href: "/junk-car-removal" },
+  { name: "Cash for Scrap Cars", href: "/cash-for-scrap-cars" },
+];
+
 type SiteHeaderProps = {
   variant?: "default" | "hero";
 };
@@ -34,6 +40,7 @@ type SiteHeaderProps = {
 export default function SiteHeader({ variant = "default" }: SiteHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLocationsOpen, setIsLocationsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const handlePhoneClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (typeof window === "undefined") return;
@@ -47,11 +54,20 @@ export default function SiteHeader({ variant = "default" }: SiteHeaderProps) {
   const closeMobileMenu = () => {
     setIsMenuOpen(false);
     setIsLocationsOpen(false);
+    setIsServicesOpen(false);
   };
 
   const handleLocationsClick = () => {
     if (typeof window !== "undefined" && window.matchMedia("(max-width: 760px)").matches) {
       setIsLocationsOpen((open) => !open);
+      setIsServicesOpen(false);
+    }
+  };
+
+  const handleServicesClick = () => {
+    if (typeof window !== "undefined" && window.matchMedia("(max-width: 760px)").matches) {
+      setIsServicesOpen((open) => !open);
+      setIsLocationsOpen(false);
     }
   };
 
@@ -62,6 +78,7 @@ export default function SiteHeader({ variant = "default" }: SiteHeaderProps) {
         variant === "hero" ? "site-header-hero" : "site-header-card",
         isMenuOpen ? "site-header-open" : "",
         isLocationsOpen ? "site-locations-open" : "",
+        isServicesOpen ? "site-services-open" : "",
       ].filter(Boolean).join(" ")}
     >
       <Link href="/" className="site-header-logo" aria-label="Maple Cash for Cars home" onClick={closeMobileMenu}>
@@ -88,7 +105,27 @@ export default function SiteHeader({ variant = "default" }: SiteHeaderProps) {
 
       <nav className="site-nav" aria-label="Main navigation">
         <Link href="/" onClick={closeMobileMenu}>Home</Link>
-        <div className="site-nav-dropdown">
+        <div className="site-nav-dropdown site-services-dropdown">
+          <button
+            type="button"
+            aria-haspopup="true"
+            aria-expanded={isServicesOpen}
+            onClick={handleServicesClick}
+          >
+            <span>Services</span>
+            <svg className="site-nav-chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          <div className="site-nav-menu site-services-menu">
+            {serviceLinks.map((service) => (
+              <Link key={service.href} href={service.href} onClick={closeMobileMenu}>
+                {service.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className="site-nav-dropdown site-locations-dropdown">
           <button
             type="button"
             aria-haspopup="true"

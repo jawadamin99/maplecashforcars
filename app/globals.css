@@ -208,7 +208,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-nav-dropdown:hover .site-nav-chevron,
 .site-nav-dropdown:focus-within .site-nav-chevron,
-.site-locations-open .site-nav-chevron {
+.site-locations-open .site-locations-dropdown .site-nav-chevron,
+.site-services-open .site-services-dropdown .site-nav-chevron {
     transform: rotate(180deg);
 }
 
@@ -254,9 +255,19 @@ h1, h2, h3, h4, h5, h6 {
     pointer-events: none;
 }
 
+.site-services-menu {
+    grid-template-columns: 1fr;
+    min-width: 230px;
+}
+
 .site-nav-dropdown:hover .site-nav-menu,
-.site-nav-dropdown:focus-within .site-nav-menu,
-.site-locations-open .site-nav-menu {
+.site-nav-dropdown:focus-within .site-nav-menu {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.site-locations-open .site-locations-dropdown .site-nav-menu,
+.site-services-open .site-services-dropdown .site-nav-menu {
     opacity: 1;
     pointer-events: auto;
 }
@@ -352,7 +363,8 @@ h1, h2, h3, h4, h5, h6 {
         pointer-events: auto;
     }
 
-    .site-locations-open .site-nav-menu {
+    .site-locations-open .site-locations-dropdown .site-nav-menu,
+    .site-services-open .site-services-dropdown .site-nav-menu {
         display: grid;
     }
 }

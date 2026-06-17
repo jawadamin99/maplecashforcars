@@ -55,9 +55,15 @@ const businessSchema = {
         "Chestermere",
         "Cochrane",
         "Diamond Valley",
+        "Didsbury",
         "High River",
+        "Irricana",
         "Lethbridge",
+        "Medicine Hat",
+        "Nanton",
+        "Olds",
         "Okotoks",
+        "Ponoka",
         "Red Deer",
         "Strathmore",
       ],
@@ -83,16 +89,16 @@ const businessSchema = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://maplecashforcars.ca"),
   applicationName: "Maple Cash for Cars",
-  title: "Maple Cash for Cars",
+  title: "Cash For Cars Calgary | Same-Day Pickup & Free Towing",
   description:
-    "Sell your vehicle fast in Calgary. Get top cash offers with easy pickup and junk car removal.",
+    "Get top cash for cars in Calgary with free towing & same-day pickup. We buy junk, scrap, damaged & non-running vehicles. Call (403) 477-1383 for a fast offer.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Maple Cash for Cars",
+    title: "Cash For Cars Calgary | Same-Day Pickup & Free Towing",
     description:
-      "Sell your vehicle fast in Calgary. Get top cash offers with easy pickup and junk car removal.",
+      "Get top cash for cars in Calgary with free towing & same-day pickup. We buy junk, scrap, damaged & non-running vehicles. Call (403) 477-1383 for a fast offer.",
     url: "/",
     siteName: "Maple Cash for Cars",
     type: "website",
@@ -107,9 +113,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Maple Cash for Cars",
+    title: "Cash For Cars Calgary | Same-Day Pickup & Free Towing",
     description:
-      "Sell your vehicle fast in Calgary. Get top cash offers with easy pickup and junk car removal.",
+      "Get top cash for cars in Calgary with free towing & same-day pickup. We buy junk, scrap, damaged & non-running vehicles. Call (403) 477-1383 for a fast offer.",
     images: [
       {
         url: "/images/og-image.png",

@@ -5,6 +5,9 @@ const baseUrl = "https://maplecashforcars.ca";
 const routes = [
   "",
   "/contact",
+  "/scrap-car-removal",
+  "/junk-car-removal",
+  "/cash-for-scrap-cars",
   "/cash-for-cars-airdrie",
   "/cash-for-cars-banff",
   "/cash-for-cars-black-diamond",

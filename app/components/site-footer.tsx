@@ -40,9 +40,9 @@ export default function SiteFooter() {
         </div>
         <div className="footer-links">
           <h4>Services</h4>
-          <span>Cash for Cars</span>
-          <span>Junk Car Removal</span>
-          <span>Free Towing</span>
+          <Link href="/scrap-car-removal">Scrap Car Removal</Link>
+          <Link href="/junk-car-removal">Junk Car Removal</Link>
+          <Link href="/cash-for-scrap-cars">Cash for Scrap Cars</Link>
         </div>
         <div className="footer-links footer-location-links">
           <h4>Locations</h4>

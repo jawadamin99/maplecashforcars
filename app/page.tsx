@@ -1,87 +1,128 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
 import SiteFooter from "./components/site-footer";
 import SiteHeader from "./components/site-header";
-import "swiper/css";
-import "swiper/css/pagination";
 
 const steps = [
   {
     title: "Share Vehicle Details",
-    text: "Tell us your name, contact info, and vehicle make/model with current condition.",
+    text: "Tell us your name, contact info, and your vehicle's make, model, year, and condition. Add a few photos if you can; it sharpens the offer.",
   },
   {
     title: "Get a Fair Offer",
-    text: "Our team sends a clear cash offer with no hidden charges or towing fees.",
+    text: "We send a clear cash offer the same day, usually within a few hours. No hidden charges, no towing fees in the fine print.",
   },
   {
     title: "Schedule Pickup",
-    text: "Choose a pickup time in Calgary or nearby cities that works best for you.",
+    text: "Choose a pickup time and a Calgary location that works for you: home, work, wherever the car sits.",
   },
   {
     title: "Get Paid on Pickup",
-    text: "We inspect, complete paperwork, and pay you immediately when we collect the car.",
-  },
-];
-
-const testimonials = [
-  {
-    name: "Emma J.",
-    area: "NW Calgary",
-    quote:
-      "Selling my car was an excellent experience. They gave me a great price and picked up the car the same day. I couldn't believe how easy it was!",
-  },
-  {
-    name: "Peter K.",
-    area: "Airdrie",
-    quote:
-      "The team at Maple Cash For Cars was professional and efficient. I got a quote quickly and sold my car the next day. The cash payment was immediate and the whole process was hassle-free.",
-  },
-  {
-    name: "Lisa M.",
-    area: "Okotoks",
-    quote:
-      "Best experience I had selling a vehicle. Very clear process and fair cash offer.",
-  },
-  {
-    name: "Nadia S.",
-    area: "Cochrane",
-    quote:
-      "Quick response and smooth process. I appreciated the clear offer and easy pickup.",
-  },
-  {
-    name: "Peter L.",
-    area: "Chestermere",
-    quote:
-      "No surprises, just a fair price and fast removal. I'd recommend them to anyone.",
+    text: "We inspect, complete the paperwork, and pay you immediately when we collect the car.",
   },
 ];
 
 const faqs = [
   {
-    q: "How fast can I get a cash offer for my car?",
-    a: "Most offers are sent the same day after you share your vehicle details. In many cases, we can provide a quote within a few hours.",
+    q: "How fast can I get a cash offer for my car in Calgary?",
+    a: "Most offers go out the same day you share your vehicle details, often within a few hours.",
   },
   {
     q: "Do you buy junk or non-running vehicles?",
-    a: "Yes. We buy running, damaged, and non-running vehicles, including junk cars, and provide free towing in Calgary and surrounding areas.",
+    a: "Yes. We buy running, damaged, junk, and non-running vehicles anywhere in Calgary, with free towing included.",
   },
   {
     q: "Are there any towing or hidden fees?",
-    a: "No. Our quotes are transparent and include pickup. There are no surprise towing charges for standard service areas.",
+    a: "None. Our quotes include free pickup across Calgary and surrounding areas; the number we quote is the number you get.",
+  },
+  {
+    q: "Do you buy hail-damaged cars?",
+    a: "Absolutely. Hail-damaged vehicles and insurance write-offs are some of the most common cars we buy in Calgary.",
   },
   {
     q: "What documents do I need to sell my vehicle?",
-    a: "A valid photo ID and vehicle ownership documents are usually required. Our team will guide you through exactly what to prepare.",
+    a: "A valid photo ID and proof of ownership. We help you complete the bill of sale on pickup.",
   },
   {
     q: "Can I upload photos before pickup?",
-    a: "Yes. You can attach vehicle photos in the form to help us provide a more accurate initial offer.",
+    a: "Yes. Attaching photos in the form helps us give you a more accurate initial offer.",
+  },
+];
+
+const services = [
+  {
+    title: "Cash for Cars Calgary",
+    image: "/images/cash-for-cars.webp",
+    alt: "Cash for cars Calgary",
+    text: "We buy all makes and models in almost any condition and pay fair cash on pickup, from daily drivers to write-offs. If it has four wheels and a VIN, we want to make you an offer.",
+    tone: "red",
+  },
+  {
+    title: "Junk Car Removal Calgary",
+    image: "/images/junk-car-removal.webp",
+    alt: "Junk car removal Calgary",
+    text: "A non-running car taking up space can earn you a bylaw notice or cost you a monthly parking stall for nothing. Our junk car removal in Calgary clears it out fast with free towing and responsible removal.",
+    tone: "green",
+  },
+  {
+    title: "Scrap Car Removal Calgary",
+    image: "/images/tow-scrap.webp",
+    alt: "Scrap car removal Calgary",
+    text: "When a vehicle reaches the end of the road, scrap car removal done right means you get paid for the metal and the car is recycled responsibly, with fluids drained and disposed of correctly.",
+    tone: "red",
+  },
+  {
+    title: "Free Towing",
+    image: "/images/cash-for-cars-calgary.webp",
+    alt: "Free towing Calgary",
+    text: "Calgary is a big city, but the tow is always on us, from a Beltline parkade to an acreage past Tuscany.",
+    tone: "green",
+  },
+];
+
+const calgaryReasons = [
+  {
+    title: "Hail happens here.",
+    text: "Calgary sits in one of Canada's most hail-prone corridors. If hail damage left you with a dented vehicle you cannot sell, we buy it as-is.",
+  },
+  {
+    title: "Salt and Chinooks are hard on metal.",
+    text: "The freeze-thaw swing of a Calgary Chinook plus winter road salt accelerates rust faster than most cities see.",
+  },
+  {
+    title: "Winter kills cars dead.",
+    text: "A car that will not start at -30°C and is not worth repairing is a perfect same-day cash offer. We tow non-runners for free.",
+  },
+];
+
+const vehicleTypes = [
+  "SUVs and crossovers",
+  "Cars, sedans, and hatchbacks",
+  "Pickup trucks and vans",
+  "Buses and minivans",
+  "Commercial trucks",
+  "All other vehicle types",
+];
+
+const calgaryQuadrants = [
+  {
+    title: "Northwest (NW)",
+    areas: "Tuscany, Bowness, Brentwood, Kensington, Country Hills, Evanston",
+  },
+  {
+    title: "Northeast (NE)",
+    areas: "Bridgeland, Marlborough, Saddle Ridge, Skyview, Coral Springs",
+  },
+  {
+    title: "Southwest (SW)",
+    areas: "Beltline, Marda Loop, Signal Hill, Aspen Woods, Glenmore-area communities",
+  },
+  {
+    title: "Southeast (SE)",
+    areas: "Forest Lawn, McKenzie Towne, Mahogany, Auburn Bay, Cranston, Seton",
   },
 ];
 
@@ -214,33 +255,9 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    const nodes = Array.from(document.querySelectorAll("[data-animate]"));
-    if (nodes.length === 0) return;
-
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const el = entry.target;
-          const anim = el.getAttribute("data-animate") || "";
-          el.classList.add("animate__animated");
-          anim.split(" ").forEach((cls) => {
-            if (cls) el.classList.add(cls);
-          });
-          obs.unobserve(el);
-        });
-      },
-      { threshold: 0.18 }
-    );
-
-    nodes.forEach((node) => observer.observe(node));
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <div className="bg-white text-slate-900">
-      <section className="hero-redgreen relative overflow-hidden reveal" data-animate="animate__fadeIn">
+      <section className="hero-redgreen relative overflow-hidden">
         <Image
           src="/images/hero-bg.webp"
           alt="Maple Cash for Cars Calgary"
@@ -260,14 +277,15 @@ export default function Home() {
 
           <div className="relative z-10 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
             <div className="space-y-6 text-white">
-              <h1 className="max-w-xl text-4xl font-extrabold leading-tight md:text-5xl lg:text-6xl reveal" data-animate="animate__fadeInUp">
-                Turn Your Scrap Car into <span className="text-[var(--brand-green)]">Cash</span>
+              <h1 className="max-w-xl text-4xl font-extrabold leading-tight md:text-5xl lg:text-6xl">
+                Cash for Cars Calgary — Turn Your Vehicle Into <span className="text-[var(--brand-green)]">Cash Today</span>
               </h1>
-              <p className="max-w-xl text-lg text-slate-100 reveal" data-animate="animate__fadeInUp">
-                We buy used, old, damaged, and junk vehicles. Quick pickup,
-                same-day offers, and a clear process from quote to payment.
+              <p className="max-w-xl text-lg text-slate-100">
+                We buy used, old, damaged, junk, and scrap vehicles from Calgary
+                and across Alberta. Same-day cash offers, free towing, and a
+                clear process from quote to payment — running or not.
               </p>
-              <div className="flex flex-wrap gap-4 reveal" data-animate="animate__fadeInUp">
+              <div className="flex flex-wrap gap-4">
                 <a href="#lead-form" className="btn btn-red">
                   Get Cash Offer
                 </a>
@@ -276,10 +294,10 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="graphic-strip reveal" data-animate="animate__fadeInUp">
+              <div className="graphic-strip">
                 <div className="graphic-chip">
                   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h18M12 3v18" stroke="currentColor" strokeWidth="2"/></svg>
-                  <span>Same Day Pickup</span>
+                  <span>Same-Day Pickup</span>
                 </div>
                 <div className="graphic-chip">
                   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 15l5-5 4 4 7-7" stroke="currentColor" strokeWidth="2"/><path d="M14 7h6v6" stroke="currentColor" strokeWidth="2"/></svg>
@@ -294,12 +312,11 @@ export default function Home() {
 
             <form
               id="lead-form"
-              className="relative z-0 rounded-2xl border-2 border-[var(--brand-green)] bg-white p-6 shadow-[0_18px_50px_rgba(0,0,0,0.35)] md:p-8 reveal"
-              data-animate="animate__fadeInUp"
+              className="relative z-0 rounded-2xl border-2 border-[var(--brand-green)] bg-white p-6 shadow-[0_18px_50px_rgba(0,0,0,0.35)] md:p-8"
               onSubmit={handleSubmit}
             >
-              <h2 className="mb-1 text-3xl font-black text-[var(--brand-red)] reveal" data-animate="animate__fadeInUp">Get a Free Cash Offer</h2>
-              <p className="mb-5 text-sm text-slate-600 reveal" data-animate="animate__fadeInUp">Fill in your details and we will contact you shortly.</p>
+              <h2 className="mb-1 text-3xl font-black text-[var(--brand-red)]">Get a Free Cash Offer</h2>
+              <p className="mb-5 text-sm text-slate-600">Fill in your details and we will contact you shortly.</p>
 
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
@@ -373,7 +390,7 @@ export default function Home() {
                 ) : null}
               </div>
 
-              <button type="submit" className="btn btn-red mt-5 w-full reveal" data-animate="animate__fadeInUp">
+              <button type="submit" className="btn btn-red mt-5 w-full">
                 {isSubmitting ? "Sending..." : "Submit"}
               </button>
               {submitMessage ? (
@@ -388,20 +405,32 @@ export default function Home() {
         </svg>
       </section>
 
-      <section className="bg-white px-4 py-16 md:px-8 lg:px-12 reveal" data-animate="animate__fadeInUp animate__slow">
+      <section className="bg-white px-4 py-16 md:px-8 lg:px-12">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 lg:grid-cols-2">
           <div>
             <p className="text-sm font-bold uppercase tracking-wide text-[var(--brand-green)]">Why Maple Cash for Cars</p>
             <h2 className="mt-3 text-4xl font-black leading-tight text-slate-900">
-              Simple Process. <span className="text-[var(--brand-red)]">Fair Price.</span> Zero Headache.
+              Sell Your Car in Calgary <span className="text-[var(--brand-red)]">Without the Headache</span>
             </h2>
             <p className="mt-5 text-lg text-slate-700">
-              We make selling your vehicle easy in Calgary. No classifieds, no
-              no-shows, and no waiting weeks for payment.
+              That vehicle sitting in your driveway is not getting more valuable.
+              Between Calgary winters that eat metal alive and the hailstorms
+              that roll through every summer, a car left to sit only loses value
+              while you keep paying for insurance, registration, or a parking
+              stall you do not need.
             </p>
             <p className="mt-3 text-lg text-slate-700">
-              Whether your car is running or not, we provide a clear offer, free
-              pickup, and instant payment.
+              Maple Cash for Cars makes the easy option obvious. We pay cash for
+              cars in Calgary whether your vehicle runs perfectly or has not
+              started since the last cold snap on Deerfoot Trail. You get a fair
+              offer the same day, free towing anywhere in the city, and money in
+              your hand when we pick it up.
+            </p>
+            <p className="mt-3 text-lg text-slate-700">
+              No classified ads, no tire-kickers, no no-shows, and no waiting
+              weeks for payment. After 8+ years buying vehicles across Calgary
+              and surrounding Alberta, we have turned a frustrating chore into a
+              simple 24-hour transaction.
             </p>
           </div>
           <div className="relative">
@@ -416,47 +445,70 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="section-green-tint px-4 py-16 md:px-8 lg:px-12 reveal" data-animate="animate__fadeInUp animate__slow">
+      <section id="services" className="section-green-tint px-4 py-16 md:px-8 lg:px-12">
         <div className="mx-auto max-w-7xl">
-          <h2 className="text-center text-4xl font-black text-slate-900">Our Services</h2>
-          <p className="mt-3 text-center section-sub text-lg text-slate-700">Cash for Cars and Junk Car Removal across Calgary</p>
+          <h2 className="text-center text-4xl font-black text-slate-900">Cash for Cars and Junk Car Removal Across Calgary</h2>
+          <p className="mt-3 text-center section-sub text-lg text-slate-700">Our services cover running, damaged, junk, scrap, and non-running vehicles.</p>
 
           <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2">
-            <article className="service-card service-card-red">
-              <Image src="/images/cash-for-cars.webp" alt="Cash for cars" width={900} height={700} className="h-72 w-full object-cover" />
-              <div className="p-7">
-                <h3 className="text-2xl font-black text-[var(--brand-red)]">Cash for Cars</h3>
-                <p className="mt-3 text-slate-700">
-                  We buy all makes and models in almost any condition and pay fair
-                  cash on pickup.
-                </p>
-              </div>
-            </article>
-
-            <article className="service-card service-card-green">
-              <Image src="/images/junk-car-removal.webp" alt="Junk car removal" width={900} height={700} className="h-72 w-full object-cover" />
-              <div className="p-7">
-                <h3 className="text-2xl font-black text-[var(--brand-green)]">Junk Car Removal</h3>
-                <p className="mt-3 text-slate-700">
-                  Free towing and responsible removal of scrap and non-running
-                  vehicles from your location.
-                </p>
-              </div>
-            </article>
+            {services.map((service) => (
+              <article
+                key={service.title}
+                className={`service-card ${service.tone === "red" ? "service-card-red" : "service-card-green"}`}
+              >
+                <Image src={service.image} alt={service.alt} width={900} height={700} className="h-72 w-full object-cover" />
+                <div className="p-7">
+                  <h3 className={`text-2xl font-black ${service.tone === "red" ? "text-[var(--brand-red)]" : "text-[var(--brand-green)]"}`}>
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 text-slate-700">{service.text}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="process-block px-4 py-16 md:px-8 lg:px-12 reveal" data-animate="animate__fadeInUp animate__slow">
+      <section className="bg-white px-4 py-16 md:px-8 lg:px-12">
         <div className="mx-auto max-w-7xl">
-          <div className="process-hero reveal" data-animate="animate__fadeInUp">
-            <h2>How We Work</h2>
-            <p className="section-sub">
-              Simple, fast, and transparent steps to sell your vehicle for cash in
-              Calgary.
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-sm font-bold uppercase tracking-wide text-[var(--brand-green)]">Why Calgary Drivers Choose Us</p>
+            <h2 className="mt-3 text-4xl font-black text-slate-900">Built for the Way Calgary Treats Cars</h2>
+            <p className="mt-4 text-lg leading-8 text-slate-700">
+              Calgary throws a unique set of problems at car owners, and we have
+              built our service around solving exactly those.
             </p>
           </div>
-          <div className="process-grid reveal" data-animate="animate__fadeInUp animate__delay-1s">
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {calgaryReasons.map((reason, index) => (
+              <article
+                key={reason.title}
+                className={`rounded-2xl border bg-white p-7 shadow-[0_12px_30px_rgba(15,23,42,0.08)] ${index % 2 === 0 ? "border-[color-mix(in_srgb,var(--brand-green)_30%,white)]" : "border-[color-mix(in_srgb,var(--brand-red)_30%,white)]"}`}
+              >
+                <h3 className={`text-2xl font-black ${index % 2 === 0 ? "text-[var(--brand-green)]" : "text-[var(--brand-red)]"}`}>
+                  {reason.title}
+                </h3>
+                <p className="mt-3 leading-7 text-slate-700">{reason.text}</p>
+              </article>
+            ))}
+          </div>
+          <p className="mx-auto mt-8 max-w-4xl text-center text-lg leading-8 text-slate-700">
+            On top of that: transparent quotes with no hidden towing charges,
+            immediate payment on pickup, and a team that shows up when we say we
+            will across all four quadrants of the city.
+          </p>
+        </div>
+      </section>
+
+      <section className="process-block px-4 py-16 md:px-8 lg:px-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="process-hero">
+            <h2>How We Work</h2>
+            <p className="section-sub">
+              Simple, fast, and transparent.
+            </p>
+          </div>
+          <div className="process-grid">
             {steps.map((step, index) => (
               <article key={step.title} className="process-card">
                 <div className={`process-number ${index % 2 === 0 ? "process-green" : "process-gold"}`}>
@@ -467,104 +519,92 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <div className="process-cta reveal" data-animate="animate__fadeInUp animate__delay-1s">
-            <a className="btn btn-outline-dark" href="tel:+14034771383" onClick={handlePhoneClick}>Call Us Now</a>
+          <div className="process-cta">
+            <a className="btn btn-outline-dark" href="tel:+14034771383" onClick={handlePhoneClick}>Call Us Now: (403) 477-1383</a>
           </div>
         </div>
       </section>
 
-            <section className="section-red-tint px-4 py-16 md:px-8 lg:px-12 reveal" data-animate="animate__fadeInUp animate__slow">
+      <section className="section-red-tint px-4 py-16 md:px-8 lg:px-12">
         <div className="mx-auto max-w-7xl">
-          <h2 className="text-center text-4xl font-black text-slate-900">Testimonials</h2>
-          <p className="my-2 text-center section-sub text-slate-700">What the customers say about us.</p>
-          <Swiper
-            className="testimonials-swiper"
-            modules={[Autoplay, Pagination]}
-            slidesPerView={3}
-            spaceBetween={24}
-            loop
-            autoplay={{ delay: 10000, disableOnInteraction: false }}
-            pagination={{ clickable: true }}
-            breakpoints={{
-              0: { slidesPerView: 1, spaceBetween: 16 },
-              640: { slidesPerView: 2, spaceBetween: 20 },
-              1024: { slidesPerView: 3, spaceBetween: 24 },
-            }}
-          >
-            {testimonials.map((item, i) => (
-              <SwiperSlide key={`${item.name}-${i}`}>
-                <article className={`testimonial-card ${i % 2 === 0 ? "testimonial-green" : "testimonial-red"}`}>
-                  <p className="text-slate-700">&ldquo;{item.quote}&rdquo;</p>
-                  <div className="testimonial-bottom">
-                    <div className="testimonial-avatar" aria-hidden="true">
-                      {item.name.slice(0, 1)}
-                    </div>
-                    <div>
-                      <h3>{item.name}</h3>
-                      <p>{item.area}</p>
-                    </div>
-                  </div>
-                  <div className="testimonial-stars" aria-hidden="true">★★★★★</div>
-                </article>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-wide text-[var(--brand-green)]">What We Buy</p>
+              <h2 className="mt-3 text-4xl font-black text-slate-900">
+                We Buy Everything and Pay Between $200 – $20,000
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-700">
+                Whether running or not, we make an offer on hail-damaged cars,
+                insurance write-offs, non-runners, high-mileage beaters, and
+                rusted-out frames.
+              </p>
+            </div>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {vehicleTypes.map((type) => (
+                <li key={type} className="rounded-xl bg-white p-4 font-bold text-slate-800 shadow-[0_8px_20px_rgba(15,23,42,0.06)]">
+                  {type}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
-      <section className="cta-dark px-4 py-16 md:px-8 lg:px-12 reveal" data-animate="animate__fadeInUp animate__slow">
+      <section className="cta-dark px-4 py-16 md:px-8 lg:px-12">
         <div className="mx-auto max-w-6xl text-center">
-          <p className="cta-eyebrow">We Have 8+ Years of Experience</p>
+          <p className="cta-eyebrow">What is my car worth in Calgary?</p>
           <h2 className="cta-title">
-            Choose us for a fast, straightforward way to sell your vehicle in
-            Calgary and surrounding areas.
+            Every Vehicle Gets Its Own Quote
           </h2>
+          <p className="mx-auto mt-5 max-w-4xl text-lg leading-8 text-slate-200">
+            Offers range from $200 for scrap-only vehicles up to $20,000 for
+            newer or in-demand models. The biggest factors are year, make,
+            model, whether it runs, repairability, mileage, rust, hail damage,
+            and current scrap metal prices. A 2008 sedan with a blown engine and
+            a 2019 truck with hail dents are very different offers, so the only
+            way to know your number is to ask. The quote is always free.
+          </p>
           <div className="cta-actions">
-            <a className="btn btn-red" href="tel:+14034771383" onClick={handlePhoneClick}>Call Us Now</a>
-            <a className="btn btn-outline-white" href="#lead-form">Get a Quote</a>
-          </div>
-        </div>
-        <div className="cta-panel">
-          <div className="cta-panel-left">
-            <p className="cta-panel-sub">Whether running or not</p>
-            <h3>
-              We buy everything and pay between
-              <span>$200 - $20,000</span>
-            </h3>
-          </div>
-          <div className="cta-panel-list">
-            <ul>
-              <li>SUVs, Crossovers</li>
-              <li>Cars, Sedans, Hatchbacks</li>
-              <li>Pickup Trucks, Vans</li>
-            </ul>
-            <ul>
-              <li>Buses, Minivans</li>
-              <li>Commercial Trucks</li>
-              <li>And all other types</li>
-            </ul>
+            <a className="btn btn-red" href="#lead-form">Get Cash Offer</a>
+            <a className="btn btn-outline-white" href="tel:+14034771383" onClick={handlePhoneClick}>Call (403) 477-1383</a>
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-4 py-16 md:px-8 lg:px-12 reveal" data-animate="animate__fadeInUp animate__slow">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-center text-4xl font-black text-slate-900">FAQs</h2>
-          <p className="mt-2 text-center text-slate-700">Common questions about selling your vehicle with us.</p>
-          <div className="mt-8 space-y-3">
-            {faqs.map((item, idx) => (
-              <details key={item.q} className={`faq-item ${idx % 2 === 0 ? "faq-green" : "faq-red"}`}>
-                <summary>{item.q}</summary>
-                <p>{item.a}</p>
-              </details>
+      <section className="bg-white px-4 py-16 md:px-8 lg:px-12">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="text-center text-4xl font-black text-slate-900">
+            Cash for Cars Across Every Calgary Quadrant — and Beyond
+          </h2>
+          <p className="mx-auto mt-4 max-w-4xl text-center text-lg leading-8 text-slate-700">
+            Our coverage is city-wide and the towing is always on us. We
+            regularly pick up vehicles in every Calgary quadrant.
+          </p>
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            {calgaryQuadrants.map((quadrant, index) => (
+              <article
+                key={quadrant.title}
+                className={`rounded-2xl border bg-slate-50 p-6 ${index % 2 === 0 ? "border-[color-mix(in_srgb,var(--brand-green)_30%,white)]" : "border-[color-mix(in_srgb,var(--brand-red)_30%,white)]"}`}
+              >
+                <h3 className={`text-xl font-black ${index % 2 === 0 ? "text-[var(--brand-green)]" : "text-[var(--brand-red)]"}`}>
+                  {quadrant.title}
+                </h3>
+                <p className="mt-3 leading-7 text-slate-700">{quadrant.areas}</p>
+              </article>
             ))}
           </div>
+          <p className="mx-auto mt-8 max-w-4xl text-center text-lg leading-8 text-slate-700">
+            We also serve the surrounding communities Calgary commuters call
+            home, including Airdrie, Cochrane, Chestermere, Okotoks, Strathmore,
+            Red Deer, and Lethbridge. If you are just outside the city limits,
+            you are still covered.
+          </p>
         </div>
       </section>
 
-      <section className="section-green-tint px-4 py-16 md:px-8 lg:px-12 reveal" data-animate="animate__fadeInUp animate__slow">
+      <section className="section-green-tint px-4 py-16 md:px-8 lg:px-12">
         <div className="mx-auto max-w-7xl">
-          <h2 className="text-center text-4xl font-black text-slate-900">Areas We Serve</h2>
+          <h2 className="text-center text-4xl font-black text-slate-900">Nearby Alberta Locations</h2>
           <p className="mt-2 text-center section-sub text-slate-700">Calgary and surrounding cities</p>
           <div className="areas-grid">
             <ul className="areas-list">
@@ -586,6 +626,65 @@ export default function Home() {
                 height={520}
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-4 py-16 md:px-8 lg:px-12">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-wide text-[var(--brand-green)]">What You Need</p>
+            <h2 className="mt-3 text-4xl font-black text-slate-900">
+              What You Need to Sell Your Car in Calgary
+            </h2>
+          </div>
+          <div className="space-y-5 text-lg leading-8 text-slate-700">
+            <p>
+              Selling to us is far simpler than a private sale, but Alberta
+              requires a couple of basics: a valid photo ID matching the
+              registered owner, proof of ownership, and a bill of sale, which we
+              help you complete on pickup.
+            </p>
+            <p>
+              Once the sale is done, remember to remove your licence plates. In
+              Alberta, plates stay with you, not the vehicle. You can then cancel
+              or transfer your registration through an Alberta registry agent.
+              Unsure about any of it? Our team walks you through exactly what to
+              prepare.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-red-tint px-4 py-16 md:px-8 lg:px-12">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-center text-4xl font-black text-slate-900">FAQ</h2>
+          <p className="mt-2 text-center text-slate-700">Common questions about selling your vehicle with us.</p>
+          <div className="mt-8 space-y-3">
+            {faqs.map((item, idx) => (
+              <details key={item.q} className={`faq-item ${idx % 2 === 0 ? "faq-green" : "faq-red"}`}>
+                <summary>{item.q}</summary>
+                <p>{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="cta-dark px-4 py-16 md:px-8 lg:px-12">
+        <div className="mx-auto max-w-5xl text-center">
+          <p className="cta-eyebrow">Turn Your Calgary Car Into Cash Today</p>
+          <h2 className="cta-title">
+            Stop paying to store a car you will never drive again.
+          </h2>
+          <p className="mx-auto mt-5 max-w-4xl text-lg leading-8 text-slate-200">
+            Whether it is a hail-battered SUV, a rusted-out winter beater, or a
+            junk car you just want gone, Maple Cash for Cars gives you a fair
+            offer, free towing, and cash in hand — same day.
+          </p>
+          <div className="cta-actions">
+            <a className="btn btn-red" href="tel:+14034771383" onClick={handlePhoneClick}>Call (403) 477-1383</a>
+            <a className="btn btn-outline-white" href="#lead-form">Request Free Cash Offer</a>
           </div>
         </div>
       </section>
