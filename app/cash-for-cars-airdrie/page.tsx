@@ -126,7 +126,18 @@ const detailSections: CityDetailSection[] = [
     title: "Scrap Car Removal Airdrie - Turning Metal into Money",
     paragraphs: [
       "There's a common misconception that scrap cars have no value. In reality, the steel, aluminum, copper wiring, and reusable parts in your old vehicle have real market value - and we pass a fair share of that back to you.",
-      "Our scrap car removal in Airdrie service works like any other pickup: call or fill out our online form with basic vehicle details, receive a same-day cash offer, schedule pickup at a time that works for you, and get paid on the spot when we arrive.",
+      <>
+        Our scrap car removal in Airdrie service works like any other pickup:
+        call or fill out our online form with basic vehicle details, receive a{" "}
+        <Link
+          href="/"
+          className="font-black text-[var(--brand-red)] underline underline-offset-4"
+        >
+          same-day cash offer
+        </Link>
+        , schedule pickup at a time that works for you, and get paid on the spot
+        when we arrive.
+      </>,
       "We do not make you wait until after we have processed the vehicle to pay you. You get paid at pickup, every time.",
     ],
   },
@@ -219,11 +230,17 @@ export default function CashForCarsAirdriePage() {
                 in your hands.
               </p>
               <p className="mt-4 text-lg leading-8 text-slate-700">
-                We offer fast, straightforward cash for cars in Airdrie, with
-                free towing, zero hidden fees, and same-day pickup available
-                across the city. No dealership trade-in games. No Kijiji
-                no-shows. Just a fair offer, fast pickup, and cash in your
-                pocket.
+                We offer fast, straightforward{" "}
+                <Link
+                  href="/cash-for-cars-airdrie"
+                  className="font-black text-[var(--brand-red)] underline underline-offset-4"
+                >
+                  cash for cars in Airdrie
+                </Link>
+                , with free towing, zero hidden fees, and same-day pickup
+                available across the city. No dealership trade-in games. No
+                Kijiji no-shows. Just a fair offer, fast pickup, and cash in
+                your pocket.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link className="btn btn-red" href="/#lead-form">
