@@ -148,7 +148,15 @@ const detailSections: CityDetailSection[] = [
       "Lethbridge sits in southern Alberta on the Oldman River, split into three sides by the river valley and the Crowsnest Highway.",
       "It's one of the sunniest - and windiest - cities in Canada, and those famous chinook winds bring dramatic freeze-thaw temperature swings that are hard on any vehicle.",
       "Combine that with hailstorms, dusty prairie roads, and the long climbs in and out of the coulees, and a lot of cars here end up as write-offs, high-kilometre trade-ins the dealer won't take, or vehicles that cost more to repair than they're worth.",
-      "We make selling your vehicle in Lethbridge easy: no classifieds, no flaky buyers, and no waiting weeks for payment.",
+      <>
+        <Link
+          href="/cash-for-cars-lethbridge"
+          className="font-black text-[var(--brand-red)] underline underline-offset-4"
+        >
+          We make selling your vehicle in Lethbridge
+        </Link>{" "}
+        easy: no classifieds, no flaky buyers, and no waiting weeks for payment.
+      </>,
     ],
     bullets: [
       "No more lowballers and no-shows. Private buyers on Kijiji and Facebook Marketplace cancel, haggle, and waste your time. We give one clear offer and stick to it.",
@@ -236,10 +244,17 @@ export default function CashForCarsLethbridgePage() {
               <p className="mt-5 text-lg leading-8 text-slate-700">
                 Selling a vehicle in Lethbridge shouldn&apos;t mean weeks of
                 waiting, endless Marketplace messages, or no-shows in a parking
-                lot off Mayor Magrath Drive. Maple Cash for Cars makes it
-                simple: tell us about your vehicle, get a fair offer the same
-                day, and we&apos;ll come to you anywhere in the city - West, North,
-                or South Lethbridge - with free towing and cash on pickup.
+                lot off Mayor Magrath Drive.{" "}
+                <Link
+                  href="/"
+                  className="font-black text-[var(--brand-red)] underline underline-offset-4"
+                >
+                  Maple Cash for Cars
+                </Link>{" "}
+                makes it simple: tell us about your vehicle, get a fair offer
+                the same day, and we&apos;ll come to you anywhere in the city -
+                West, North, or South Lethbridge - with free towing and cash on
+                pickup.
               </p>
               <p className="mt-4 text-lg leading-8 text-slate-700">
                 Whether your car is running, broken down, hail-battered, or

@@ -159,9 +159,12 @@ export default function JunkCarRemovalPage() {
               </p>
               <p>
                 Maple Cash for Cars ends the problem in a single visit. We
-                provide junk car removal in Calgary with free towing, a fair
-                cash offer, and same-day pickup, turning the eyesore in your
-                driveway into money in your pocket.
+                provide{" "}
+                <Link href="/junk-car-removal" className="font-black text-[var(--brand-red)] underline underline-offset-4">
+                  junk car removal in Calgary
+                </Link>{" "}
+                with free towing, a fair cash offer, and same-day pickup,
+                turning the eyesore in your driveway into money in your pocket.
               </p>
             </div>
           </div>
@@ -270,7 +273,10 @@ export default function JunkCarRemovalPage() {
               </h2>
               <p className="mt-4 text-lg leading-8 text-slate-700">
                 A lot of wreckers quote a fee to take a junk car off your hands.
-                We do the opposite: we pay cash, and the tow is always free.
+                <Link href="/" className="font-black text-[var(--brand-red)] underline underline-offset-4">
+                  We do the opposite
+                </Link>
+                : we pay cash, and the tow is always free.
               </p>
             </div>
             <ul className="grid gap-3 sm:grid-cols-2">
@@ -343,8 +349,21 @@ export default function JunkCarRemovalPage() {
               We pick up junk and scrap vehicles city-wide, from Tuscany and
               Bowness in the NW, Saddle Ridge and Bridgeland in the NE, Beltline
               and Signal Hill in the SW, to Mahogany and Forest Lawn in the SE.
-              We also cover Airdrie, Cochrane, Chestermere, Okotoks, Strathmore,
-              Red Deer, and Lethbridge. Towing is free everywhere we serve.
+              We also cover{" "}
+              <Link href="/cash-for-cars-airdrie" className="font-black text-[var(--brand-red)] underline underline-offset-4">Airdrie</Link>
+              ,{" "}
+              <Link href="/cash-for-cars-cochrane" className="font-black text-[var(--brand-red)] underline underline-offset-4">Cochrane</Link>
+              ,{" "}
+              <Link href="/cash-for-cars-chestermere" className="font-black text-[var(--brand-red)] underline underline-offset-4">Chestermere</Link>
+              ,{" "}
+              <Link href="/cash-for-cars-okotoks" className="font-black text-[var(--brand-red)] underline underline-offset-4">Okotoks</Link>
+              ,{" "}
+              <Link href="/cash-for-cars-strathmore" className="font-black text-[var(--brand-red)] underline underline-offset-4">Strathmore</Link>
+              ,{" "}
+              <Link href="/cash-for-cars-red-deer" className="font-black text-[var(--brand-red)] underline underline-offset-4">Red Deer</Link>
+              , and{" "}
+              <Link href="/cash-for-cars-lethbridge" className="font-black text-[var(--brand-red)] underline underline-offset-4">Lethbridge</Link>
+              . Towing is free everywhere we serve.
             </p>
           </div>
         </section>

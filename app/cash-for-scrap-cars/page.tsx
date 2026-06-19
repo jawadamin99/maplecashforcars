@@ -119,9 +119,15 @@ export default function CashForScrapCarsPage() {
                 loses value every week you wait.
               </p>
               <p className="mt-4 text-lg leading-8 text-slate-700">
-                Maple Cash for Cars pays Calgarians real cash for scrap cars,
-                running or not, complete or stripped, plated or unplated, and we
-                haul it away the same day at no cost to you.
+                Maple Cash for Cars pays Calgarians{" "}
+                <Link
+                  href="/cash-for-scrap-cars"
+                  className="font-black text-[var(--brand-red)] underline underline-offset-4"
+                >
+                  real cash for scrap cars
+                </Link>
+                , running or not, complete or stripped, plated or unplated, and
+                we haul it away the same day at no cost to you.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link className="btn btn-red" href="/#lead-form">
@@ -159,8 +165,14 @@ export default function CashForScrapCarsPage() {
                 <p>
                   Private buyers ghost you, scrap yards quote one price on the
                   phone and another on arrival, and towing fees eat whatever
-                  cash you were going to walk away with. We built Maple Cash for
-                  Cars to fix those problems.
+                  cash you were going to walk away with. We built{" "}
+                  <Link
+                    href="/"
+                    className="font-black text-[var(--brand-red)] underline underline-offset-4"
+                  >
+                    Maple Cash for Cars
+                  </Link>{" "}
+                  to fix those problems.
                 </p>
                 <p>
                   Our quote is the price you get paid. Our tow truck is free.
@@ -306,9 +318,84 @@ export default function CashForScrapCarsPage() {
               Cranston, Auburn Bay, Tuxedo Park, and Country Hills.
             </p>
             <p className="mt-4 max-w-5xl text-lg leading-8 text-slate-700">
-              We also serve Airdrie, Cochrane, Chestermere, Okotoks, High River,
-              Strathmore, Canmore, Banff, Red Deer, Lethbridge, Medicine Hat,
-              and surrounding Alberta communities.
+              We also serve{" "}
+              <Link
+                href="/cash-for-cars-airdrie"
+                className="font-black text-[var(--brand-red)] underline underline-offset-4"
+              >
+                Airdrie
+              </Link>
+              ,{" "}
+              <Link
+                href="/cash-for-cars-cochrane"
+                className="font-black text-[var(--brand-red)] underline underline-offset-4"
+              >
+                Cochrane
+              </Link>
+              ,{" "}
+              <Link
+                href="/cash-for-cars-chestermere"
+                className="font-black text-[var(--brand-red)] underline underline-offset-4"
+              >
+                Chestermere
+              </Link>
+              ,{" "}
+              <Link
+                href="/cash-for-cars-okotoks"
+                className="font-black text-[var(--brand-red)] underline underline-offset-4"
+              >
+                Okotoks
+              </Link>
+              ,{" "}
+              <Link
+                href="/cash-for-cars-high-river"
+                className="font-black text-[var(--brand-red)] underline underline-offset-4"
+              >
+                High River
+              </Link>
+              ,{" "}
+              <Link
+                href="/cash-for-cars-strathmore"
+                className="font-black text-[var(--brand-red)] underline underline-offset-4"
+              >
+                Strathmore
+              </Link>
+              ,{" "}
+              <Link
+                href="/cash-for-cars-canmore"
+                className="font-black text-[var(--brand-red)] underline underline-offset-4"
+              >
+                Canmore
+              </Link>
+              ,{" "}
+              <Link
+                href="/cash-for-cars-banff"
+                className="font-black text-[var(--brand-red)] underline underline-offset-4"
+              >
+                Banff
+              </Link>
+              ,{" "}
+              <Link
+                href="/cash-for-cars-red-deer"
+                className="font-black text-[var(--brand-red)] underline underline-offset-4"
+              >
+                Red Deer
+              </Link>
+              ,{" "}
+              <Link
+                href="/cash-for-cars-lethbridge"
+                className="font-black text-[var(--brand-red)] underline underline-offset-4"
+              >
+                Lethbridge
+              </Link>
+              ,{" "}
+              <Link
+                href="/cash-for-cars-medicine-hat"
+                className="font-black text-[var(--brand-red)] underline underline-offset-4"
+              >
+                Medicine Hat
+              </Link>
+              , and surrounding Alberta communities.
             </p>
           </div>
         </section>

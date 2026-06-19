@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LocationPage, { type LocationPageData } from "../components/location-page";
 
 const data: LocationPageData = {
@@ -16,14 +17,34 @@ const data: LocationPageData = {
     "It's a place where people come for the water, the space, and the community - and once they're here, they stay. But even in one of Alberta's most desirable bedroom communities, everyday problems do not disappear.",
     "One of the most common problems we hear about from Chestermere residents is an unwanted vehicle that's been sitting too long - in the driveway, in the garage, or taking up a spot that could be used for literally anything else.",
     "Maybe it's a car that stopped making financial sense to repair. Maybe it's a second vehicle you no longer need after a lifestyle change. Maybe it's been sitting since last winter and you just have not gotten around to it.",
-    "Whatever the situation, Maple Cash for Cars is here to make it simple. We offer the fastest, most transparent cash for cars in Chestermere - a confirmed same-day offer, completely free towing, and cash in your hand before our truck leaves your property.",
+    <>
+      Whatever the situation,{" "}
+      <Link
+        href="/"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        Maple Cash for Cars
+      </Link>{" "}
+      is here to make it simple. We offer the fastest, most transparent cash for
+      cars in Chestermere - a confirmed same-day offer, completely free towing,
+      and cash in your hand before our truck leaves your property.
+    </>,
   ],
   whyTitle: "We know Chestermere",
   whyHeading: "Every neighbourhood, every street",
   whyParagraphs: [
     "Chestermere has grown remarkably fast over the past decade, evolving from a quiet lake town into a full city of over 25,000 residents with one of the highest growth rates in Alberta.",
     "We know the city well - from the established waterfront properties along West Chestermere Drive and East Chestermere Drive to the rapidly expanding newer communities of Westmere, Rainbow Falls, Kinniburgh, Chelsea, Lakepointe, and Clearwater Park.",
-    "We serve every part of Chestermere - from lakeside homes with tight driveways to newer subdivision properties off Chestermere Boulevard and Westmere Drive.",
+    <>
+      <Link
+        href="/cash-for-cars-chestermere"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        We serve every part of Chestermere
+      </Link>{" "}
+      - from lakeside homes with tight driveways to newer subdivision properties
+      off Chestermere Boulevard and Westmere Drive.
+    </>,
     "We also serve the surrounding Rocky View County rural properties along Highway 1, Range Road 284, and the acreage corridor east of the city.",
     "You do not drive to us. You do not arrange transport. You tell us where the vehicle is, and we come to you - on time, ready to complete the transaction and leave you with cash in hand.",
   ],

@@ -219,10 +219,16 @@ export default function CashForCarsCochranePage() {
                 and possibly bylaw headaches.
               </p>
               <p className="mt-4 text-lg leading-8 text-slate-700">
-                Maple Cash for Cars offers straightforward cash for cars in
-                Cochrane - a fair offer, free towing, and payment on the spot.
-                Whether your vehicle is in showroom condition or hasn&apos;t run
-                since the last Cochrane Rodeo, we want it.
+                <Link
+                  href="/"
+                  className="font-black text-[var(--brand-red)] underline underline-offset-4"
+                >
+                  Maple Cash for Cars
+                </Link>{" "}
+                offers straightforward cash for cars in Cochrane - a fair offer,
+                free towing, and payment on the spot. Whether your vehicle is in
+                showroom condition or hasn&apos;t run since the last Cochrane Rodeo,
+                we want it.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link className="btn btn-red" href="/#lead-form">
@@ -353,9 +359,14 @@ export default function CashForCarsCochranePage() {
               Serving Cochrane and the Surrounding Foothills Region
             </h2>
             <p className="mt-4 max-w-4xl text-lg leading-8 text-slate-700">
-              We serve Cochrane neighbourhoods and nearby Rocky View County
-              communities, including rural addresses when tow access is
-              available.
+              <Link
+                href="/cash-for-cars-cochrane"
+                className="font-black text-[var(--brand-red)] underline underline-offset-4"
+              >
+                We serve Cochrane neighbourhoods
+              </Link>{" "}
+              and nearby Rocky View County communities, including rural
+              addresses when tow access is available.
             </p>
             <div className="mt-8 grid gap-8 lg:grid-cols-2">
               <div>

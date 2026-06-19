@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LocationPage, { type LocationPageData } from "../components/location-page";
 
 const data: LocationPageData = {
@@ -15,14 +16,34 @@ const data: LocationPageData = {
     "Olds is the kind of Alberta town that does not need to prove itself. Sitting right along the Queen Elizabeth II Highway corridor in Mountain View County, about 80 kilometres north of Calgary, it has built a quiet reputation as one of central Alberta's most complete communities.",
     "Olds is a real agricultural and educational hub with Olds College, the Olds Cowboy Festival, the Mountain View Ag Society, and a main street that still actually functions as a main street.",
     "People who live in Olds chose it because it works. It has what you need without the noise you do not. Farmers, tradespeople, students, families, and everyone in between tend to be practical people who want practical solutions to practical problems.",
-    "If you have an unwanted vehicle sitting in your driveway, yard, garage, or acreage, Maple Cash for Cars makes turning it into cash simple and fast.",
+    <>
+      If you have an unwanted vehicle sitting in your driveway, yard, garage, or
+      acreage,{" "}
+      <Link
+        href="/"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        Maple Cash for Cars
+      </Link>{" "}
+      makes turning it into cash simple and fast.
+    </>,
     "We offer straightforward cash for cars in Olds, with a real same-day offer, completely free towing to your location, and cash in your hand before we leave your property. No city-company runaround. No surprise distance fees. No waiting around for a buyer who never shows.",
   ],
   whyTitle: "We serve all of Olds",
   whyHeading: "Olds and the surrounding Mountain View County area",
   whyParagraphs: [
     "Olds has grown steadily into a city of around 10,000 people, anchored by 50th Street, 46th Avenue, and the commercial and residential corridors spreading out from the Olds College campus and downtown core.",
-    "We serve every neighbourhood, from the established residential streets near Uptowne Olds to the newer developments along the city's northern and eastern edges, and properties near the Olds Airport and industrial areas along Highway 27.",
+    <>
+      <Link
+        href="/cash-for-cars-olds"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        We serve all of Olds
+      </Link>
+      , from the established residential streets near Uptowne Olds to the newer
+      developments along the city&apos;s northern and eastern edges, and properties
+      near the Olds Airport and industrial areas along Highway 27.
+    </>,
     "We also serve rural properties throughout Mountain View County, including farm and ranch operations along Highway 2, Highway 27, Highway 54, Township Road 332, and the range road network connecting Olds to Didsbury, Carstairs, Sundre, Innisfail, and Red Deer.",
     "If your vehicle is on a rural property north of Calgary and you are wondering whether we come out this way, we do, regularly. You tell us where the vehicle is. We handle everything from there.",
   ],

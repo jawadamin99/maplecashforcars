@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LocationPage, { type LocationPageData } from "../components/location-page";
 
 const data: LocationPageData = {
@@ -13,7 +14,17 @@ const data: LocationPageData = {
   title: "Cash for Cars Banff - Get Top Dollar for Your Vehicle, Fast",
   intro: [
     "Banff residents deal with the same vehicle headaches as anyone else: cars that will not start, trucks that cost more to fix than they are worth, and old SUVs they have simply outgrown.",
-    "Maple Cash for Cars offers genuine cash for cars in Banff with fair market offers, free towing, same-day payment, and the experience needed to serve a mountain town inside a national park corridor.",
+    <>
+      <Link
+        href="/"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        Maple Cash for Cars
+      </Link>{" "}
+      offers genuine cash for cars in Banff with fair market offers, free
+      towing, same-day payment, and the experience needed to serve a mountain
+      town inside a national park corridor.
+    </>,
   ],
   whyTitle: "Why selling in Banff is different",
   whyHeading: "National park town service without the runaround",
@@ -101,8 +112,17 @@ const data: LocationPageData = {
     "Get paid on the spot after quick visual confirmation and ownership transfer paperwork.",
   ],
   areasTitle: "Serving Banff and the Surrounding Bow Valley",
-  areasText:
-    "We serve the Banff townsite and the surrounding Bow Valley and Rockies corridor.",
+  areasText: (
+    <>
+      <Link
+        href="/cash-for-cars-banff"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        We serve the Banff townsite
+      </Link>{" "}
+      and the surrounding Bow Valley and Rockies corridor.
+    </>
+  ),
   areaGroups: [
     {
       title: "Banff pickup areas",

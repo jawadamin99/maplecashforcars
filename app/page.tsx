@@ -64,14 +64,20 @@ const services = [
     title: "Junk Car Removal Calgary",
     image: "/images/junk-car-removal.webp",
     alt: "Junk car removal Calgary",
-    text: "A non-running car taking up space can earn you a bylaw notice or cost you a monthly parking stall for nothing. Our junk car removal in Calgary clears it out fast with free towing and responsible removal.",
+    text: "A non-running car taking up space can earn you a bylaw notice or cost you a monthly parking stall for nothing. Our ",
+    linkText: "junk car removal in Calgary",
+    linkHref: "/junk-car-removal",
+    textAfter: " clears it out fast with free towing and responsible removal.",
     tone: "green",
   },
   {
     title: "Scrap Car Removal Calgary",
     image: "/images/tow-scrap.webp",
     alt: "Scrap car removal Calgary",
-    text: "When a vehicle reaches the end of the road, scrap car removal done right means you get paid for the metal and the car is recycled responsibly, with fluids drained and disposed of correctly.",
+    text: "When a vehicle reaches the end of the road, ",
+    linkText: "scrap car removal",
+    linkHref: "/scrap-car-removal",
+    textAfter: " done right means you get paid for the metal and the car is recycled responsibly, with fluids drained and disposed of correctly.",
     tone: "red",
   },
   {
@@ -420,11 +426,14 @@ export default function Home() {
               stall you do not need.
             </p>
             <p className="mt-3 text-lg text-slate-700">
-              Maple Cash for Cars makes the easy option obvious. We pay cash for
-              cars in Calgary whether your vehicle runs perfectly or has not
-              started since the last cold snap on Deerfoot Trail. You get a fair
-              offer the same day, free towing anywhere in the city, and money in
-              your hand when we pick it up.
+              <Link href="/" className="font-black text-[var(--brand-red)] underline underline-offset-4">
+                Maple Cash for Cars
+              </Link>{" "}
+              makes the easy option obvious. We pay cash for cars in Calgary
+              whether your vehicle runs perfectly or has not started since the
+              last cold snap on Deerfoot Trail. You get a fair offer the same
+              day, free towing anywhere in the city, and money in your hand when
+              we pick it up.
             </p>
             <p className="mt-3 text-lg text-slate-700">
               No classified ads, no tire-kickers, no no-shows, and no waiting
@@ -461,7 +470,15 @@ export default function Home() {
                   <h3 className={`text-2xl font-black ${service.tone === "red" ? "text-[var(--brand-red)]" : "text-[var(--brand-green)]"}`}>
                     {service.title}
                   </h3>
-                  <p className="mt-3 text-slate-700">{service.text}</p>
+                  <p className="mt-3 text-slate-700">
+                    {service.text}
+                    {"linkText" in service ? (
+                      <Link href={service.linkHref} className="font-black text-[var(--brand-red)] underline underline-offset-4">
+                        {service.linkText}
+                      </Link>
+                    ) : null}
+                    {"textAfter" in service ? service.textAfter : null}
+                  </p>
                 </div>
               </article>
             ))}

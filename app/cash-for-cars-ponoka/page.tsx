@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LocationPage, { type LocationPageData } from "../components/location-page";
 
 const data: LocationPageData = {
@@ -15,14 +16,34 @@ const data: LocationPageData = {
     "Ponoka sits right at the geographic midpoint of Alberta, positioned along the Queen Elizabeth II Highway corridor between Calgary and Edmonton in Ponoka County.",
     "It is about 100 kilometres south of Edmonton and 130 kilometres north of Calgary, a city of around 7,000 people with a proud identity rooted in agriculture, rodeo culture, and central Alberta community spirit.",
     "The Ponoka Stampede, Ponoka County agricultural district, grain and cattle operations, and the Battle River all anchor a community that works hard, values straight talk, and has little patience for hidden fees.",
-    "If you have a truck that finally gave up, an old car sitting in your yard, or a non-running vehicle occupying valuable property space, Maple Cash for Cars is ready to take it off your hands today.",
+    <>
+      If you have a truck that finally gave up, an old car sitting in your yard,
+      or a non-running vehicle occupying valuable property space,{" "}
+      <Link
+        href="/"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        Maple Cash for Cars
+      </Link>{" "}
+      is ready to take it off your hands today.
+    </>,
     "We offer straightforward cash for cars in Ponoka with a confirmed same-day offer, completely free towing to your exact location, and cash paid directly to you before we leave your property.",
   ],
   whyTitle: "We come to Ponoka",
   whyHeading: "Town, county, and rural properties",
   whyParagraphs: [
     "Ponoka is centrally located along Highway 2A and Highway 53, with strong road connections to Wetaskiwin, Lacombe, Rimbey, and the broader central Alberta region.",
-    "We serve all of Ponoka, from residential neighbourhoods near Bonnett Avenue and Highway 2A through the townsite, to properties along the Ponoka County agricultural corridor and rural acreages surrounding the city.",
+    <>
+      <Link
+        href="/cash-for-cars-ponoka"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        We serve all of Ponoka
+      </Link>
+      , from residential neighbourhoods near Bonnett Avenue and Highway 2A
+      through the townsite, to properties along the Ponoka County agricultural
+      corridor and rural acreages surrounding the city.
+    </>,
     "We also serve farm and ranch operations along Highway 2, Highway 2A, Highway 53, Range Road 263, and township roads connecting Ponoka to Wetaskiwin, Lacombe, Rimbey, Bentley, Morningside, Millet, and Bashaw.",
     "Whether your vehicle is in a Ponoka driveway, stored in a Quonset on a county farm, sitting on an acreage near the Battle River, or anywhere in Ponoka County, you tell us where it is and we handle the rest.",
   ],

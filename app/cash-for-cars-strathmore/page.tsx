@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LocationPage, { type LocationPageData } from "../components/location-page";
 
 const data: LocationPageData = {
@@ -13,12 +14,31 @@ const data: LocationPageData = {
   title: "Cash for Cars Strathmore - Same-Day Offers, Free Towing & Cash on Pickup",
   intro: [
     "Strathmore sits along the Trans-Canada Highway 1 corridor east of Calgary in the heart of Wheatland County. It is a practical community, and unwanted vehicle removal should be practical too.",
-    "Maple Cash for Cars offers transparent cash for cars in Strathmore with a real same-day offer, free towing to your door, and cash paid before we leave your property.",
+    <>
+      <Link
+        href="/"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        Maple Cash for Cars
+      </Link>{" "}
+      offers transparent cash for cars in Strathmore with a real same-day offer,
+      free towing to your door, and cash paid before we leave your property.
+    </>,
   ],
   whyTitle: "We serve all of Strathmore",
   whyHeading: "No-fuss pickup across town and Wheatland County",
   whyParagraphs: [
-    "We serve every part of town, from established residential streets near downtown and Wheatland Trail to newer developments like Lakewood, Hillview Estates, Westmount, and Strathaven.",
+    <>
+      <Link
+        href="/cash-for-cars-strathmore"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        We serve Strathmore
+      </Link>
+      , from established residential streets near downtown and Wheatland Trail
+      to newer developments like Lakewood, Hillview Estates, Westmount, and
+      Strathaven.
+    </>,
     "We also serve rural properties throughout Wheatland County, including acreages, farm operations, and properties along Highway 564, Highway 9, Range Road 240, and nearby township roads.",
   ],
   painPoints: [

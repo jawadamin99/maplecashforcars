@@ -180,8 +180,11 @@ export default function ScrapCarRemovalPage() {
                 metal.
               </p>
               <p>
-                Maple Cash for Cars provides scrap car removal in Calgary that
-                brings the offer and the tow truck to you. We assess your
+                Maple Cash for Cars provides{" "}
+                <Link href="/scrap-car-removal" className="font-black text-[var(--brand-red)] underline underline-offset-4">
+                  scrap car removal in Calgary
+                </Link>{" "}
+                that brings the offer and the tow truck to you. We assess your
                 vehicle&apos;s real value, pay you cash on the spot, haul it away
                 for free, and process it through proper recycling channels.
               </p>
@@ -330,9 +333,12 @@ export default function ScrapCarRemovalPage() {
                   legitimate recyclers.
                 </p>
                 <p>
-                  You get fair cash for the scrap value and peace of mind that
-                  your old car is not leaching contaminants into Calgary&apos;s soil
-                  and waterways or sitting in an illegal dump.
+                  <Link href="/" className="font-black text-[var(--brand-red)] underline underline-offset-4">
+                    You get fair cash
+                  </Link>{" "}
+                  for the scrap value and peace of mind that your old car is not
+                  leaching contaminants into Calgary&apos;s soil and waterways or
+                  sitting in an illegal dump.
                 </p>
               </div>
             </div>
@@ -371,9 +377,21 @@ export default function ScrapCarRemovalPage() {
               We collect scrap and end-of-life vehicles city-wide, from Tuscany
               and Bowness in the NW, Saddle Ridge and Bridgeland in the NE,
               Beltline and Signal Hill in the SW, to Mahogany and Forest Lawn in
-              the SE. We also serve Airdrie, Cochrane, Chestermere, Okotoks,
-              Strathmore, Red Deer, and Lethbridge. Free towing applies
-              everywhere we operate.
+              the SE. We also serve{" "}
+              <Link href="/cash-for-cars-airdrie" className="font-black text-[var(--brand-red)] underline underline-offset-4">Airdrie</Link>
+              ,{" "}
+              <Link href="/cash-for-cars-cochrane" className="font-black text-[var(--brand-red)] underline underline-offset-4">Cochrane</Link>
+              ,{" "}
+              <Link href="/cash-for-cars-chestermere" className="font-black text-[var(--brand-red)] underline underline-offset-4">Chestermere</Link>
+              ,{" "}
+              <Link href="/cash-for-cars-okotoks" className="font-black text-[var(--brand-red)] underline underline-offset-4">Okotoks</Link>
+              ,{" "}
+              <Link href="/cash-for-cars-strathmore" className="font-black text-[var(--brand-red)] underline underline-offset-4">Strathmore</Link>
+              ,{" "}
+              <Link href="/cash-for-cars-red-deer" className="font-black text-[var(--brand-red)] underline underline-offset-4">Red Deer</Link>
+              , and{" "}
+              <Link href="/cash-for-cars-lethbridge" className="font-black text-[var(--brand-red)] underline underline-offset-4">Lethbridge</Link>
+              . Free towing applies everywhere we operate.
             </p>
           </div>
         </section>

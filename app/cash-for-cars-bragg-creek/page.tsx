@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LocationPage, { type LocationPageData } from "../components/location-page";
 
 const data: LocationPageData = {
@@ -15,7 +16,18 @@ const data: LocationPageData = {
     "There are very few places in Alberta quite like Bragg Creek. Nestled where the Elbow River meets the Rocky Mountain foothills, tucked inside the Tsuu T'ina Nation boundary and surrounded by Bragg Creek Provincial Park and Kananaskis Country, it is unlike any other community in the Calgary region.",
     "People who live in Bragg Creek made a deliberate choice. They wanted space, nature at the doorstep, a real community, and enough distance from Calgary to feel different.",
     "Those benefits come with the practical realities of rural and semi-rural living, including vehicles that get used hard, wear faster, and eventually need to go.",
-    "If you have an unwanted vehicle sitting on your Bragg Creek property, a truck that's served its purpose, an old SUV that gave up on a back road, or a vehicle deteriorating beside the garage, Maple Cash for Cars can take it off your hands today.",
+    <>
+      If you have an unwanted vehicle sitting on your Bragg Creek property, a
+      truck that&apos;s served its purpose, an old SUV that gave up on a back road,
+      or a vehicle deteriorating beside the garage,{" "}
+      <Link
+        href="/"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        Maple Cash for Cars
+      </Link>{" "}
+      can take it off your hands today.
+    </>,
     "We offer reliable cash for cars in Bragg Creek with a confirmed same-day offer, completely free towing to your property, and cash paid directly to you before we leave.",
   ],
   whyTitle: "We know Bragg Creek",
@@ -118,8 +130,18 @@ const data: LocationPageData = {
     "Get paid on arrival. Our driver confirms the vehicle, completes ownership transfer paperwork on-site, and pays you immediately. Most pickups take 20 to 30 minutes.",
   ],
   areasTitle: "Serving Bragg Creek and the Southwest Foothills",
-  areasText:
-    "We serve Bragg Creek, nearby hamlets, acreage properties, and the southwest Calgary foothills corridor.",
+  areasText: (
+    <>
+      <Link
+        href="/cash-for-cars-bragg-creek"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        We serve Bragg Creek
+      </Link>
+      , nearby hamlets, acreage properties, and the southwest Calgary foothills
+      corridor.
+    </>
+  ),
   areaGroups: [
     {
       title: "Bragg Creek pickup areas",

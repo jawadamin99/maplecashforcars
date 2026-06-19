@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LocationPage, { type LocationPageData } from "../components/location-page";
 
 const data: LocationPageData = {
@@ -15,14 +16,35 @@ const data: LocationPageData = {
     "Brooks sits at the geographic and agricultural heart of southern Alberta, positioned along the Trans-Canada Highway 1 corridor in Newell County, roughly 185 kilometres southeast of Calgary.",
     "The Eastern Irrigation District, the JBS Canada beef processing facility, Lake Newell, and the surrounding agricultural economy make Brooks one of the most economically active mid-sized cities in rural Alberta.",
     "It is a hardworking city. And hardworking cities run on vehicles.",
-    "When those vehicles reach the end of their useful life, whether it is a fleet truck from a local operation, a family SUV that finally gave out, or an old pickup sitting since the last good crop year, Maple Cash for Cars is ready to step in.",
+    <>
+      When those vehicles reach the end of their useful life, whether it is a
+      fleet truck from a local operation, a family SUV that finally gave out, or
+      an old pickup sitting since the last good crop year,{" "}
+      <Link
+        href="/"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        Maple Cash for Cars
+      </Link>{" "}
+      is ready to step in.
+    </>,
     "We offer dependable cash for cars in Brooks with a genuine same-day offer, completely free towing to your location, and cash paid directly into your hands before we leave.",
   ],
   whyTitle: "We come to Brooks",
   whyHeading: "Every neighbourhood and rural property",
   whyParagraphs: [
     "Brooks is a city of around 15,000 people anchored by 2nd Street West, Sutherland Drive, and the commercial corridors connecting residential communities to its agricultural and industrial base.",
-    "We serve every part of Brooks, from established neighbourhoods near Uplands and College Park, to streets around Heritage Lake, properties near Eastbrook, and newer developments expanding along the city's edges.",
+    <>
+      <Link
+        href="/cash-for-cars-brooks"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        We serve every part of Brooks
+      </Link>
+      , from established neighbourhoods near Uplands and College Park, to
+      streets around Heritage Lake, properties near Eastbrook, and newer
+      developments expanding along the city&apos;s edges.
+    </>,
     "We also serve rural properties throughout Newell County, including farm and ranch operations along Highway 1, Highway 36, Highway 539, Range Road 140, and the township roads connecting Brooks to Bassano, Tilley, Duchess, Patricia, Rolling Hills, and Scandia.",
     "If your vehicle is in a Brooks driveway, on a Newell County acreage, parked at an agricultural operation east of the city, or sitting at a storage facility near the Brooks Airport, we come to you.",
   ],

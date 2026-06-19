@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LocationPage, { type LocationPageData } from "../components/location-page";
 
 const data: LocationPageData = {
@@ -15,14 +16,34 @@ const data: LocationPageData = {
     "There's something genuinely special about living in Black Diamond. Nestled in the Sheep River Valley at the edge of the Alberta foothills, with Turner Valley just across the river and the Rocky Mountains visible on a clear day from almost anywhere in town, it is the kind of place people discover and never want to leave.",
     "Small enough to know your neighbours. Big enough to have everything you need. And far enough from Calgary to feel like you actually live somewhere, not just sleep somewhere.",
     "Even in a town this peaceful, practical problems have a way of showing up. One of the most common ones we hear from Black Diamond residents is an unwanted vehicle that's been sitting too long, taking up driveway space, collecting rust, or nagging at the back of your mind every time you pull in after work.",
-    "Maple Cash for Cars makes that problem disappear with a real same-day offer, completely free towing to your exact location, and cash paid directly into your hands before our truck leaves your property.",
+    <>
+      <Link
+        href="/"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        Maple Cash for Cars
+      </Link>{" "}
+      makes that problem disappear with a real same-day offer, completely free
+      towing to your exact location, and cash paid directly into your hands
+      before our truck leaves your property.
+    </>,
     "No complicated process, no strangers showing up to test drive your vehicle on Highway 7, and no waiting around for a buyer who may never come.",
   ],
   whyTitle: "We come to you",
   whyHeading: "Every corner of Black Diamond and beyond",
   whyParagraphs: [
     "Black Diamond sits in the heart of Foothills County, about 65 kilometres southwest of Calgary along Highway 7 and Highway 22. It is a town of around 3,000 people where the pace is slower, the landscapes are dramatic, and the community runs deep.",
-    "We serve all of Black Diamond, from the older character homes near Centre Avenue and Diamond Avenue in the historic core, to properties along the Sheep River, and the residential streets spreading out toward the town's quieter edges.",
+    <>
+      <Link
+        href="/cash-for-cars-black-diamond"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        We serve all of Black Diamond
+      </Link>
+      , from the older character homes near Centre Avenue and Diamond Avenue in
+      the historic core, to properties along the Sheep River, and the
+      residential streets spreading out toward the town&apos;s quieter edges.
+    </>,
     "We also serve Turner Valley just across the river, and rural properties throughout Foothills County along Highway 22, Highway 549, Township Road 194, and the range roads connecting Black Diamond to Millarville, Longview, Priddis, and Bragg Creek.",
     "You tell us where the vehicle is, town property, rural acreage, or anywhere in between, and we come to you. No transport arrangements and no logistics headaches.",
   ],

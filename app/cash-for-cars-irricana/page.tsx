@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LocationPage, { type LocationPageData } from "../components/location-page";
 
 const data: LocationPageData = {
@@ -15,14 +16,35 @@ const data: LocationPageData = {
     "Irricana is one of those small Alberta towns that flies under the radar, and that is exactly how most residents like it.",
     "Tucked into the rolling prairie northeast of Calgary in Rocky View County, just off Highway 9 and close to the Highway 72 corridor, Irricana is a quiet agricultural community of around 1,500 people where life moves at a sensible pace and neighbours still know each other by name.",
     "It is the kind of place where people fix things when they can, live practically when they must, and do not have time for services that waste time or pad bills with hidden charges.",
-    "If an old vehicle has finally reached the end of its useful life, whether it is a truck that gave everything it had, a car that is not worth fixing, or something sitting on the property too long, Maple Cash for Cars makes it simple.",
+    <>
+      If an old vehicle has finally reached the end of its useful life, whether
+      it is a truck that gave everything it had, a car that is not worth fixing,
+      or something sitting on the property too long,{" "}
+      <Link
+        href="/"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        Maple Cash for Cars
+      </Link>{" "}
+      makes it simple.
+    </>,
     "We offer reliable cash for cars in Irricana with a real same-day offer, completely free towing to your exact location, and cash paid directly into your hands before we leave your property.",
   ],
   whyTitle: "We come to Irricana",
   whyHeading: "Town properties and rural acreages alike",
   whyParagraphs: [
     "Irricana sits about 55 kilometres northeast of Calgary, positioned at the junction of Highway 9 and Township Road 280, at the heart of a broad agricultural landscape spanning Rocky View County and adjacent Wheatland County areas.",
-    "We serve Irricana fully: the residential streets through the townsite, acreage properties surrounding the community, and rural farm and ranch operations throughout the broader area.",
+    <>
+      <Link
+        href="/cash-for-cars-irricana"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        We serve Irricana
+      </Link>{" "}
+      fully: the residential streets through the townsite, acreage properties
+      surrounding the community, and rural farm and ranch operations throughout
+      the broader area.
+    </>,
     "We also serve nearby communities connected to Irricana, including Beiseker, Crossfield, Airdrie, Strathmore, Rockyford, and properties along Highway 9, Highway 72, Highway 564, and Range Road 274.",
     "Whether the vehicle is in a town driveway, parked at a farm operation east of town, sitting in a Quonset along Range Road 270, or stored on an acreage near the Bow River corridor, you tell us where it is and we handle everything.",
   ],

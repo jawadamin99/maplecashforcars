@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LocationPage, { type LocationPageData } from "../components/location-page";
 
 const data: LocationPageData = {
@@ -16,13 +17,32 @@ const data: LocationPageData = {
     "Situated along the South Saskatchewan River in the southeast corner of Alberta, just kilometres from the Saskatchewan border, Medicine Hat is a city of around 65,000 people that has always operated on its own terms.",
     "It has more hours of sunshine than almost any other Canadian city, one of the lowest tax burdens in the country, and a manufacturing and energy economy that gives it resilience most cities its size do not possess.",
     "Residents here value straight talk, practical solutions, and services that deliver what they promise without padding the bill.",
-    "If you have an unwanted vehicle sitting on your Medicine Hat property, Maple Cash for Cars is ready to solve that problem today with a genuine same-day offer, completely free towing, and cash in your hand before our driver leaves.",
+    <>
+      If you have an unwanted vehicle sitting on your Medicine Hat property,{" "}
+      <Link
+        href="/"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        Maple Cash for Cars
+      </Link>{" "}
+      is ready to solve that problem today with a genuine same-day offer,
+      completely free towing, and cash in your hand before our driver leaves.
+    </>,
   ],
   whyTitle: "We serve all of Medicine Hat",
   whyHeading: "Every neighbourhood and every corner",
   whyParagraphs: [
     "Medicine Hat stretches across both sides of the South Saskatchewan River, connected by bridges and divided into distinct communities that give the city a layered, neighbourhood-by-neighbourhood character.",
-    "We serve all of it, from Ross Glen, Riverside, Crescent Heights, and Norwood to newer developments in Southridge, Crestwood, Vista, and Ranchlands.",
+    <>
+      <Link
+        href="/cash-for-cars-medicine-hat"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        We serve all of Medicine Hat
+      </Link>
+      , from Ross Glen, Riverside, Crescent Heights, and Norwood to newer
+      developments in Southridge, Crestwood, Vista, and Ranchlands.
+    </>,
     "We also serve the surrounding Cypress County rural area, including acreage and agricultural properties along Highway 1, Highway 3, Highway 41, Highway 523, and the range road network connecting Medicine Hat to Redcliff, Dunmore, Irvine, Ralston, Seven Persons, and the Cypress Hills corridor.",
     "Whether your vehicle is in a Southridge driveway, a Medicine Hat Industrial Park property, a rural acreage near Cypress County, or anywhere else in or around the city, you tell us where it is and we handle everything.",
   ],

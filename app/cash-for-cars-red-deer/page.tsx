@@ -134,7 +134,15 @@ const detailSections: CityDetailSection[] = [
     paragraphs: [
       "Red Deer sits right at the centre of the province, midway between Calgary and Edmonton on the Queen Elizabeth II Highway (Highway 2). That central-Alberta location is great for commuting - and tough on vehicles.",
       "Long highway runs on the QEII and Highway 11 (David Thompson Highway), road salt through five-month winters, and freeze-thaw cycles take a real toll. Many of the cars we buy here are write-offs, high-kilometre trade-ins the dealer wouldn't touch, or vehicles that simply cost more to repair than they're worth.",
-      "We make selling your vehicle in Red Deer easy: no classifieds, no flaky buyers, and no waiting weeks for payment.",
+      <>
+        <Link
+          href="/cash-for-cars-red-deer"
+          className="font-black text-[var(--brand-red)] underline underline-offset-4"
+        >
+          We make selling your vehicle in Red Deer
+        </Link>{" "}
+        easy: no classifieds, no flaky buyers, and no waiting weeks for payment.
+      </>,
     ],
     bullets: [
       "No more lowballers and no-shows. Private buyers on Kijiji and Facebook Marketplace cancel, haggle, and waste your time. We give one clear offer and stick to it.",
@@ -220,10 +228,16 @@ export default function CashForCarsRedDeerPage() {
               <p className="mt-5 text-lg leading-8 text-slate-700">
                 Selling a vehicle in Red Deer shouldn&apos;t mean weeks of waiting,
                 endless Marketplace messages, or no-shows in a Tim Hortons
-                parking lot off Gaetz Avenue. Maple Cash for Cars makes it
-                simple: tell us about your vehicle, get a fair offer the same
-                day, and we&apos;ll come to you anywhere in Red Deer with free towing
-                and cash on pickup.
+                parking lot off Gaetz Avenue.{" "}
+                <Link
+                  href="/"
+                  className="font-black text-[var(--brand-red)] underline underline-offset-4"
+                >
+                  Maple Cash for Cars
+                </Link>{" "}
+                makes it simple: tell us about your vehicle, get a fair offer
+                the same day, and we&apos;ll come to you anywhere in Red Deer with
+                free towing and cash on pickup.
               </p>
               <p className="mt-4 text-lg leading-8 text-slate-700">
                 Whether your car is running, broken down, rusted out from

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LocationPage, { type LocationPageData } from "../components/location-page";
 
 const data: LocationPageData = {
@@ -13,7 +14,16 @@ const data: LocationPageData = {
   title: "Cash for Cars Okotoks - Fast, Fair & Hassle-Free Vehicle Sales",
   intro: [
     "Okotoks has grown into one of Alberta's most thriving mid-sized towns, and if you have a vehicle you no longer need, there is a better option than private listings or dealership trade-in deductions.",
-    "Maple Cash for Cars offers transparent cash for cars in Okotoks: a real same-day offer, free towing straight to your door, and cash in your hand before we leave.",
+    <>
+      <Link
+        href="/"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        Maple Cash for Cars
+      </Link>{" "}
+      offers transparent cash for cars in Okotoks: a real same-day offer, free
+      towing straight to your door, and cash in your hand before we leave.
+    </>,
   ],
   whyTitle: "Okotoks residents, we come to your door",
   whyHeading: "Fast pickup across town and acreage properties",
@@ -90,7 +100,18 @@ const data: LocationPageData = {
       paragraphs: [
         "Okotoks has a solid community feel, but the private buyer market is still limited, especially for vehicles that are not in great condition.",
         "Serious buyers want clean, well-maintained vehicles. Anything with high mileage, mechanical issues, cosmetic damage, or age sees private interest drop off fast.",
-        "With Maple Cash for Cars, one call, one offer, one pickup, and the transaction is complete. For most Okotoks sellers, especially with anything less than pristine, we deliver more value when you account for your time.",
+        <>
+          With Maple Cash for Cars, one call, one offer, one pickup, and the
+          transaction is complete. For most Okotoks sellers, especially with
+          anything less than pristine,{" "}
+          <Link
+            href="/cash-for-cars-okotoks"
+            className="font-black text-[var(--brand-red)] underline underline-offset-4"
+          >
+            we deliver more value
+          </Link>{" "}
+          when you account for your time.
+        </>,
       ],
     },
   ],
@@ -102,8 +123,18 @@ const data: LocationPageData = {
     "Get paid when we arrive after a quick visual confirmation and ownership paperwork.",
   ],
   areasTitle: "Serving Okotoks and the Foothills Region",
-  areasText:
-    "We serve Okotoks and the surrounding Foothills County area, including rural properties and communities south of Calgary.",
+  areasText: (
+    <>
+      <Link
+        href="/cash-for-cars-okotoks"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        We serve Okotoks
+      </Link>{" "}
+      and the surrounding Foothills County area, including rural properties and
+      communities south of Calgary.
+    </>
+  ),
   areaGroups: [
     {
       title: "Okotoks neighbourhoods",

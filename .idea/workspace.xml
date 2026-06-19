@@ -4,15 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab2a8dd3-3d6e-4c29-ad58-5acc4a200d9d" name="Changes" comment="Added location pages">
+    <list default="true" id="ab2a8dd3-3d6e-4c29-ad58-5acc4a200d9d" name="Changes" comment="new pages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/site-footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/site-footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/site-header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/site-header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-banff/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-banff/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-black-diamond/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-black-diamond/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-bragg-creek/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-bragg-creek/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-brooks/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-brooks/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-canmore/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-canmore/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-chestermere/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-chestermere/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-cochrane/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-cochrane/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-diamond-valley/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-diamond-valley/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-didsbury/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-didsbury/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-high-river/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-high-river/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-irricana/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-irricana/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-lethbridge/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-lethbridge/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-medicine-hat/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-medicine-hat/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-nanton/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-nanton/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-okotoks/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-okotoks/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-olds/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-olds/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-cars-red-deer/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-cars-red-deer/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cash-for-scrap-cars/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-scrap-cars/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/city-detail-sections.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/city-detail-sections.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/location-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/location-page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/junk-car-removal/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/junk-car-removal/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/sitemap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/sitemap.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/llms.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/llms.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/scrap-car-removal/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/scrap-car-removal/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +37,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="96" />
+    <option name="cachedIndexableFilesCount" value="101" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,6 +57,9 @@
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -120,7 +140,8 @@
       <workItem from="1781383824875" duration="65000" />
       <workItem from="1781384166450" duration="172000" />
       <workItem from="1781519419270" duration="2338000" />
-      <workItem from="1781643036503" duration="4107000" />
+      <workItem from="1781643036503" duration="5351000" />
+      <workItem from="1781903214930" duration="1322000" />
     </task>
     <task id="LOCAL-00001" summary="consent removed.">
       <option name="closed" value="true" />
@@ -194,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781646203768</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="new pages">
+      <option name="closed" value="true" />
+      <created>1781735118836</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1781735118836</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +232,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="consent removed." />
     <MESSAGE value="Added location pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added location pages" />
+    <MESSAGE value="new pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="new pages" />
   </component>
 </project>

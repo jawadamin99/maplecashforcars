@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LocationPage, { type LocationPageData } from "../components/location-page";
 
 const data: LocationPageData = {
@@ -15,7 +16,18 @@ const data: LocationPageData = {
     "Living in Canmore means you're surrounded by some of the most breathtaking scenery in Canada. The Three Sisters, Ha Ling Peak, the Bow River winding through town - it's a place people move to on purpose, and once they're here, they tend to stay.",
     "But even in paradise, life gets cluttered. And sometimes that clutter comes in the form of a vehicle sitting in your driveway that you no longer want, need, or can afford to fix.",
     "Maybe it's a truck that took one too many trips up Spray Lakes Road. Maybe it's an old SUV that served you well through a dozen Banff winters but finally gave up. Maybe you just downsized or upgraded and the old vehicle is simply in the way.",
-    "Whatever the story, Maple Cash for Cars is here to give it a clean ending. We offer the fastest, fairest cash for cars Canmore - with free towing, same-day offers, and payment in your hand before we leave your driveway.",
+    <>
+      Whatever the story,{" "}
+      <Link
+        href="/"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        Maple Cash for Cars
+      </Link>{" "}
+      is here to give it a clean ending. We offer the fastest, fairest cash for
+      cars Canmore - with free towing, same-day offers, and payment in your hand
+      before we leave your driveway.
+    </>,
   ],
   whyTitle: "We know Canmore",
   whyHeading: "Mountain-town pickup without the hassle",
@@ -106,8 +118,18 @@ const data: LocationPageData = {
     "Get paid when we arrive. Our driver inspects the vehicle, completes paperwork, and pays you immediately.",
   ],
   areasTitle: "Serving Canmore and the Entire Bow Valley Corridor",
-  areasText:
-    "We serve Canmore itself and the full Bow Valley corridor, including nearby communities and properties along Highway 1 and Highway 1A.",
+  areasText: (
+    <>
+      <Link
+        href="/cash-for-cars-canmore"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        We serve Canmore
+      </Link>{" "}
+      itself and the full Bow Valley corridor, including nearby communities and
+      properties along Highway 1 and Highway 1A.
+    </>
+  ),
   areaGroups: [
     {
       title: "Canmore neighbourhoods",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LocationPage, { type LocationPageData } from "../components/location-page";
 
 const data: LocationPageData = {
@@ -16,13 +17,34 @@ const data: LocationPageData = {
     "Situated along the Queen Elizabeth II Highway corridor in Mountain View County, about 75 kilometres north of Calgary, it sits at a comfortable distance from the city, close enough to be practical and far enough to feel genuinely different.",
     "It is a community of around 5,500 people built on agriculture, small business, and the tight-knit neighbourhood fabric that defines life in rural Alberta.",
     "The Didsbury and District Agricultural Society, the annual Didsbury Rodeo and Fair, the historic Didsbury Museum, and community anchors along 20th Street are pillars of a town that moves at its own pace and holds its own standards.",
-    "If you have an unwanted vehicle on your property, Maple Cash for Cars offers dependable cash for cars in Didsbury with a real same-day offer, completely free towing to your exact location, and cash paid directly to you before we leave.",
+    <>
+      If you have an unwanted vehicle on your property,{" "}
+      <Link
+        href="/"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        Maple Cash for Cars
+      </Link>{" "}
+      offers dependable cash for cars in Didsbury with a real same-day offer,
+      completely free towing to your exact location, and cash paid directly to
+      you before we leave.
+    </>,
   ],
   whyTitle: "We serve all of Didsbury",
   whyHeading: "Town properties and rural acreages",
   whyParagraphs: [
     "Didsbury sits at the junction of Highway 2 and Highway 582, making it one of the most accessible small cities in the Calgary-to-Red Deer corridor.",
-    "We serve all of Didsbury, from established residential streets near 20th Avenue and Elkton Drive in the town core, to newer developments along the edges, and properties near the Didsbury Airport and surrounding agricultural areas.",
+    <>
+      <Link
+        href="/cash-for-cars-didsbury"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        We serve all of Didsbury
+      </Link>
+      , from established residential streets near 20th Avenue and Elkton Drive
+      in the town core, to newer developments along the edges, and properties
+      near the Didsbury Airport and surrounding agricultural areas.
+    </>,
     "We also serve rural properties throughout Mountain View County, including farm and ranch operations along Highway 2, Highway 27, Highway 582, Township Road 320, and range roads connecting Didsbury to Carstairs, Olds, Crossfield, Sundre, Cremona, Water Valley, and Bergen.",
     "Whether your vehicle is in a Didsbury driveway, stored in a Quonset on a Mountain View County grain farm, parked on an acreage near Rosebud River, or sitting in an outbuilding anywhere nearby, you tell us where it is and we handle everything.",
   ],

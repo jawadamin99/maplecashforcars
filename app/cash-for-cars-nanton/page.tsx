@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LocationPage, { type LocationPageData } from "../components/location-page";
 
 const data: LocationPageData = {
@@ -16,13 +17,34 @@ const data: LocationPageData = {
     "Sitting along the Queen Elizabeth II Highway corridor about 75 kilometres south of Calgary in Willow Creek No. 26 Municipal District, it is a community of around 2,500 people with remarkable character for its size.",
     "The Nanton Lancaster Society Air Museum, famous Nanton candy stores, and the wide open skies of the Porcupine Hills foothills give the town genuine identity.",
     "It is also a working agricultural and ranching community. The vehicles here tend to be trucks, and the trucks tend to get used.",
-    "When those vehicles reach the end of their useful life, Maple Cash for Cars delivers dependable cash for cars in Nanton with a real same-day offer, free towing to your location, and cash paid before our truck leaves your property.",
+    <>
+      When those vehicles reach the end of their useful life,{" "}
+      <Link
+        href="/"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        Maple Cash for Cars
+      </Link>{" "}
+      delivers dependable cash for cars in Nanton with a real same-day offer,
+      free towing to your location, and cash paid before our truck leaves your
+      property.
+    </>,
   ],
   whyTitle: "We come to Nanton",
   whyHeading: "Every property, every road",
   whyParagraphs: [
     "Nanton is positioned directly along Highway 2, the main artery connecting Calgary to Lethbridge, making it accessible and connected to the broader southern Alberta region.",
-    "We serve all of Nanton, from residential streets near 19th Street and 22nd Avenue to properties along the Nanton Airport corridor and the agricultural areas surrounding the townsite.",
+    <>
+      <Link
+        href="/cash-for-cars-nanton"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        We serve all of Nanton
+      </Link>
+      , from residential streets near 19th Street and 22nd Avenue to properties
+      along the Nanton Airport corridor and the agricultural areas surrounding
+      the townsite.
+    </>,
     "We also serve rural properties throughout Willow Creek No. 26 Municipal District and the surrounding region, including farm and ranch operations along Highway 2, Highway 533, Highway 520, Range Road 284, and township roads connecting Nanton to Stavely, Claresholm, Vulcan, High River, Black Diamond, and Cayley.",
     "Whether the vehicle is in a residential driveway, a ranch Quonset west toward the Porcupine Hills, an acreage near Chain Lakes Provincial Park, or any rural property in the Willow Creek district, you tell us where it is and we come to you.",
   ],

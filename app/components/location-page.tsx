@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import CityLeadForm from "./city-lead-form";
 import CityPageJsonLd from "./city-page-json-ld";
 import SiteFooter from "./site-footer";
@@ -30,10 +31,10 @@ export type LocationPageData = {
   }>;
   eyebrow: string;
   title: string;
-  intro: string[];
-  whyTitle: string;
+  intro: ReactNode[];
+  whyTitle: ReactNode;
   whyHeading: string;
-  whyParagraphs: string[];
+  whyParagraphs: ReactNode[];
   painPoints: string[];
   services: Array<{
     title: string;
@@ -48,7 +49,7 @@ export type LocationPageData = {
   whatWeBuy: string[];
   extraSections?: Array<{
     title: string;
-    paragraphs?: string[];
+    paragraphs?: ReactNode[];
     bullets?: string[];
     table?: {
       headers: string[];
@@ -58,7 +59,7 @@ export type LocationPageData = {
   processTitle: string;
   steps: string[];
   areasTitle: string;
-  areasText: string;
+  areasText: ReactNode;
   areaGroups: Array<{
     title: string;
     tone: "gold" | "green";
@@ -84,7 +85,7 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
       <CityPageJsonLd
         city={data.city}
         title={data.title}
-        description={data.intro[0]}
+        description={typeof data.intro[0] === "string" ? data.intro[0] : data.title}
         faqs={data.faqs}
       />
       <div className="border-b border-slate-200 bg-white px-4 py-4 md:px-8 lg:px-12">
@@ -103,8 +104,8 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
               <h1 className="mt-3 text-4xl font-black leading-tight text-slate-950 md:text-5xl">
                 {data.title}
               </h1>
-              {data.intro.map((paragraph) => (
-                <p key={paragraph} className="mt-5 text-lg leading-8 text-slate-700">
+              {data.intro.map((paragraph, paragraphIndex) => (
+                <p key={paragraphIndex} className="mt-5 text-lg leading-8 text-slate-700">
                   {paragraph}
                 </p>
               ))}
@@ -133,8 +134,8 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
               </h2>
             </div>
             <div className="space-y-5 text-lg leading-8 text-slate-700">
-              {data.whyParagraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+              {data.whyParagraphs.map((paragraph, paragraphIndex) => (
+                <p key={paragraphIndex}>{paragraph}</p>
               ))}
               <ul className="grid gap-3 text-base font-semibold text-slate-800 md:grid-cols-2">
                 {data.painPoints.map((point) => (

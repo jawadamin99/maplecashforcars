@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LocationPage, { type LocationPageData } from "../components/location-page";
 
 const data: LocationPageData = {
@@ -14,7 +15,18 @@ const data: LocationPageData = {
   intro: [
     "High River is a town that knows resilience. From its roots as a ranching and agricultural hub along the Highwood River to rebuilding stronger after the devastating 2013 Alberta floods, this community has always faced challenges head-on.",
     "It is a town of hardworking people who do not have time for complicated processes or companies that waste their time.",
-    "If you have an unwanted vehicle sitting on your property, whether it is a truck that finally gave up, a flood-damaged car you never got around to dealing with, or a family SUV you have replaced, Maple Cash for Cars is ready to take it off your hands today.",
+    <>
+      If you have an unwanted vehicle sitting on your property, whether it is a
+      truck that finally gave up, a flood-damaged car you never got around to
+      dealing with, or a family SUV you have replaced,{" "}
+      <Link
+        href="/"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        Maple Cash for Cars
+      </Link>{" "}
+      is ready to take it off your hands today.
+    </>,
     "We offer straightforward cash for cars in High River, with a fair same-day offer, completely free towing, and cash paid directly to you before our truck leaves your property.",
     "No waiting. No nonsense. Just a clean, fast transaction that respects your time.",
   ],
@@ -22,7 +34,18 @@ const data: LocationPageData = {
   whyHeading: "Every corner of town and Foothills County",
   whyParagraphs: [
     "High River sits at the heart of Foothills County, about 60 kilometres south of Calgary along Highway 2. It is a town of around 15,000 people with a strong sense of identity.",
-    "From the storefronts along Centre Street and MacLeod Trail to residential neighbourhoods like Montrose, Emerson Lake, Hampton Hills, Sunrise Meadows, and Happy Trails, we serve every neighbourhood in High River.",
+    <>
+      From the storefronts along Centre Street and MacLeod Trail to residential
+      neighbourhoods like Montrose, Emerson Lake, Hampton Hills, Sunrise
+      Meadows, and Happy Trails,{" "}
+      <Link
+        href="/cash-for-cars-high-river"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        we serve every neighbourhood in High River
+      </Link>
+      .
+    </>,
     "We also serve rural acreage properties throughout the surrounding Foothills County area, because in this part of Alberta, not every vehicle is parked on a tidy suburban driveway.",
     "Whether your vehicle is in a garage off 12 Avenue SE, sitting in a field on an acreage outside town, or parked at a storage facility near Highway 2A, we come to you. You do not arrange transport. You do not figure out logistics. That is our job.",
   ],

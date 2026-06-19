@@ -1,8 +1,9 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 
 export type CityDetailSection = {
   title: string;
-  paragraphs?: string[];
+  paragraphs?: ReactNode[];
   bullets?: string[];
   table?: {
     headers: string[];
@@ -40,8 +41,8 @@ export default function CityDetailSections({ sections, images }: CityDetailSecti
               <h2 className="text-3xl font-black text-slate-950">{section.title}</h2>
               {section.paragraphs ? (
                 <div className="mt-5 space-y-4 text-lg leading-8 text-slate-700">
-                  {section.paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
+                  {section.paragraphs.map((paragraph, paragraphIndex) => (
+                    <p key={paragraphIndex}>{paragraph}</p>
                   ))}
                 </div>
               ) : null}

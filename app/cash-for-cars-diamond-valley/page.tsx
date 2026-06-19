@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import LocationPage, { type LocationPageData } from "../components/location-page";
 
 const data: LocationPageData = {
@@ -14,7 +15,18 @@ const data: LocationPageData = {
   intro: [
     "Diamond Valley is one of Alberta's newest towns and one of its most interesting stories. Formed in 2023 through the amalgamation of Black Diamond and Turner Valley, Diamond Valley brings together two historic foothills communities into a single municipality.",
     "Its identity is rooted in the Sheep River Valley, the rhythms of agricultural and ranch life, and the kind of tight-knit community that is increasingly rare in modern Alberta.",
-    "If you have an unwanted vehicle sitting on your property, a truck that's finally given up, an old SUV you've replaced, or a non-running vehicle occupying space on your acreage, Maple Cash for Cars is ready to solve that problem today.",
+    <>
+      If you have an unwanted vehicle sitting on your property, a truck
+      that&apos;s finally given up, an old SUV you&apos;ve replaced, or a
+      non-running vehicle occupying space on your acreage,{" "}
+      <Link
+        href="/"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        Maple Cash for Cars
+      </Link>{" "}
+      is ready to solve that problem today.
+    </>,
     "We offer straightforward cash for cars in Diamond Valley with a confirmed same-day offer, completely free towing to your exact location, and cash in your hand before our truck leaves your property.",
     "No runaround. No city-company attitude. Just a clean, fast, fair transaction that respects your time and your community.",
   ],
@@ -22,7 +34,17 @@ const data: LocationPageData = {
   whyHeading: "Both sides of the Sheep River",
   whyParagraphs: [
     "Diamond Valley spans the communities formerly known as Black Diamond and Turner Valley, connected across the Sheep River by Highway 7 and now united under a single municipal identity.",
-    "We serve the entire town, from the historic streets of the former Black Diamond core near Centre Avenue and Diamond Avenue, to the Turner Valley side along Main Street and Sunset Boulevard, and everything in between.",
+    <>
+      <Link
+        href="/cash-for-cars-diamond-valley"
+        className="font-black text-[var(--brand-red)] underline underline-offset-4"
+      >
+        We serve the entire town
+      </Link>
+      , from the historic streets of the former Black Diamond core near Centre
+      Avenue and Diamond Avenue, to the Turner Valley side along Main Street and
+      Sunset Boulevard, and everything in between.
+    </>,
     "We also serve rural properties and acreages throughout surrounding Foothills County along Highway 22, Highway 549, Highway 762, Township Road 194, and the range roads connecting Diamond Valley to Millarville, Longview, Priddis, Bragg Creek, and Nanton.",
     "Whether your vehicle is parked in a residential driveway, sitting on a ranch property outside the municipal boundary, or stored at a rural acreage along the Sheep River corridor, we come to you.",
   ],
