@@ -52,6 +52,17 @@ const faqs = [
   },
 ];
 
+type ServiceCard = {
+  title: string;
+  image: string;
+  alt: string;
+  text: string;
+  tone: "red" | "green";
+  linkText?: string;
+  linkHref?: string;
+  textAfter?: string;
+};
+
 const services = [
   {
     title: "Cash for Cars Calgary",
@@ -87,7 +98,7 @@ const services = [
     text: "Calgary is a big city, but the tow is always on us, from a Beltline parkade to an acreage past Tuscany.",
     tone: "green",
   },
-];
+] satisfies ServiceCard[];
 
 const calgaryReasons = [
   {
@@ -472,7 +483,7 @@ export default function Home() {
                   </h3>
                   <p className="mt-3 text-slate-700">
                     {service.text}
-                    {"linkText" in service ? (
+                    {service.linkText && service.linkHref ? (
                       <Link href={service.linkHref} className="font-black text-[var(--brand-red)] underline underline-offset-4">
                         {service.linkText}
                       </Link>

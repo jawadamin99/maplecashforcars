@@ -211,8 +211,8 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
                   {section.title}
                 </h2>
                 <div className="mt-5 space-y-4 text-lg leading-8 text-slate-700">
-                  {section.paragraphs?.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
+                  {section.paragraphs?.map((paragraph, paragraphIndex) => (
+                    <p key={paragraphIndex}>{paragraph}</p>
                   ))}
                 </div>
                 {section.bullets ? (
