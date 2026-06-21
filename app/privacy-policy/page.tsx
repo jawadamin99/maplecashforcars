@@ -42,7 +42,7 @@ const sections = [
           </li>
           <li>
             <strong>Vehicle Data:</strong> Year, make, model, VIN, mileage, and
-            photos.
+            condition details.
           </li>
         </ul>
       </>

@@ -244,7 +244,7 @@ export default function JunkCarRemovalPage() {
             </h2>
             <div className="process-grid mt-10">
               {[
-                "Tell us about the car. Send your name, contact info, and the vehicle's make, model, year, and condition. A couple of photos help us quote it accurately.",
+                "Tell us about the car. Send your name, contact info, and the vehicle's make, model, year, and condition.",
                 "Get a free cash offer. We send a transparent quote the same day, usually within a few hours, with no hidden towing charges.",
                 "Pick a pickup time. Choose a slot that suits you, anywhere in Calgary. We come to the car; you do not move it.",
                 "Get paid on pickup. We complete the paperwork, load the vehicle, and hand you cash on the spot. Gone in a single visit.",

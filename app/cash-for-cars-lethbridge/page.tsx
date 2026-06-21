@@ -36,7 +36,7 @@ const whatWeBuy = [
 ];
 
 const steps = [
-  "Share your vehicle details. Call us or fill out the form with your name, contact info, vehicle make/model, and current condition. You can upload up to three photos for a more accurate quote.",
+  "Share your vehicle details. Call us or fill out the form with your name, contact info, vehicle make/model, and current condition.",
   "Get a fair offer. Our team sends a clear cash offer the same day - usually within a few hours - with no hidden charges and no towing fees.",
   "Schedule your pickup. Choose a time that works for you anywhere in Lethbridge or the surrounding communities. We come to you.",
   "Get paid on pickup. We inspect the vehicle, handle the paperwork, and pay you immediately when we collect the car. Done.",

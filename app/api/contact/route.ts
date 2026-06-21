@@ -33,22 +33,6 @@ export async function POST(req: Request) {
       },
     });
 
-    const images = formData.getAll("images");
-    const attachments = await Promise.all(
-      images.map(async (file) => {
-        if (!(file instanceof File)) return null;
-        const arrayBuffer = await file.arrayBuffer();
-        return {
-          filename: file.name,
-          content: Buffer.from(arrayBuffer),
-          contentType: file.type,
-        };
-      })
-    );
-    const imageAttachments = attachments.filter(
-      (item): item is NonNullable<(typeof attachments)[number]> => item !== null
-    );
-
     const html = `
       <div style="font-family: Arial, Helvetica, sans-serif; background:#f4f6f8; padding:24px;">
         <div style="max-width:640px; margin:0 auto; background:#ffffff; border-radius:12px; overflow:hidden; border:1px solid #e5e7eb;">
@@ -104,7 +88,6 @@ export async function POST(req: Request) {
         `Page URL: ${pageUrl || "-"}`,
       ].join("\n"),
       html,
-      attachments: imageAttachments,
     });
 
     return new Response(JSON.stringify({ ok: true }), { status: 200 });

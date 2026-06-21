@@ -9,7 +9,7 @@ import SiteHeader from "./components/site-header";
 const steps = [
   {
     title: "Share Vehicle Details",
-    text: "Tell us your name, contact info, and your vehicle's make, model, year, and condition. Add a few photos if you can; it sharpens the offer.",
+    text: "Tell us your name, contact info, and your vehicle's make, model, year, and condition.",
   },
   {
     title: "Get a Fair Offer",
@@ -45,10 +45,6 @@ const faqs = [
   {
     q: "What documents do I need to sell my vehicle?",
     a: "A valid photo ID and proof of ownership. We help you complete the bill of sale on pickup.",
-  },
-  {
-    q: "Can I upload photos before pickup?",
-    a: "Yes. Attaching photos in the form helps us give you a more accurate initial offer.",
   },
 ];
 
@@ -168,67 +164,8 @@ const areas = [
 ];
 
 export default function Home() {
-  const [files, setFiles] = useState<File[]>([]);
-  const [fileError, setFileError] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
-
-  const validateFiles = (
-    fileList: FileList | null,
-    existing: File[] = []
-  ): { ok: boolean; files: File[]; warning?: string; error?: string } => {
-    const maxFiles = 3;
-    const maxSize = 5 * 1024 * 1024;
-    const incoming = Array.from(fileList || []) as File[];
-
-    if (incoming.length === 0) {
-      return { ok: true, files: [] };
-    }
-
-    const availableSlots = Math.max(0, maxFiles - existing.length);
-    const clipped = incoming.slice(0, availableSlots);
-
-    for (const f of clipped) {
-      if (!f.type.startsWith("image/")) {
-        return { ok: false, error: "Only image files are allowed.", files: [] };
-      }
-      if (f.size > maxSize) {
-        return { ok: false, error: "Each image must be 5MB or less.", files: [] };
-      }
-    }
-
-    const trimmed = incoming.length > clipped.length;
-    return {
-      ok: true,
-      files: clipped,
-      warning: trimmed ? "Only 3 images are allowed. Extra files were ignored." : "",
-    };
-  };
-
-  const handleFiles = (fileList: FileList | null) => {
-    const result = validateFiles(fileList, files);
-    if (!result.ok) {
-      setFileError(result.error ?? "");
-      return;
-    }
-    setFileError(result.warning || "");
-    setFiles((prev) => [...prev, ...result.files]);
-  };
-
-  const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    handleFiles(e.dataTransfer.files);
-  };
-
-  const onDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-  };
-
-  const removeFile = (index: number) => {
-    const next = files.filter((_, i) => i !== index);
-    setFiles(next);
-  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -239,7 +176,6 @@ export default function Home() {
     const form = e.currentTarget;
     const data = new FormData(form);
     data.append("pageUrl", window.location.href);
-    files.forEach((file) => data.append("images", file));
 
     try {
       const res = await fetch("/api/contact", {
@@ -255,7 +191,6 @@ export default function Home() {
         }
       }
       form.reset();
-      setFiles([]);
     } catch {
       setSubmitMessage("Something went wrong. Please try again.");
     } finally {
@@ -362,49 +297,6 @@ export default function Home() {
               <div className="mt-4">
                 <label className="mb-1 block text-sm font-semibold text-slate-700" htmlFor="message">Message</label>
                 <textarea id="message" name="message" rows={3} className="field" placeholder="Vehicle condition, mileage, pickup area, reason to sell" />
-              </div>
-
-              <div className="mt-4">
-                <label className="mb-1 block text-sm font-semibold text-slate-700" htmlFor="photo">Photo Upload (Optional)</label>
-                <div
-                  className="dropzone"
-                  onDrop={onDrop}
-                  onDragOver={onDragOver}
-                >
-                  <input
-                    id="photo"
-                    name="photo"
-                    type="file"
-                    accept="image/*"
-                    multiple
-                    className="dropzone-input"
-                    onChange={(e) => handleFiles(e.target.files)}
-                  />
-                  <div className="dropzone-content">
-                    <div className="dropzone-icon">+</div>
-                    <div>
-                      <div className="dropzone-title">Drop up to 3 photos</div>
-                      <div className="dropzone-sub">
-                        PNG or JPG, max 5MB each
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {fileError ? (
-                  <p className="mt-2 text-sm text-[var(--brand-red)]">{fileError}</p>
-                ) : null}
-                {files.length > 0 ? (
-                  <ul className="file-list">
-                    {files.map((f, i) => (
-                      <li key={`${f.name}-${f.size}-${i}`}>
-                        <span>{f.name}</span>
-                        <button type="button" onClick={() => removeFile(i)}>
-                          Remove
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
               </div>
 
               <button type="submit" className="btn btn-red mt-5 w-full">
