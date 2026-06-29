@@ -145,6 +145,7 @@ export default function SiteHeader({ variant = "default" }: SiteHeaderProps) {
             ))}
           </div>
         </div>
+        <Link href="/blog" onClick={closeMobileMenu}>Blog</Link>
         <Link href="/contact" onClick={closeMobileMenu}>Contact</Link>
       </nav>
 

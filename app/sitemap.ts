@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getAllPosts } from "./lib/blog";
 
 const baseUrl = "https://maplecashforcars.ca";
 
@@ -8,6 +9,7 @@ const routes = [
   "/scrap-car-removal",
   "/junk-car-removal",
   "/cash-for-scrap-cars",
+  "/blog",
   "/cash-for-cars-airdrie",
   "/cash-for-cars-banff",
   "/cash-for-cars-black-diamond",
@@ -33,10 +35,22 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route) => ({
+  const staticRoutes = routes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: route.startsWith("/cash-for-cars") ? "monthly" : "yearly",
-    priority: route === "" ? 1 : route.startsWith("/cash-for-cars") ? 0.8 : 0.5,
+    changeFrequency: (route === "/blog" ? "weekly" : route.startsWith("/cash-for-cars") ? "monthly" : "yearly") as
+      | "weekly"
+      | "monthly"
+      | "yearly",
+    priority: route === "" ? 1 : route === "/blog" ? 0.7 : route.startsWith("/cash-for-cars") ? 0.8 : 0.5,
   }));
+
+  const blogRoutes = getAllPosts().map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: post.date ? new Date(post.date) : new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...blogRoutes];
 }

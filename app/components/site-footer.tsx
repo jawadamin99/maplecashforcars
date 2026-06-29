@@ -43,6 +43,7 @@ export default function SiteFooter() {
           <Link href="/scrap-car-removal">Scrap Car Removal</Link>
           <Link href="/junk-car-removal">Junk Car Removal</Link>
           <Link href="/cash-for-scrap-cars">Cash for Scrap Cars</Link>
+          <Link href="/blog">Blog</Link>
         </div>
         <div className="footer-links footer-location-links">
           <h4>Locations</h4>

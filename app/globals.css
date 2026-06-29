@@ -502,6 +502,133 @@ h1, h2, h3, h4, h5, h6 {
     border: 2px solid color-mix(in srgb, var(--brand-green) 45%, white);
 }
 
+.blog-card {
+    overflow: hidden;
+    border-radius: 1.5rem;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 52px rgba(15, 23, 42, 0.16);
+}
+
+.blog-content {
+    color: #334155;
+    font-size: 1.075rem;
+    line-height: 1.85;
+}
+
+.blog-content > * + * {
+    margin-top: 1.25rem;
+}
+
+.blog-content h2,
+.blog-content h3 {
+    color: #020617;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.blog-content h2 {
+    margin-top: 2.25rem;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.blog-content h3 {
+    margin-top: 1.75rem;
+    font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+}
+
+.blog-content a {
+    color: var(--brand-red);
+    font-weight: 900;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.blog-content ul,
+.blog-content ol {
+    padding-left: 1.35rem;
+}
+
+.blog-content li + li {
+    margin-top: 0.55rem;
+}
+
+.blog-content blockquote {
+    border-left: 5px solid var(--brand-green);
+    border-radius: 0.9rem;
+    background: #f8fafc;
+    padding: 1rem 1.25rem;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.blog-content code {
+    border-radius: 0.45rem;
+    background: #f1f5f9;
+    padding: 0.15rem 0.35rem;
+    color: #b91c1c;
+    font-size: 0.92em;
+}
+
+.blog-content figure {
+    margin: 2rem 0;
+}
+
+.blog-content figure img {
+    height: auto;
+    width: 100%;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+}
+
+.blog-sidebar-card {
+    border-radius: 1.25rem;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    padding: 1.5rem;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.blog-sidebar-card h2 {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #020617;
+}
+
+.blog-sidebar-card p {
+    margin-top: 0.75rem;
+    color: #475569;
+    line-height: 1.7;
+}
+
+.blog-sidebar-card a:not(.btn) {
+    color: #334155;
+    font-weight: 800;
+}
+
+.blog-sidebar-card a:not(.btn):hover {
+    color: var(--brand-red);
+}
+
+.blog-sidebar-post {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.blog-sidebar-post img {
+    height: 4.5rem;
+    width: 5.5rem;
+    border-radius: 0.85rem;
+    object-fit: cover;
+}
+
 .pattern-dots {
     background-image: radial-gradient(circle at 1px 1px, rgba(31, 157, 85, 0.18) 1px, transparent 0), radial-gradient(circle at 12px 12px, rgba(203, 31, 47, 0.14) 1px, transparent 0);
     background-size: 24px 24px;

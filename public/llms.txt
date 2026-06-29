@@ -5,8 +5,13 @@
 ## Site
 
 - Homepage: https://maplecashforcars.ca/
+- Blog: https://maplecashforcars.ca/blog
 - Contact: https://maplecashforcars.ca/contact
 - Sitemap: https://maplecashforcars.ca/sitemap.xml
+
+## Blog Posts
+
+- Why Your Calgary Junk Car Was Worth $1,200 Last Year and $400 This Year: https://maplecashforcars.ca/blog/calgary-junk-car-worth-scrap-metal-index-explained
 
 ## Service Pages
 
