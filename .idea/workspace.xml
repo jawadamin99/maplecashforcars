@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab2a8dd3-3d6e-4c29-ad58-5acc4a200d9d" name="Changes" comment="internal linking" />
+    <list default="true" id="ab2a8dd3-3d6e-4c29-ad58-5acc4a200d9d" name="Changes" comment="internal linking">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/blog/calgary-junk-car-worth-scrap-metal-index-explained.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/calgary-junk-car-worth-scrap-metal-index-explained.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/blog/what-does-a-catalytic-converter-do-alberta-drivers-guide.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/what-does-a-catalytic-converter-do-alberta-drivers-guide.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/catalytic-converter-alberta-guide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/llms.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/llms.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="106" />
+    <option name="cachedIndexableFilesCount" value="108" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -128,6 +134,7 @@
       <workItem from="1782075785747" duration="298000" />
       <workItem from="1782768822694" duration="6775000" />
       <workItem from="1783111310232" duration="5190000" />
+      <workItem from="1783630243255" duration="607000" />
     </task>
     <task id="LOCAL-00001" summary="consent removed.">
       <option name="closed" value="true" />
