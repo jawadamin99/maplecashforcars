@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ab2a8dd3-3d6e-4c29-ad58-5acc4a200d9d" name="Changes" comment="internal linking">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/cash-for-scrap-cars/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cash-for-scrap-cars/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/location-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/location-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/junk-car-removal/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/junk-car-removal/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/scrap-car-removal/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/scrap-car-removal/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/llms.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/llms.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="113" />
+    <option name="cachedIndexableFilesCount" value="114" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -138,7 +133,9 @@
       <workItem from="1783111310232" duration="5190000" />
       <workItem from="1783630243255" duration="631000" />
       <workItem from="1784040008503" duration="351000" />
-      <workItem from="1784314277209" duration="605000" />
+      <workItem from="1784314277209" duration="1252000" />
+      <workItem from="1784316019893" duration="1000" />
+      <workItem from="1784324086972" duration="375000" />
     </task>
     <task id="LOCAL-00001" summary="consent removed.">
       <option name="closed" value="true" />
@@ -284,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784040248295</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="internal linking">
+      <option name="closed" value="true" />
+      <created>1784314958033</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1784314958033</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
