@@ -6,6 +6,7 @@ import CityDetailSections, { type CityDetailSection } from "../components/city-d
 import CityPageJsonLd from "../components/city-page-json-ld";
 import SiteFooter from "../components/site-footer";
 import SiteHeader from "../components/site-header";
+import TrustindexSection from "../components/trustindex-section";
 
 const phoneDisplay = "(403) 477-1383";
 const phoneHref = "tel:+14034771383";
@@ -310,6 +311,8 @@ export default function CashForCarsLethbridgePage() {
             </div>
           </div>
         </section>
+
+        <TrustindexSection />
 
         <section className="section-green-tint px-4 py-14 md:px-8 lg:px-12">
           <div className="mx-auto max-w-7xl">

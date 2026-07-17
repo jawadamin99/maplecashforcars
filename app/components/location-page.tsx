@@ -5,6 +5,7 @@ import CityLeadForm from "./city-lead-form";
 import CityPageJsonLd from "./city-page-json-ld";
 import SiteFooter from "./site-footer";
 import SiteHeader from "./site-header";
+import TrustindexSection from "./trustindex-section";
 
 const phoneDisplay = "(403) 477-1383";
 const phoneHref = "tel:+14034771383";
@@ -145,6 +146,8 @@ export default function LocationPage({ data }: { data: LocationPageData }) {
             </div>
           </div>
         </section>
+
+        <TrustindexSection />
 
         <section className="section-green-tint px-4 py-14 md:px-8 lg:px-12">
           <div className="mx-auto max-w-7xl">

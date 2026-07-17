@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "./components/site-footer";
 import SiteHeader from "./components/site-header";
+import TrustindexSection from "./components/trustindex-section";
 
 const steps = [
   {
@@ -419,6 +420,8 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      <TrustindexSection />
 
       <section className="process-block px-4 py-16 md:px-8 lg:px-12">
         <div className="mx-auto max-w-7xl">

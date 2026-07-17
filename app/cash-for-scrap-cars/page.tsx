@@ -5,6 +5,7 @@ import CityLeadForm from "../components/city-lead-form";
 import JsonLd from "../components/json-ld";
 import SiteFooter from "../components/site-footer";
 import SiteHeader from "../components/site-header";
+import TrustindexSection from "../components/trustindex-section";
 
 const phoneDisplay = "(403) 477-1383";
 const phoneHref = "tel:+14034771383";
@@ -415,6 +416,8 @@ export default function CashForScrapCarsPage() {
             </div>
           </div>
         </section>
+
+        <TrustindexSection />
 
         <section className="cta-dark px-4 py-14 md:px-8 lg:px-12">
           <div className="mx-auto max-w-5xl text-center">
