@@ -8,6 +8,7 @@ import SiteHeader from "../components/site-header";
 const phoneDisplay = "(403) 477-1383";
 const phoneHref = "tel:+14034771383";
 const email = "maplecashforcars@gmail.com";
+const address = "4147 6a St NE, Calgary, AB T2E 6T9, Canada";
 
 const contactCards = [
     {
@@ -24,9 +25,9 @@ const contactCards = [
         type: 'email_link'
     },
     {
-        title: "Service Area",
-        detail: "Calgary & Alberta Cities",
-        text: "We serve Calgary, Airdrie, Cochrane, Red Deer, Lethbridge, Canmore, Banff, Okotoks, Strathmore, and nearby communities.",
+        title: "Business Address",
+        detail: address,
+        text: "Primary business address for Maple Cash for Cars in Calgary.",
     },
     {
         title: "Pickup Timing",
@@ -139,6 +140,24 @@ export default function ContactPage() {
                         <div
                             className="rounded-[2rem] border border-slate-200 bg-white p-3 shadow-[0_20px_60px_rgba(15,23,42,0.1)]">
                             <CityLeadForm city="Calgary"/>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="px-4 pb-14 md:px-8 lg:px-12">
+                    <div className="mx-auto max-w-7xl">
+                        <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-3 shadow-[0_20px_60px_rgba(15,23,42,0.1)]">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.9722303271237!2d-114.0451499!3d51.09052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53716509ac687c5f%3A0x34144f1d19f8316a!2s4147%206a%20St%20NE%2C%20Calgary%2C%20AB%20T2E%206T9%2C%20Canada!5e0!3m2!1sen!2s!4v1784743270427!5m2!1sen!2s"
+                                width="100%"
+                                height="460"
+                                style={{border: 0}}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="strict-origin-when-cross-origin"
+                                title="Maple Cash for Cars Calgary location"
+                                className="w-full rounded-[1.5rem]"
+                            />
                         </div>
                     </div>
                 </section>

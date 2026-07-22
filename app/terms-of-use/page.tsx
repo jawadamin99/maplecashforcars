@@ -139,6 +139,9 @@ const sections = [
           <li>
               <strong>Phone:</strong> (403) 477-1383
           </li>
+          <li>
+              <strong>Address:</strong> 4147 6a St NE, Calgary, AB T2E 6T9, Canada
+          </li>
       </ul>
     ),
   },

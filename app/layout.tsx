@@ -40,8 +40,10 @@ const businessSchema = {
       priceRange: "$200-$20000",
       address: {
         "@type": "PostalAddress",
+        streetAddress: "4147 6a St NE",
         addressLocality: "Calgary",
         addressRegion: "AB",
+        postalCode: "T2E 6T9",
         addressCountry: "CA",
       },
       areaServed: [

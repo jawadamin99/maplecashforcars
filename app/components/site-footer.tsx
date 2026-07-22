@@ -36,7 +36,7 @@ export default function SiteFooter() {
           <a href="mailto:maplecashforcars@gmail.com">
             maplecashforcars@gmail.com
           </a>
-          <span>Calgary, AB</span>
+          <span>4147 6a St NE, Calgary, AB T2E 6T9, Canada</span>
         </div>
         <div className="footer-links">
           <h4>Services</h4>
