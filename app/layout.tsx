@@ -149,11 +149,16 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=AW-17815203674"
           strategy="afterInteractive"
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-B9Z6K2S3BE"
+          strategy="afterInteractive"
+        />
         <Script id="gtag-init" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'AW-17815203674');
+gtag('config', 'G-B9Z6K2S3BE');
 function gtagSendEvent(url) {
   var callback = function () {
     if (typeof url === 'string') {
