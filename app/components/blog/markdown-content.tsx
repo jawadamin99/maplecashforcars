@@ -86,6 +86,49 @@ function renderBlock(block: string, index: number) {
   }
 
   const lines = trimmed.split("\n");
+  if (
+    lines.length >= 3 &&
+    lines[0].includes("|") &&
+    /^\s*\|?[\s:-]+(\|[\s:-]+)+\|?\s*$/.test(lines[1])
+  ) {
+    const parseTableRow = (line: string) =>
+      line
+        .trim()
+        .replace(/^\|/, "")
+        .replace(/\|$/, "")
+        .split("|")
+        .map((cell) => cell.trim());
+
+    const headers = parseTableRow(lines[0]);
+    const rows = lines
+      .slice(2)
+      .map(parseTableRow)
+      .filter((row) => row.some(Boolean));
+
+    return (
+      <div key={key} className="blog-table-wrap">
+        <table className="blog-table">
+          <thead>
+            <tr>
+              {headers.map((header, headerIndex) => (
+                <th key={headerIndex}>{parseInline(header)}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                {row.map((cell, cellIndex) => (
+                  <td key={cellIndex}>{parseInline(cell)}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+
   if (lines.every((line) => /^-\s+/.test(line.trim()))) {
     return (
       <ul key={key}>

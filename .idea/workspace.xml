@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ab2a8dd3-3d6e-4c29-ad58-5acc4a200d9d" name="Changes" comment="GA4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/blog/markdown-content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/blog/markdown-content.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/llms.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/llms.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="116" />
+    <option name="cachedIndexableFilesCount" value="118" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,6 +86,9 @@
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
     </configuration>
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
     <configuration name="localhost:3000" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -137,7 +142,8 @@
       <workItem from="1784316019893" duration="1000" />
       <workItem from="1784324086972" duration="2211000" />
       <workItem from="1784743245586" duration="1197000" />
-      <workItem from="1785183608571" duration="4255000" />
+      <workItem from="1785183608571" duration="4374000" />
+      <workItem from="1785963164829" duration="942000" />
     </task>
     <task id="LOCAL-00001" summary="consent removed.">
       <option name="closed" value="true" />
@@ -315,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785183705005</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="GA4">
+      <option name="closed" value="true" />
+      <created>1785352083542</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1785352083542</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
