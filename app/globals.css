@@ -601,17 +601,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .blog-table-wrap {
+    max-width: 100%;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .blog-table {
     width: 100%;
-    min-width: 540px;
     border-collapse: collapse;
     border: 1px solid #dbe1e8;
     border-radius: 1rem;
     overflow: hidden;
     background: #ffffff;
+    table-layout: fixed;
 }
 
 .blog-table th,
@@ -620,6 +622,7 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid #e6ebf1;
     text-align: left;
     vertical-align: top;
+    word-break: break-word;
 }
 
 .blog-table thead th {
@@ -635,6 +638,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .blog-table tbody tr:last-child td {
     border-bottom: 0;
+}
+
+@media (max-width: 640px) {
+    .blog-table th,
+    .blog-table td {
+        padding: 0.75rem 0.8rem;
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
 }
 
 .blog-sidebar-card {
