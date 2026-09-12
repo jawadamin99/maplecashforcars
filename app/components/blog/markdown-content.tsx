@@ -29,11 +29,16 @@ function parseInline(text: string): ReactNode[] {
       if (linkMatch) {
         const [, label, href] = linkMatch;
         const isInternal = href.startsWith("/");
+        const isAuthorityLink = href === "https://www.junkacarcalgary.ca";
         nodes.push(
           isInternal ? (
             <Link key={key} href={href}>
               {label}
             </Link>
+          ) : isAuthorityLink ? (
+            <a key={key} className="regular-text-link" href={href} target="_blank">
+              {label}
+            </a>
           ) : (
             <a key={key} href={href} target="_blank" rel="noreferrer">
               {label}
